@@ -106,7 +106,7 @@ var drawBeadType = function(x, y, beadType, context, color){
     var text = beadType.toString();
     var centerP = getPointOnOCS(x, y);
 
-    context.font = '14px century';               // ここでbeadType のfontを決定してる.
+    context.font = '11px century';               // ここでbeadType のfontを決定してる.
     context.textBaseline = 'middle';    
     context.textAlign = 'center';
     context.fillStyle = color ? color : 'black';
