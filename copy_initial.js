@@ -173,16 +173,16 @@ setSeed(69, 9 , { beadType: 200, index : -3, bondNum : 0 } );
 setSeed(71, 10 , { beadType: 200, index : -3, bondNum : 0 } );
 setSeed(72, 10 , { beadType: 200, index : -3, bondNum : 0 } );
 setSeed(68, 8 , { beadType: 200, index : -3, bondNum : 0 } );
+
 //start point with no carry
 /*
-setSeed(41, 10 , { beadType: 964, index : -3, bondNum : 0 } );
-setSeed(39, 8 , { beadType: 966, index : -3, bondNum : 0 } );
-setSeed(42, 10 , { beadType: 963, index : -3, bondNum : 0 } );
+setSeed(69, 10 , { beadType: 898, index : -3, bondNum : 0 } );
+setSeed(67, 8 , { beadType: 900, index : -3, bondNum : 0 } );
+setSeed(70, 10 , { beadType: 200, index : -3, bondNum : 0 } );
 OSVars.w_path = [
-    {x: 39, y: 8}
+    {x: 67, y: 8}
 ];
 */
-
 
 //+1
 

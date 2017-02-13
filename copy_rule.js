@@ -787,6 +787,7 @@ function Rules(){
    	 32=glider to square
    	 */
    	OSVars.ruleset[623][473]=true;
+   	OSVars.ruleset[898][98]=true;
    	OSVars.ruleset[234][900]=true;
 };
 

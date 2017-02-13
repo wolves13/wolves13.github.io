@@ -5,10 +5,10 @@
 
 /*  グローバル変数定義  */
 
-UNIT_DIST_X = 15;
-UNIT_DIST_Y = 15;
+UNIT_DIST_X = 14;
+UNIT_DIST_Y = 14;
 
-CIRCLE_RADIUS = 7;  // 6, 6.5, 7 are suitable...?
+CIRCLE_RADIUS = 6.5;  // 6, 6.5, 7 are suitable...?
 ANGLE_IN_OCS = Math.PI / 6;
 
 TEST = 0;

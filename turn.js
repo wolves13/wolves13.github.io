@@ -423,6 +423,7 @@
     OSVars.ruleset[1+lsg][841]=true;
     OSVars.ruleset[1+lsg][17+lsg]=true;
     OSVars.ruleset[1+lsg][35+lgs]=true;
+    OSVars.ruleset[3+lgs][37+lgs]=true;
     
     OSVars.ruleset[3+lsg][16+l6]=true;
     OSVars.ruleset[5+lsg][1+lsg]=true;
@@ -1536,7 +1537,7 @@
     OSVars.ruleset[2+r6][16+move]=true;
     OSVars.ruleset[3+r6][16+move]=true;
     OSVars.ruleset[4+r6][6+move]=true;
-    OSVars.ruleset[5+r6][6+move]=true;
+    //OSVars.ruleset[5+r6][6+move]=true;
     OSVars.ruleset[5+r6][1+move]=true;
     OSVars.ruleset[18+r6][1+move]=true;
     OSVars.ruleset[18+r6][18+move]=true;
@@ -1558,44 +1559,6 @@
     OSVars.ruleset[5+r6][1+move_tau]=true;
     OSVars.ruleset[18+r6][1+move_tau]=true;
     
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
