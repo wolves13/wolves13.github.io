@@ -5,10 +5,10 @@
 
 /*  グローバル変数定義  */
 
-UNIT_DIST_X = 14;
-UNIT_DIST_Y = 14;
+UNIT_DIST_X = 1;
+UNIT_DIST_Y = 1;
 
-CIRCLE_RADIUS = 6.5;  // 6, 6.5, 7 are suitable...?
+CIRCLE_RADIUS = 0.1;  // 6, 6.5, 7 are suitable...?
 ANGLE_IN_OCS = Math.PI / 6;
 
 TEST = 0;
@@ -189,7 +189,7 @@ var reflectNonDetRoute = function () {
     var step = OSVars.step;
     var d = OSVars.cons.delta;
     var idx = 0;                                      // クロージャで毎回ここが変化する.
-    var img = overCtx.getImageData(0, 0, 3000, 3000);
+    var img = overCtx.getImageData(0, 0, 6000, 6000);
     
     var fragColor = 'blue';  // 暫定色だけどよさげ
     var bondColor = 'purple';

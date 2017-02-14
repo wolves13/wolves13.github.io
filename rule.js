@@ -4,7 +4,7 @@ function Rules(){
 	//1part   
 
 	setConfirmation(18,0);
-	FirstCF(900,0);
+	FirstCF(1974,0);
 	PCFrule(3,3,0);
 	PCFrule(3,2,0);
 	PCFrule(2,3,0);
@@ -13,25 +13,30 @@ function Rules(){
 	PCFrule(6,2,0);
 	PCFrule(7,3,0);
 	
-	ICFrule(3,19,0);
+	OSVars.ruleset[3][715]=true;
+	ICFrule(3,15,0);//
 	ICFrule(4,13,0);
 	ICFrule(9,12,0);
 	ICFrule(9,13,0);
 	ICFrule(10,12,0);
-	ICFrule(2,18,0);
-	ICFrule(1,18,0);
+	ICFrule(2,10,0);
+	ICFrule(2,14,0);
+	ICFrule(1,10,0);
+	ICFrule(1,14,0);
 	ICFrule(7,13,0);
 	ICFrule(2,13,0);
 	ICFrule(3,12,0);
 	ICFrule(3,13,0);
 	ICFrule(12,12,0);
-	ICFrule(5,16,0);
-	ICFrule(5,17,0);
-	ICFrule(12,16,0);
-	ICFrule(6,18,0);
-	ICFrule(7,17,0);
-	ICFrule(12,7,0);
-	ICFrule(7,16,0);
+	ICFrule(5,4,0);
+	ICFrule(5,9,0);
+	ICFrule(12,4,0);
+	ICFrule(6,10,0);
+	ICFrule(7,4,0);
+	ICFrule(7,9,0);
+	ICFrule(12,3,0);
+	ICFrule(12,11,0);
+	ICFrule(7,4,0);
 	
 	CFrule(1,6,0);
 	CFrule(12,7,0);
@@ -52,11 +57,17 @@ function Rules(){
 	CFrule(14,18,0);
 	CFrule(14,17,0);
 	CFrule(14,16,0);
-	ICFrule(15,7,0);
-	ICFrule(18,6,0);
+	ICFrule(15,3,0);
+	ICFrule(15,11,0);
+	OSVars.ruleset[766][18]=true;
+	OSVars.ruleset[766][16]=true;
+	OSVars.ruleset[766][15]=true;
+	/*
 	ICFrule(16,6,0);
 	ICFrule(15,6,0);
-	//
+	ICFrule(18,6,0);
+	*/
+	//spacer
 	setConfirmation(18,1);
 	PCFrule(2,2,1);
 	PCFrule(3,3,1);
@@ -72,20 +83,29 @@ function Rules(){
 	CFrule(6,8,1);
 	CFrule(16,14,1);
 	CFrule(18,14,1);
-	ICFrule(4,13,1);
-	ICFrule(9,13,1);
-	ICFrule(9,12,1);
-	ICFrule(15,7,1);
-	ICFrule(16,6,1);
-	ICFrule(10,7,1);
-	ICFrule(1,18,1);
-	ICFrule(3,18,1);
-	ICFrule(6,13,1);
-	ICFrule(7,12,1);
-	ICFrule(12,7,1);
-	ICFrule(13,7,1);
-	ICFrule(18,6,1);
-	
+	ICFrule(4,10,1);
+	ICFrule(9,9,1);
+	ICFrule(9,4,1);
+	ICFrule(15,3,1);
+	ICFrule(16,16,1);
+	OSVars.ruleset[34][716]=true;
+	ICFrule(10,4,1);
+	ICFrule(1,10,1);//
+	OSVars.ruleset[19][1740]=true;
+	ICFrule(3,10,1);//
+	OSVars.ruleset[21][1740]=true;
+	ICFrule(6,9,1);
+	OSVars.ruleset[24][1739]=true;
+	ICFrule(7,4,1);
+	OSVars.ruleset[25][1739]=true;
+	ICFrule(12,4,1);
+	OSVars.ruleset[30][1734]=true;
+	ICFrule(13,3,1);
+	OSVars.ruleset[31][1733]=true;
+	ICFrule(18,16,1);
+	OSVars.ruleset[36][716]=true;
+	OSVars.ruleset[36][1746]=true;
+	OSVars.ruleset[36][1732]=true;
 	//left_turn(up to up)
 	setConfirmation(18,3);
 	PCFrule(3,3,3);
@@ -107,7 +127,7 @@ function Rules(){
 	CFrule(18,11,3);
 	CFrule(18,13,3);
 	
-	//2nd_line
+	//2nd_line_spacer
 	setConfirmation(18,4);
 	PCFrule(2,2,4);
 	PCFrule(3,3,4);
@@ -115,7 +135,7 @@ function Rules(){
 		CFrule((i+1)*3,3*i-2,4);
 		CFrule((i+1)*3-1,3*i-1,4);
 	}
-	//
+	//2nd_line_2Confs
 	setConfirmation(18,5);
 	PCFrule(2,3,5);
 	PCFrule(3,3,5);
@@ -128,7 +148,8 @@ function Rules(){
 	ICFrule(9,6,5);
 	ICFrule(18,1,5);
 	ICFrule(18,0,5);
-	ICFrule(18,-2,5);
+	SpeCFrule(18,18,5);//
+	SpeCFrule(18,16,5);//
 	for(var i=1;i<6;i++){
 		CFrule((i+1)*3,3*i-2,5);
 	}
@@ -140,7 +161,7 @@ function Rules(){
 	CFrule(12,5,5);
 	CFrule(15,17,5);
 	CFrule(18,9,5);
-	//left turn(up to low)
+	//right turn(up to low)
 	setConfirmation(22,6);
 	PCFrule(2,2,6);
 	PCFrule(3,3,6);
@@ -218,6 +239,7 @@ function Rules(){
 	ICFrule(9,1,10);
 	ICFrule(9,6,10);
 	ICFrule(18,1,10);
+	ICFrule(12,11,10);
 	for(var i=1;i<6;i++){
 		CFrule((i+1)*3,3*i-2,10);
 		CFrule((i+1)*3-1,3*i-1,10);
@@ -265,20 +287,20 @@ function Rules(){
 	PCFrule(6,2,12);
 	PCFrule(7,2,12);
 	PCFrule(7,3,12);
-	ICFrule(3,16,12);
-	ICFrule(4,15,12);
-	ICFrule(4,16,12);
-	ICFrule(5,20,12);
-	ICFrule(6,19,12);
-	ICFrule(6,20,12);
-	ICFrule(7,20,12);
-	ICFrule(12,16,12);
-	ICFrule(12,20,12);
-	ICFrule(13,19,12);
-	ICFrule(7,10,12);
-	ICFrule(13,10,12);
-	ICFrule(15,4,12);
-	ICFrule(24,4,12);
+	ICFrule(3,10,12);
+	ICFrule(4,9,12);
+	ICFrule(4,10,12);
+	ICFrule(5,14,12);
+	ICFrule(6,13,12);
+	ICFrule(6,14,12);
+	ICFrule(7,14,12);
+	ICFrule(12,10,12);
+	ICFrule(12,14,12);
+	ICFrule(13,13,12);
+	ICFrule(7,4,12);
+	ICFrule(13,4,12);
+	SpeCFrule(15,16,12);//
+	SpeCFrule(24,16,12);//
 	for(var i=1;i<8;i++){
 		CFrule((i+1)*3,3*i-2,12);
 		CFrule((i+1)*3-1,3*i-1,12);
@@ -305,8 +327,9 @@ function Rules(){
 		CFrule((i+1)*3,3*i-2,13);
 		CFrule((i+1)*3-1,3*i-1,13);
 	}
-	CFrule(12,8,13);
-	
+	CFrule(6,2,13);
+	CFrule(5,9,13);
+	CFrule(8,12,13);
 	//left_turn(glider)
 	setConfirmation(22,14);
 	PCFrule(2,2,14);
@@ -324,7 +347,9 @@ function Rules(){
 	CFrule(16,4,14);
 	CFrule(17,14,14);
 	CFrule(18,16,14);
+	CFrule(18,21,14);
 	CFrule(19,17,14);
+	//CFrule(18,20,14);
 	CFrule(22,16,14);
 	
 	//Automaton_copy
@@ -352,7 +377,7 @@ function Rules(){
 	ICFrule(24,7,15);
 	
 	//right_turn(glider)
-	setConfirmation(23,16);
+	setConfirmation(17,16);
 	PCFrule(3,3,16);
 	CFrule(4,2,16);
 	CFrule(5,3,16);
@@ -364,27 +389,25 @@ function Rules(){
 	CFrule(11,8,16);
 	PCFrule(14,3,16);
 	CFrule(17,12,16);
-	CFrule(20,15,16);
-	CFrule(23,19,16);
-	CFrule(23,18,16);
 	
 	////
 	//Automaton_2nd
-	setConfirmation(26,17);
+	setConfirmation(24,17);
 	PCFrule(3,3,17);
 	PCFrule(3,2,17);
 	for(var i=1;i<4;i++){
 		CFrule((i+1)*3,3*i-2,17);
 	}
+	SpeCFrule(24,10,17);//
 	PCFrule(7,2,17);
 	PCFrule(8,3,17);
-	ICFrule(2,20,17);//
-	ICFrule(3,19,17);//
-	ICFrule(3,20,17);//
-	ICFrule(3,22,17);//
-	ICFrule(4,10,17);//
-	ICFrule(4,19,17);//
-	ICFrule(5,15,17);//
+	ICFrule(2,20,17);
+	ICFrule(3,19,17);
+	ICFrule(3,20,17);
+	ICFrule(3,22,17);
+	ICFrule(4,10,17);
+	ICFrule(4,19,17);
+	ICFrule(5,15,17);
 	ICFrule(5,16,17);//
 	ICFrule(6,10,17);//
 	ICFrule(6,15,17);//
@@ -442,7 +465,7 @@ function Rules(){
 	CFrule(19,22,17);///
 	CFrule(19,24,17);//
 	CFrule(21,24,17);//
-	CFrule(26,18,17);//
+	//CFrule(26,18,17);//
 	//to low part
 	setConfirmation(12,18);
 	PCFrule(3,3,18);
@@ -549,12 +572,13 @@ function Rules(){
 	for(var i=1;i<2;i++){
 		CFrule((i+1)*3,3*i-2,22);
 	}
-	ICFrule(3,12,22);
+	ICFrule(3,6,22);
 	CFrule(2,6,22);
 	
 	////
-	//Automaton2ndのspace
+	//Automaton2ndのspacer
 	setConfirmation(12,23);
+	PCFrule(2,7,23);
 	PCFrule(3,3,23);
 	for(var i=1;i<4;i++){
 		CFrule((i+1)*3,3*i-2,23);
@@ -564,7 +588,7 @@ function Rules(){
 	CFrule(12,8,23);
 	
 	////
-	//tau
+	//tau_propa
 	setConfirmation(12,24);
 	PCFrule(3,3,24);
 	for(var i=1;i<3;i++){
@@ -577,6 +601,19 @@ function Rules(){
 	PCFrule(7,3,24);
 	ICFrule(12,3,24);
 	ICFrule(12,1,24);
+	//////another_tau_propa
+	setConfirmation(12,33);
+	PCFrule(3,3,33);
+	for(var i=1;i<3;i++){
+		CFrule((i+1)*3,3*i-2,33);
+		CFrule((i+1)*3-1,3*i-1,33);
+	}
+	ICFrule(2,8,33);
+	ICFrule(3,8,33);
+	PCFrule(6,2,33);
+	PCFrule(7,3,33);
+	ICFrule(12,3,33);
+	ICFrule(12,1,33);
 	////
 	//last copy
 	setConfirmation(12,25);
@@ -585,16 +622,75 @@ function Rules(){
 		CFrule((i+1)*3,3*i-2,25);
 		CFrule((i+1)*3-1,3*i-1,25);
 	}
-	ICFrule(2,8,25);
-	ICFrule(3,8,25);
-	ICFrule(2,6,25);
-	ICFrule(3,6,25);
+	ICFrule(2,8+12,25);
+	ICFrule(3,8+12,25);
+	ICFrule(2,6+12,25);
+	ICFrule(3,6+12,25);
 	PCFrule(6,2,25);
 	PCFrule(7,3,25);
-	ICFrule(12,7,25);
-	ICFrule(12,3,25);
-	ICFrule(12,1,25);
+	ICFrule(12,7+12,25);
+	ICFrule(12,3+12,25);
+	ICFrule(12,1+12,25);
 	
+	////
+	//ToUp
+	setConfirmation(12,26);
+	PCFrule(3,3,26);
+	PCFrule(3,2,26);
+	PCFrule(2,2,26);
+	for(var i=1;i<4;i++){
+		CFrule((i+1)*3,3*i-2,26);
+	}
+	ICFrule(5,4,26);
+	ICFrule(6,9,26);
+	ICFrule(7,3,26);
+	ICFrule(12,3,26);
+	
+	CFrule(1,8,26);
+	CFrule(2,7,26);
+	CFrule(4,7,26);
+	CFrule(5,12,26);
+	CFrule(6,9,26);
+	
+	////
+	//length:2(glider)
+	setConfirmation(6,27);
+	PCFrule(3,3,27);
+	CFrule(6,2,27);
+	PCFrule(2,2,27);
+	for(var i=1;i<2;i++){
+		CFrule((i+1)*3,3*i-2,27);
+	}
+	//tau from 4con
+	//to low part
+	setConfirmation(12,31);
+	PCFrule(3,3,31);
+	PCFrule(3,2,31);
+	PCFrule(2,2,31);
+	for(var i=1;i<4;i++){
+		CFrule((i+1)*3,3*i-2,31);
+	}
+	ICFrule(5,7,31);
+	ICFrule(6,12,31);
+	ICFrule(7,7,31);
+	ICFrule(12,1,31);
+	
+	CFrule(1,8,31);
+	CFrule(2,7,31);
+	CFrule(4,7,31);
+	CFrule(5,12,31);
+	CFrule(6,9,31);
+	//glider to square
+	setConfirmation(43,32);
+	PCFrule(3,3,32);
+	CFrule(2,4,32);
+	CFrule(4,6,32);
+	CFrule(6,2,32);
+	CFrule(7,1,32);
+	for(var i=0;i<12;i++){
+		CFrule((i+1)*3+7,3*i-2+7,32);
+		CFrule((i+1)*3+6,3*i-2+8,32);
+	}
 	/////////////////////////
 	CopyCF(0,2);//2はfirst=false
 	SetColor('blue',0);
@@ -606,91 +702,128 @@ function Rules(){
 	SetColor('green',15);
 	SetColor('green',17);
 	SetColor('green',20);
-	SetColor('red',18);
-	SetColor('red',24);
-	SetColor('purple',25);
-	SetCFR(0,500,0);
-	SetCFR(18,400,1);
-	SetCFR(36,500,2);
-	SetCFR(54,400,1);
-	SetCFR(72,500,2);
-	SetCFR(90,400,1);
-	SetCFR(108,500,3);//left_turn
-	SetCFR(126,0,4);
-	SetCFR(144,72,5);
-	SetCFR(162,0,4);
-	SetCFR(180,36,5);
-	SetCFR(198,0,4);
-	SetCFR(216,0,5);
-	SetCFR(234,0,6);//right_turn
-	SetCFR(256,216,7);
-	SetCFR(274,0,8);
-	SetCFR(292,180,7);
-	SetCFR(310,0,8);
-	SetCFR(328,144,7);
-	SetCFR(346,0,8);
-	SetCFR(364,0,9);//left_turn2
-	SetCFR(380,0,4);
-	SetCFR(398,328,10);
-	SetCFR(416,0,4);
-	SetCFR(434,292,10);
-	SetCFR(452,0,4);
-	SetCFR(470,256,10);
-	SetCFR(488,0,11);//right_turn2
-	SetCFR(536,464,12);
-	SetCFR(560,0,13);//length:4のglider
-	SetCFR(572,428,12);
-	SetCFR(596,0,13);
-	SetCFR(608,392,12);
-	SetCFR(632,0,13);
-	SetCFR(644,0,13);
-	SetCFR(656,0,14);//left_turn3
-	SetCFR(678,0,13);
-	SetCFR(690,0,13);
-	SetCFR(702,608,15);
-	SetCFR(726,0,13);
-	SetCFR(738,572,15);
-	SetCFR(762,0,13);
-	SetCFR(774,536,15);
-	SetCFR(798,0,13);
-	SetCFR(810,0,16);//right_turn3(23個)
-	SetCFR(833,774,17);
-	SetCFR(857,762,23);
-	SetCFR(869,738,17);
-	SetCFR(893,726,23);
-	SetCFR(905,702,17);
-	SetCFR(929,690,23);
-	SetCFR(941,678,18);//low_to_up
-	SetCFR(953,0,14);//left_turn
-	SetCFR(975,0,13);
-	SetCFR(987,0,19);//length:3のglider
-	SetCFR(996,905,20);
-	SetCFR(1020,893,21);//glider
-	SetCFR(1032,869,20);
-	SetCFR(1056,857,21);
-	SetCFR(1068,833,20);
-	SetCFR(1092,821,22);
-	SetCFR(1098,818,18);//tau
-	SetCFR(1110,0,13);
-	SetCFR(1122,0,14);
-	SetCFR(1144,0,13);
-	SetCFR(1156,1098,24);
-	SetCFR(1168,0,22);
-	SetCFR(1174,1080,25);
-	SetCFR(1186,0,13);
-	SetCFR(1198,0,13);
-	SetCFR(1210,1044,25);
-	SetCFR(1222,0,13);
-	SetCFR(1234,0,13);
-	SetCFR(1246,1008,25);
-	SetCFR(1258,0,13);
-	SetCFR(1270,0,14);
-    //////////////////////////////////////////////
-   	//Completion
-   	
-   	OSVars.ruleset[234][900]=true;
-    complement(OSVars.cons.beadTypeNum);
-   	//////////////////////////////////////////////
-   	
+	SetColor('magenta',31);
+	SetColor('yellow',26);
+	SetColor('magenta',24);
+	SetColor('magenta',33);
+	SetColor('magenta',25);
+	setConfirmation(18,700);
+	setConfirmation(18,750);
+	//SetCFR(startNum,InputConf,PreConf,UseConf)
+	SetCFR(700,0,0,700);
+	SetCFR(750,0,0,750);
+	SetCFR(0,700,0,0);
+	SetCFR(18,750,0,1);
+	SetCFR(18,750,1,1);
+	SetCFR(0,700,1,2);
+	SetCFR(40,0,1,3);//left_turn1
+	SpecialCF(1,5);//special_one
+	SetCFR(60,0,3,4);
+	SetCFR(60,0,4,4);
+	SetCFR(80,0,4,5);
+	SetCFR(60,0,5,4);
+	SetCFR(100,0,5,6);//right_turn1
+	SetCFR(130,5,6,7);
+	SetCFR(150,0,7,8);
+	SetCFR(150,0,8,8);
+	SetCFR(130,5,8,7);
+	SetCFR(170,7,8,9);//left_turn2
+	SetCFR(60,0,9,4);
+	SetCFR(190,7,4,10);
+	SetCFR(60,0,10,4);
+	SetCFR(100,0,10,6);
+	SetCFR(130,10,6,7);
+	SetCFR(210,0,10,11);
+	SpecialCF(4,12);
+	SetCFR(260,10,11,12);
+	SetCFR(290,0,12,13);
+	SetCFR(290,0,13,13);
+	SetCFR(310,0,13,27);
+	SetCFR(260,10,27,12);
+	SetCFR(320,4,13,26);//調整中
+	
+	SetCFR(290,0,26,13);
+	SetCFR(340,0,27,14);//left_turn3
+	CopyCF(13,28);
+	CopyCF(27,29);
+	
+	SetCFR(370,0,14,29);
+	SetCFR(380,0,29,28);
+	SetCFR(380,0,28,28);
+	SetCFR(400,12,28,15);
+	SetCFR(370,0,15,29);
+	
+	SetCFR(380,0,15,28);
+	SetCFR(450,0,28,16);//right_turn
+	SetCFR(290,0,16,13);
+	
+	//Automaton_2nd
+	SpecialCF(28,17);
+	SetCFR(480,15,27,17);
+	SetCFR(510,28,17,23);
+	SetCFR(290,0,27,13);
+	SetCFR(310,0,23,27);
+	SetCFR(480,15,13,17);
+	SetCFR(530,28,23,18);//low to up
+	SetCFR(310,0,18,27);
+	
+	CopyCF(14,30);
+	SetCFR(550,0,27,30);//left_turn
+
+	//Automaton_2nd_propagate
+	SetCFR(380,0,30,28);
+	SetCFR(370,0,28,29);
+	SetCFR(580,0,29,19);
+	SetCFR(590,17,19,20);
+	SetCFR(370,0,20,29);
+	SetCFR(590,17,29,20);
+	SetCFR(620,13,20,21);
+	SetCFR(380,0,21,28);
+	SetCFR(370,0,21,29);
+	SetCFR(632,27,20,22);
+	SetCFR(640,13,22,31);
+	//last_path
+	SetCFR(340,0,31,14);//right_turn
+	SetCFR(660,31,14,24);//tau
+	SetCFR(2000,31,14,33);//another
+	SetCFR(310,0,24,27);
+	SetCFR(310,0,33,27);
+	SetCFR(680,20,27,25);
+	SetCFR(290,0,25,13);
+	
+	
+	SetCFR(800,0,14,32);//glider to square
+   	/*
+   	 0,2=counter
+   	 1=spacer_right to left
+   	 3=left_turn(up to up)
+   	 4=spacer_left to right
+   	 5=2ndline_counter
+   	 6=right_turn1
+   	 7=copy
+   	 8=spacer(right to left)
+   	 9=left_turn2
+   	 10=2ndline_copy
+   	 11=right_turn(square to glider)
+   	 12=Automaton1st
+   	 13,28=spacer_glider(4)
+   	 22,27,29=spacer_glider(2)
+   	 19=spacer_glider(3)
+   	 14=left_turn(glider)
+   	 15=propagate_1stAutomaton
+   	 16=right_turn(glider)
+   	 17=Automaton2nd
+   	 23=Automaton2ndのGlider(4)
+   	 18=low to up
+   	 20=4con
+   	 21=4con用glider(4)
+   	 31=tau
+   	 24=tau_propagate
+   	 25=last_copy
+   	 32=glider to square
+   	 */
+   	OSVars.ruleset[623][473]=true;
+   	OSVars.ruleset[1972][98]=true;
+   	//OSVars.ruleset[234][900]=true;
 };
 
