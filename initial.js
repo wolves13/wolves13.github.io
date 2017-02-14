@@ -57,8 +57,8 @@ initOccupied( INITIAL_GRID_SIZE_X, INITIAL_GRID_SIZE_Y );
 // occupied配列の初期設定(seed)
 
 
-var seedx = 600;//seed position
-var seedy = 300;
+var seedx = 1500;//seed position
+var seedy = 1000;
 
 var v3 =[0,0,0];
 
