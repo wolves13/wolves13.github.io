@@ -724,6 +724,7 @@ function Rules(){
 	SetCFR(60,0,5,4);
 	SetCFR(100,0,5,6);//right_turn1
 	SetCFR(130,5,6,7);
+	SetColor('purple',8);
 	SetCFR(150,0,7,8);
 	SetCFR(150,0,8,8);
 	SetCFR(130,5,8,7);

@@ -34,7 +34,7 @@ var setSeed = function(x, y, obj) {
     OSVars.occupied[x][y] = { beadType: obj.beadType, index : obj.index, bondNum : obj.bondNum };
     var overCtx = document.getElementById('overCanvas').getContext('2d');
     drawBeadCircle(x, y, overCtx, 'red');
-    drawBeadType(x, y, obj.beadType, overCtx, 'red');
+    //drawBeadType(x, y, obj.beadType, overCtx, 'red');
 };
 
 //色指定
@@ -101,36 +101,7 @@ var init_a_d = function(args){
 // 高分子の系列(数値の配列)を, 入力から生成.
 // A:0  U:1  G:2  C:3 といったイメージ.
 // 入力form, またはFileから読み込んで初期化するようにしたい.
-/***  まだお試し版. 未完成. ***/
-var initWord = function( word ) {
-    var i;
-    var wordLen = OSVars.cons.len;
 
-    // wordが, "0-len" の形式で与えられるなら, 
-    // wordLenだけを使って初期化.
-    if( OSVars.mode.indexEqualBeadtype ) {
-	for(i=0; i < wordLen ; i++){
-	    OSVars.word[i]=i;
-	}
-    } else {
-	// wordをパースする処理.
-	// OSVars.word = [49,50,51,0,1,2,3,4,5,6,7,8,9,10,11];
-	
-	var wordFm = document.forms.word;
-	var wordArr = wordFm.value.split('-');
-	var bt1,bt2,lim;
-	bt1 = parseInt(wordArr[0],10);
-	bt2 = parseInt(wordArr[1],10);
-	console.log('%d',bt2);
-	lim=bt1;
-	while(lim < wordLen) {
-		if(bt1==bt2+1){bt1=1;}
-	    OSVars.word[lim]=bt1;
-	    bt1++;
-	    lim++;
-	   }
-    }
-};
 
 // OSが動作し始める前にoccupied配列をすべて'false'で初期化する.
 // 配列の大きさは2つの引数で指定する.
@@ -915,7 +886,7 @@ var optimize = function( p ){
     // Canvas上にも反映する(Hbond以外).
     var overCtx = document.getElementById('overCanvas').getContext('2d');
     var beadcolor = OSVars.word[step];
-    drawBeadType(optFirstPoint.x, optFirstPoint.y, OSVars.word[step], overCtx,OSVars.beadcolor[beadcolor]);
+    //drawBeadType(optFirstPoint.x, optFirstPoint.y, OSVars.word[step], overCtx,OSVars.beadcolor[beadcolor]);
     drawChain(OSVars.w_path[ step - 1 ], optFirstPoint, overCtx,OSVars.beadcolor[beadcolor-1]);
     drawBeadCircle(optFirstPoint.x, optFirstPoint.y, overCtx,OSVars.beadcolor[beadcolor]);
 	
@@ -955,7 +926,7 @@ var loopopt = function(){
 		}else{
 	(OSVars.step)++;
 	//return loopopt();
-	setTimeout(loopopt,100);
+	setTimeout(loopopt,1/100);
 	}
 	}else{
     	resolve(st);
@@ -1072,7 +1043,7 @@ var expandGrid = function (expandWidth, expandHeight) {
   if ( expandHeight ){  // Y軸方向の拡張(すべてのxについて行う必要がある)
     for(i=0; i < expandHeight ; i++){
       for(j=0; j < OSVars.oc_size.y; j++){
-        OSVars.occupied[j].push( false ); 
+        if(OSVars.occupied[i][j]==null){OSVars.occupied[i][j]=false;}  
       }
     }
     OSVars.oc_size.y += expandHeight; 

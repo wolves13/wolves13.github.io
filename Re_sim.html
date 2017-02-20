@@ -32,15 +32,15 @@
   <form name="forms" onsubmit="return false" >
     <div id="firstSettingDiv" style="background-color : lightblue">
 
-      <div id="arityDiv">
+    <div id="arityDiv">
 	Arity :
 	<br><label> <input type="radio"  name="arity" value="1"/>1</label>
 	<br><label> <input type="radio"  name="arity" value="2"/>2</label>
-	<br><label> <input type="radio"  name="arity" value="3" checked="yes" />3</label>
+	<br><label> <input type="radio"  name="arity" value="3" checked=yes/>3</label>
 	<br><label> <input type="radio"  name="arity" value="4"/>4</label>
 	<br><label> <input type="radio"  name="arity" value="5"/>5(Max)</label>
 	<br>
-      </div>
+    </div>
 
       <br>
 
@@ -48,31 +48,28 @@
 	Delay :
 	<input type="text" name="delay" size="2" value="3" />
       </label>
-
       <br><br>
-
       <label>
 	Word Length :
-	<input type="text" name="wordLength" size="3" value="100000" />
-      </label>
-      <br>
-      <label name="checkBox">
-	(
-	Regard molecule index as bead type
-	<input type="checkbox" name="indexEqualBeadtype" />
-	)
+	<input type="text" name="wordLength" size="3" value="2000000" />
       </label>
     </div>
 
     <br>
 
     <div id="secondSettingDiv" class="setting2" style="visibility:hidden">
-      Number of beadTypes :
-      <input type="text" name="beadTypes" size="3" value="3000" />
-      <br><br>
-      Word :
-      <textarea name="word" cols="50" rows="5">1-54</textarea>
-      
+      Bit number :
+    <br><label> <input type="radio"  name="bitNum" value="1"/>1</label>
+	<br><label> <input type="radio"  name="bitNum" value="2"/>2</label>
+	<br><label> <input type="radio"  name="bitNum" value="3"/>3</label>
+	<br><label> <input type="radio"  name="bitNum" value="4"/>4</label>
+	<br><label> <input type="radio"  name="bitNum" value="5" checked=yes/>5</label>
+	<br><label> <input type="radio"  name="bitNum" value="6"/>6</label>
+	<br><br>
+	   <label>
+	Body_height :
+	<input type="text" name="dragon_height" size="2" value="30" />
+      </label>
     </div>
      <input type="submit" name="nextButton" value="Next" />
     <div id="btnMsg"> (Bead types, Word) </div>

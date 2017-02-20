@@ -7,6 +7,7 @@
 // Grobal な 値の定義
 INITIAL_GRID_SIZE_X = 10000;
 INITIAL_GRID_SIZE_Y = 10000;
+var bitNum;
 
 var nonDetRoutes = [];   // nondeterministic なとき, 複数のRouteを保存する用.
 var nonDetHbonds = [];   // nondeterministic なとき, 複数のHbondの組を保存する用.
@@ -46,7 +47,9 @@ var OSVars = {
 
     step :   0,         // 最適化ステップの段階.1ずつ増える.
                        // 現在, indexいくつの高分子位置を最適化しているかを表す.
-    initialStep : 0
+    initialStep : 0,
+    
+    dragon_height : 0
 };
 //
 //////////
@@ -56,13 +59,14 @@ initOccupied( INITIAL_GRID_SIZE_X, INITIAL_GRID_SIZE_Y );
 
 // occupied配列の初期設定(seed)
 
+function Seedfunction(bitNum){
 
-var seedx = 1500;//seed position
-var seedy = 1000;
+var seedx = 8000;//seed position
+var seedy =5000;
 
-var v3 =[0,0,0];
+var v3 =[0,0,0,0,0,0,0];
 
-var bitNum=3;
+
 setSeed(13+seedx, 7+seedy , { beadType: 1732, index : -3, bondNum : 0 } );
 for(var i=0;i<bitNum;i++){
 setSeed(14+seedx+i*18, 7+seedy, { beadType: 753, index : -3, bondNum : 0 } );
@@ -126,7 +130,7 @@ OSVars.w_path = [
     {x: 31+seedx+(bitNum-1)*18, y: 8+seedy}
 ];
 }
-
+};
 
 //+1
 

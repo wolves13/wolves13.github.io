@@ -12,6 +12,7 @@ window.onload = function () {
 };
 
 
+
 var changeColor = function (elm, color) {
     elm.style.backgroundColor = color;
 };
@@ -73,7 +74,7 @@ var firstNextPushed = function () {
     }
 
     // simulator へ反映
-    init_a_d( {a: arity, d: delay} );
+    init_a_d( {a: 3, d: 3} );
     OSVars.cons.len = parseInt( wl.value, 10 );
 
     // 次の設定画面を生成する.
@@ -85,14 +86,10 @@ var secondSettings = function (arity, delay) {
     var fm = document.forms;
     var firstSettingDiv = document.getElementById('firstSettingDiv');
     var secondSettingDiv = document.getElementById('secondSettingDiv');    
-    var beadTypes = fm.beadTypes;
-    var indexEqualBeadtype = fm.indexEqualBeadtype;
-    var word = fm.word;
+    
+    var word = fm.word; 	
 
-    // 以前のinput要素は, 設定を表示するだけの行へ置換する.
-    var checkBoxLabel = indexEqualBeadtype.parentNode;   
-
-    firstSettingDiv.removeChild( checkBoxLabel );          // Node 削除
+    //firstSettingDiv.removeChild( checkBoxLabel );          // Node 削除
 
     var arityDiv = document.getElementById('arityDiv');
     var newDiv = document.createElement('div');
@@ -110,48 +107,41 @@ var secondSettings = function (arity, delay) {
     wordLenLabel.innerHTML = 'Word Length : ' + wordLen;
 
     // SecondSettingDiv を可視化.
-    // checkされていたら, 自動的に(beadtypes, word)の内容を反映する
-    if (  indexEqualBeadtype.checked  ) {
-	// beadTypes.disabled = true;
-	word.disabled = true;
-	// beadTypes.value = wordLen;
-	word.innerHTML = '0-' + wordLen;
-	
-	OSVars.mode.indexEqualBeadtype = true;
-    } 
+    
     secondSettingDiv.style.visibility = "visible";
     secondSettingDiv.style.backgroundColor = "lightblue";
     firstSettingDiv.style.backgroundColor = "white";
 
     var nextBtnMsgDiv = document.getElementById('btnMsg');
     nextBtnMsgDiv.innerHTML = '(Seed)';
-    
     fm.onsubmit = secondNextPushed;
     return false;
 };
 
 var secondNextPushed = function () {
     var fm = document.forms;
-    var beadTypeNum = fm.beadTypes.value;
-    var word = fm.word.innerHTML;
-    
-    // (Number of bead types), (word)  のcheck.
-    //
-    //
-    // まずは自動で補完されるバージョンを扱うので, 後で実装する.
-    //
-    //
-    //
-    
+    var beadTypeNum = 3000;
     // word を OS-simulator へ反映する.
-    initWord( word );
     
-    return thirdSettings( beadTypeNum );
+    var bit = fm.bitNum;  
+    var bodyheight = fm.dragon_height;
+    OSVars.dragon_height = bodyheight.value;
+ 
+ 	for (i=0; i < bit.length; i++) {
+	if ( bit[i].checked ){
+	    // bit numberを選択された値にセットする.
+	    bitNum = bit[i].value;
+	    console.log(bitNum);
+	    break;
+	}
+    }
+    Seedfunction(bitNum);
+    return thirdSettings(  );
 };
 
 
-var thirdSettings = function ( beadTypeNum ) {
-
+var thirdSettings = function (  ) {
+	var beadTypeNum=3000;
     console.log('beadTypeNum : ' + beadTypeNum );
 
     var secondSettingDiv = document.getElementById('secondSettingDiv');
@@ -160,10 +150,11 @@ var thirdSettings = function ( beadTypeNum ) {
     // Seedの設定画面を生成.
     var beadtypeString = "Number of bead types :" + beadTypeNum ;
     var wordString =     "Word ( bead type array ) : <br>" ;
+    var body_height = "body_length :";
     var animationcheck = "Animation :" ;
-    secondSettingDiv.innerHTML = beadtypeString + '<br><br>' + wordString + OSVars.word.toString() +'<br><br>' + animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    secondSettingDiv.innerHTML = beadtypeString + '<br><br>'+body_height + '<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
-
+	
     OSVars.cons.beadTypeNum = parseInt( beadTypeNum, 10 );
     setRuleset();
 

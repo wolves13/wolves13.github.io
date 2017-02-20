@@ -5,8 +5,10 @@
 
 /*  グローバル変数定義  */
 
-UNIT_DIST_X = 1;
-UNIT_DIST_Y = 1;
+UNIT_DIST_X = 0.2;
+UNIT_DIST_Y = 0.2;
+
+
 
 CIRCLE_RADIUS = 0.1;  // 6, 6.5, 7 are suitable...?
 ANGLE_IN_OCS = Math.PI / 6;
@@ -72,10 +74,10 @@ var drawBeadCircle = function(x, y, context, color) {
 
     var centerP = getPointOnOCS(x, y);
     context.strokeStyle =  color ? color : 'black' ;
+    context.fillStyle = color? color: 'black' ;
     context.beginPath();
     context.arc(centerP.x, centerP.y, CIRCLE_RADIUS, 0, Math.PI*2 );
     context.stroke();
-
     context.restore();
 };
 
