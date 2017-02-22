@@ -302,5 +302,5 @@ for(i = 1 ; i <= sizeX ; i++ ) {
 gridContext.textBaseline = 'middle';
 for(i = 1 ; i <= sizeY ; i++ ) {
     textY = i.toString();
-    gridContext.strokeText(textY, 0, UNIT_DIST_Y * i);
+    //gridContext.strokeText(textY, 0, UNIT_DIST_Y * i);
 }

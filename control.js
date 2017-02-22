@@ -125,14 +125,19 @@ var secondNextPushed = function () {
     
     var bit = fm.bitNum;  
     var bodyheight = fm.dragon_height;
+    var stx = fm.start_x;
+    var sty = fm.start_y;
     var fdirec = fm.direction;
     OSVars.dragon_height = bodyheight.value;
+    start_x=parseInt(stx.value);
+    start_y=parseInt(sty.value);
+    //console.log(start_x);
  
  	for (i=0; i < bit.length; i++) {
 	if ( bit[i].checked ){
 	    // bit numberを選択された値にセットする.
-	    bitNum = bit[i].value;
-	    console.log(bitNum);
+	    bitNum = parseInt(bit[i].value);
+	    //console.log(bitNum);
 	    break;
 	}
     }
@@ -140,8 +145,8 @@ var secondNextPushed = function () {
     for (i=0; i < fdirec.length; i++) {
 	if ( fdirec[i].checked ){
 	    // bit numberを選択された値にセットする.
-	    direction = fdirec[i].value;
-	    console.log(direction);
+	    direction = parseInt(fdirec[i].value);
+	    //console.log(direction);
 	    break;
 	}
     }
@@ -154,10 +159,13 @@ var thirdSettings = function (  ) {
 	var beadTypeNum=3000;
     console.log('beadTypeNum : ' + beadTypeNum );
 
+	var firstSettingDiv = document.getElementById('firstSettingDiv');
     var secondSettingDiv = document.getElementById('secondSettingDiv');
     var fm = document.forms;
-    
+    var newDiv = document.createElement('div');
+    firstSettingDiv.remove( newDiv );
     // Seedの設定画面を生成.
+    var start_str = "Start_point (" + start_x +"," + start_y + ")";
     var direction_str = "First_Direction : ";
     var firstdirection;
     if(direction==0){
@@ -169,7 +177,7 @@ var thirdSettings = function (  ) {
     var bit_string = bitNum + " folds dragon";
     var body_height = "body_length :" + OSVars.dragon_height;
     var animationcheck = "Animation :" ;
-    secondSettingDiv.innerHTML =direction_str +firstdirection + '<br><br>'+body_height+ '<br><br>'+bit_string + '<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    secondSettingDiv.innerHTML =start_str + '<br><br>'+direction_str +firstdirection + '<br><br>'+body_height+ '<br><br>'+bit_string + '<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
 	
     OSVars.cons.beadTypeNum = parseInt( beadTypeNum, 10 );

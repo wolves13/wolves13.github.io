@@ -7,6 +7,8 @@
 // Grobal な 値の定義
 INITIAL_GRID_SIZE_X = 10000;
 INITIAL_GRID_SIZE_Y = 10000;
+start_x = 0;
+start_y = 0;
 var bitNum,direction;
 
 var nonDetRoutes = [];   // nondeterministic なとき, 複数のRouteを保存する用.
@@ -62,9 +64,9 @@ initOccupied( INITIAL_GRID_SIZE_X, INITIAL_GRID_SIZE_Y );
 
 function Seedfunction(bitNum){
 
-var seedx = 7000;//seed position
-var seedy =6000;
-
+var seedx = start_x;//seed position
+var seedy = start_y;
+console.log(seedx);
 var v3 =[0,0,0,0,0,0,0];
 
 
