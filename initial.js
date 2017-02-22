@@ -7,7 +7,7 @@
 // Grobal な 値の定義
 INITIAL_GRID_SIZE_X = 10000;
 INITIAL_GRID_SIZE_Y = 10000;
-var bitNum;
+var bitNum,direction;
 
 var nonDetRoutes = [];   // nondeterministic なとき, 複数のRouteを保存する用.
 var nonDetHbonds = [];   // nondeterministic なとき, 複数のHbondの組を保存する用.
