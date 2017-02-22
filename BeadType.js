@@ -14,7 +14,7 @@ function setBeadTypes(){
 			}
 		}
 	}
-	var numbers=0;
+
 	while(presentnum<OSVars.cons.len){
 	console.log(presentnum);
 	
@@ -109,7 +109,7 @@ function setBeadTypes(){
 	useBead(14,1);//right_turn4
 	
 	//propagate_Information
-	if(numbers%2==0){
+	if(direction%2==0){
 	useBead(24,1);//tau
 	}else{
 	useBead(33,1);
@@ -199,6 +199,6 @@ function setBeadTypes(){
 		OSVars.word[presentnum]=i+1950;
 		presentnum++;
 	}
-	numbers++;
+	direction++;
 	}	
 }

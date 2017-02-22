@@ -125,6 +125,7 @@ var secondNextPushed = function () {
     
     var bit = fm.bitNum;  
     var bodyheight = fm.dragon_height;
+    var fdirec = fm.direction;
     OSVars.dragon_height = bodyheight.value;
  
  	for (i=0; i < bit.length; i++) {
@@ -136,6 +137,15 @@ var secondNextPushed = function () {
 	}
     }
     Seedfunction(bitNum);
+    for (i=0; i < fdirec.length; i++) {
+	if ( fdirec[i].checked ){
+	    // bit numberを選択された値にセットする.
+	    direction = fdirec[i].value;
+	    console.log(direction);
+	    break;
+	}
+    }
+    
     return thirdSettings(  );
 };
 
@@ -148,11 +158,18 @@ var thirdSettings = function (  ) {
     var fm = document.forms;
     
     // Seedの設定画面を生成.
-    var beadtypeString = "Number of bead types :" + beadTypeNum ;
+    var direction_str = "First_Direction : ";
+    var firstdirection;
+    if(direction==0){
+    	firstdirection="Left";
+    }else{
+    	firstdirection="Right";
+    }
     var wordString =     "Word ( bead type array ) : <br>" ;
+    var bit_string = bitNum + " folds dragon";
     var body_height = "body_length :" + OSVars.dragon_height;
     var animationcheck = "Animation :" ;
-    secondSettingDiv.innerHTML = beadtypeString + '<br><br>'+body_height + '<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    secondSettingDiv.innerHTML =direction_str +firstdirection + '<br><br>'+body_height+ '<br><br>'+bit_string + '<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
 	
     OSVars.cons.beadTypeNum = parseInt( beadTypeNum, 10 );
