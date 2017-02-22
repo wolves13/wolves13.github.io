@@ -14,7 +14,7 @@ function setBeadTypes(){
 			}
 		}
 	}
-	var numbers=1;
+	var numbers=0;
 	while(presentnum<OSVars.cons.len){
 	console.log(presentnum);
 	
