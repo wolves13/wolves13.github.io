@@ -150,7 +150,7 @@ var thirdSettings = function (  ) {
     // Seedの設定画面を生成.
     var beadtypeString = "Number of bead types :" + beadTypeNum ;
     var wordString =     "Word ( bead type array ) : <br>" ;
-    var body_height = "body_length :";
+    var body_height = "body_length :" + OSVars.dragon_height;
     var animationcheck = "Animation :" ;
     secondSettingDiv.innerHTML = beadtypeString + '<br><br>'+body_height + '<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
@@ -170,8 +170,8 @@ var thirdSettings = function (  ) {
     upperInputDiv.innerHTML = "Upper Input <br>  <label><input type='radio' name='upperInput' value=''> T <\label> <br> <label><input type='radio' name='TF' value='F5'> F5 <\label> <br> <label><input type='radio' name='TF' value='F9'> F9 <\label> <br>";
 
     
-    var gridCanvas = document.getElementById('gridCanvas');
-    var overCanvas = document.getElementById('overCanvas');
+    //var gridCanvas = document.getElementById('gridCanvas');
+    //var overCanvas = document.getElementById('overCanvas');
     gridCanvas.style.visibility = 'visible';
     overCanvas.style.visibility = 'visible';
 
@@ -189,7 +189,7 @@ var thirdSettings = function (  ) {
 	// 斜行座標でのcanvas座標(yから計算する必然性あり.)
 	var ocsY = Math.round( realY / UNIT_DIST_Y );
 	var floatX = (realX / UNIT_DIST_X) +  (ocsY * Math.sin( ANGLE_IN_OCS ));  
-	var ocsX = Math.round( floatX );
+	var ocsX = Math.round( floatX )-(sizeY/2);
 	console.log('ocs mouse pos (ocs) : (' + ocsX + ', ' + ocsY + ')' );
     }, false);
 

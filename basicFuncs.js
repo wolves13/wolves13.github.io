@@ -944,6 +944,7 @@ var runSimu = function (){
     var animation=false;
     if(animation!=true){
     while( OSVars.step < OSVars.cons.len ) {
+    	console.log(OSVars.step);
 	p = OSVars.w_path[ OSVars.step - 1 ];     // [固定された鎖の一番先端] を pとする
 	st = optimize( p );    //  p の次を最適化する.
 	if( !st ) { break; }

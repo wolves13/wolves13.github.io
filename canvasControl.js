@@ -1,4 +1,5 @@
-﻿/*
+﻿
+/*
   Canvas上での描画に関する関数をまとめる.
   <canvasControl.js>
 */
@@ -62,9 +63,10 @@ var drawGrid = function(context, color, stepx, stepy, gridOrigin) {
 var getPointOnOCS = function (x, y) {
     
     var angle = ANGLE_IN_OCS;
+    var origin = (sizeY/2)*(UNIT_DIST_Y);
     
     return {
-	x : (x * UNIT_DIST_X)  -  (y * UNIT_DIST_Y) * Math.sin( angle ),
+	x : (x * UNIT_DIST_X)  -  (y * UNIT_DIST_Y) * Math.sin( angle )+origin,
 	y : (y * UNIT_DIST_Y)
     };
 };
@@ -257,13 +259,13 @@ var reflectTmpRoute = function ( route, img ) {
 
 
 // 座標システムを, 斜交座標のものに変換する.
-var changeToOCS = function( context ) {
+var changeToOCS = function( context,maxY ) {
 
     // cは, transform()に与える引数.
     // x' = (a*x) + (c*y) + e の中の 'c'.
     var c =  - Math.sin( ANGLE_IN_OCS );
-
-    context.transform(1, 0, c, 1, 0, 0);
+	var origin = (maxY/2)*(UNIT_DIST_Y);
+    context.transform(1, 0, c, 1, origin, 0);
 };
 
 //////////
@@ -273,16 +275,19 @@ var gridContext = gridCanvas.getContext('2d');
 var overCanvas =  document.getElementById('overCanvas');
 var overContext =  overCanvas.getContext('2d');
 
-changeToOCS( gridContext );  // gridContextを斜交座標システムへ変換
-drawGrid(gridContext, 'lightgray', UNIT_DIST_X, UNIT_DIST_Y );
-
-
 /* 軸ラベルの描画 */
   // 座標最大値の計算
 var sizeX =  ( gridContext.canvas.width / UNIT_DIST_X );
 var sizeY =  ( gridContext.canvas.height / UNIT_DIST_Y );
 console.log('sizeX : ' + sizeX);
 console.log('sizeY : ' + sizeY);
+
+
+changeToOCS( gridContext,sizeY );  // gridContextを斜交座標システムへ変換
+
+drawGrid(gridContext, 'lightgray', UNIT_DIST_X, UNIT_DIST_Y );
+
+
 
 var textX;
 var i;
@@ -297,5 +302,5 @@ for(i = 1 ; i <= sizeX ; i++ ) {
 gridContext.textBaseline = 'middle';
 for(i = 1 ; i <= sizeY ; i++ ) {
     textY = i.toString();
-    gridContext.strokeText(textY, (UNIT_DIST_X * Math.sin(ANGLE_IN_OCS) ) * i + UNIT_DIST_X/3, UNIT_DIST_Y * i);
+    gridContext.strokeText(textY, 0, UNIT_DIST_Y * i);
 }

@@ -31,6 +31,7 @@ var OSVars = {
     },
 
     word   :   [ ],    // 高分子の鎖を順にならべたリスト.
+    //word2  :   [ ],    // 2nd
     w_path :   [ ],    // 高分子の鎖が辿った点のリスト
 
     ruleset :  [],     // 高分子種どうしが水素結合を結べるかどうか定める. 2dMatrix.
@@ -61,8 +62,8 @@ initOccupied( INITIAL_GRID_SIZE_X, INITIAL_GRID_SIZE_Y );
 
 function Seedfunction(bitNum){
 
-var seedx = 8000;//seed position
-var seedy =5000;
+var seedx = 7000;//seed position
+var seedy =6000;
 
 var v3 =[0,0,0,0,0,0,0];
 
