@@ -127,7 +127,7 @@ function setBeadTypes(){
 	var maketurn = [];
 	maketurn=make_turn(bitNum);
 	
-	while(turnword[turnNum]!=null){
+	while(maketurn[turnNum]!=null){
 	OSVars.word[presentnum]=maketurn[turnNum];
 	presentnum++;
 	turnNum++;
