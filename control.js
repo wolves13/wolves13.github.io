@@ -12,6 +12,7 @@ window.onload = function () {
 };
 
 
+
 var changeColor = function (elm, color) {
     elm.style.backgroundColor = color;
 };
@@ -73,7 +74,7 @@ var firstNextPushed = function () {
     }
 
     // simulator へ反映
-    init_a_d( {a: arity, d: delay} );
+    init_a_d( {a: 3, d: 3} );
     OSVars.cons.len = parseInt( wl.value, 10 );
 
     // 次の設定画面を生成する.
@@ -85,14 +86,10 @@ var secondSettings = function (arity, delay) {
     var fm = document.forms;
     var firstSettingDiv = document.getElementById('firstSettingDiv');
     var secondSettingDiv = document.getElementById('secondSettingDiv');    
-    var beadTypes = fm.beadTypes;
-    var indexEqualBeadtype = fm.indexEqualBeadtype;
-    var word = fm.word;
+    
+    var word = fm.word; 	
 
-    // 以前のinput要素は, 設定を表示するだけの行へ置換する.
-    var checkBoxLabel = indexEqualBeadtype.parentNode;   
-
-    firstSettingDiv.removeChild( checkBoxLabel );          // Node 削除
+    //firstSettingDiv.removeChild( checkBoxLabel );          // Node 削除
 
     var arityDiv = document.getElementById('arityDiv');
     var newDiv = document.createElement('div');
@@ -110,60 +107,79 @@ var secondSettings = function (arity, delay) {
     wordLenLabel.innerHTML = 'Word Length : ' + wordLen;
 
     // SecondSettingDiv を可視化.
-    // checkされていたら, 自動的に(beadtypes, word)の内容を反映する
-    if (  indexEqualBeadtype.checked  ) {
-	// beadTypes.disabled = true;
-	word.disabled = true;
-	// beadTypes.value = wordLen;
-	word.innerHTML = '0-' + wordLen;
-	
-	OSVars.mode.indexEqualBeadtype = true;
-    } 
+    
     secondSettingDiv.style.visibility = "visible";
     secondSettingDiv.style.backgroundColor = "lightblue";
     firstSettingDiv.style.backgroundColor = "white";
 
     var nextBtnMsgDiv = document.getElementById('btnMsg');
     nextBtnMsgDiv.innerHTML = '(Seed)';
-    
     fm.onsubmit = secondNextPushed;
     return false;
 };
 
 var secondNextPushed = function () {
     var fm = document.forms;
-    var beadTypeNum = fm.beadTypes.value;
-    var word = fm.word.innerHTML;
-    
-    // (Number of bead types), (word)  のcheck.
-    //
-    //
-    // まずは自動で補完されるバージョンを扱うので, 後で実装する.
-    //
-    //
-    //
-    
+    var beadTypeNum = 3000;
     // word を OS-simulator へ反映する.
-    initWord( word );
     
-    return thirdSettings( beadTypeNum );
+    var bit = fm.bitNum;  
+    var bodyheight = fm.dragon_height;
+    var stx = fm.start_x;
+    var sty = fm.start_y;
+    var fdirec = fm.direction;
+    OSVars.dragon_height = bodyheight.value;
+    start_x=parseInt(stx.value);
+    start_y=parseInt(sty.value);
+    //console.log(start_x);
+ 
+ 	for (i=0; i < bit.length; i++) {
+	if ( bit[i].checked ){
+	    // bit numberを選択された値にセットする.
+	    bitNum = parseInt(bit[i].value);
+	    //console.log(bitNum);
+	    break;
+	}
+    }
+    Seedfunction(bitNum);
+    for (i=0; i < fdirec.length; i++) {
+	if ( fdirec[i].checked ){
+	    // bit numberを選択された値にセットする.
+	    direction = parseInt(fdirec[i].value);
+	    //console.log(direction);
+	    break;
+	}
+    }
+    
+    return thirdSettings(  );
 };
 
 
-var thirdSettings = function ( beadTypeNum ) {
-
+var thirdSettings = function (  ) {
+	var beadTypeNum=3000;
     console.log('beadTypeNum : ' + beadTypeNum );
 
+	var firstSettingDiv = document.getElementById('firstSettingDiv');
     var secondSettingDiv = document.getElementById('secondSettingDiv');
     var fm = document.forms;
-    
+    var newDiv = document.createElement('div');
+    firstSettingDiv.remove( newDiv );
     // Seedの設定画面を生成.
-    var beadtypeString = "Number of bead types :" + beadTypeNum ;
+    var start_str = "Start_point (" + start_x +"," + start_y + ")";
+    var direction_str = "First_Direction : ";
+    var firstdirection;
+    if(direction==0){
+    	firstdirection="Left";
+    }else{
+    	firstdirection="Right";
+    }
     var wordString =     "Word ( bead type array ) : <br>" ;
+    var bit_string = bitNum + " folds dragon";
+    var body_height = "body_length :" + OSVars.dragon_height;
     var animationcheck = "Animation :" ;
-    secondSettingDiv.innerHTML = beadtypeString + '<br><br>' + wordString + OSVars.word.toString() +'<br><br>' + animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    secondSettingDiv.innerHTML =start_str + '<br><br>'+direction_str +firstdirection + '<br><br>'+body_height+ '<br><br>'+bit_string + '<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
-
+	
     OSVars.cons.beadTypeNum = parseInt( beadTypeNum, 10 );
     setRuleset();
 
@@ -179,8 +195,8 @@ var thirdSettings = function ( beadTypeNum ) {
     upperInputDiv.innerHTML = "Upper Input <br>  <label><input type='radio' name='upperInput' value=''> T <\label> <br> <label><input type='radio' name='TF' value='F5'> F5 <\label> <br> <label><input type='radio' name='TF' value='F9'> F9 <\label> <br>";
 
     
-    var gridCanvas = document.getElementById('gridCanvas');
-    var overCanvas = document.getElementById('overCanvas');
+    //var gridCanvas = document.getElementById('gridCanvas');
+    //var overCanvas = document.getElementById('overCanvas');
     gridCanvas.style.visibility = 'visible';
     overCanvas.style.visibility = 'visible';
 
@@ -198,10 +214,35 @@ var thirdSettings = function ( beadTypeNum ) {
 	// 斜行座標でのcanvas座標(yから計算する必然性あり.)
 	var ocsY = Math.round( realY / UNIT_DIST_Y );
 	var floatX = (realX / UNIT_DIST_X) +  (ocsY * Math.sin( ANGLE_IN_OCS ));  
-	var ocsX = Math.round( floatX );
+	var ocsX = Math.round( floatX )-(sizeY/2);
 	console.log('ocs mouse pos (ocs) : (' + ocsX + ', ' + ocsY + ')' );
     }, false);
-
+	//////////////////////////
+		//RuleSet
+	//////////////////////////
+	
+	
+	Rules();
+	turnRules();
+	
+    setBeadTypes();
+	//////////////////////////////////////////////
+   	//Completion
+   	
+ 	ColorChange(13,18,'black');
+ 	ColorChange(81,86,'black');
+ 	ColorChange(143,148,'black');
+ 	ColorChange(191,196,'black');
+    complement(OSVars.cons.beadTypeNum);
+   	//////////////////////////////////////////////
+   	
+    ///////////////////////////////////////////////////////////////
+    //
+    // RuleSet おわり
+    /*
+     * 
+     */
+    ///////////////////////////////////////////////////////////////
     var submitButton = fm.nextButton;
     submitButton.value = "Execute !!";
 	
@@ -412,33 +453,9 @@ var execute = function () {
     */
     
     console.log('execute button pushed...');
-  	//////////////////////////
-		//RuleSet
-	//////////////////////////
-	
-	
-	Rules();
-	turnRules();
-	
-    setBeadTypes();
+  	
 
-    //////////////////////////////////////////////
-   	//Completion
-   	
- 	ColorChange(13,18,'black');
- 	ColorChange(81,86,'black');
- 	ColorChange(143,148,'black');
- 	ColorChange(191,196,'black');
-    complement(OSVars.cons.beadTypeNum);
-   	//////////////////////////////////////////////
-   	
-    ///////////////////////////////////////////////////////////////
-    //
-    // RuleSet おわり
-    /*
-     * 
-     */
-    ///////////////////////////////////////////////////////////////
+    
     // show_occupied_in_binary_2();
     
     
