@@ -11,7 +11,7 @@ UNIT_DIST_Y = 10;
 
 
 
-CIRCLE_RADIUS = 7;  // 6, 6.5, 7 are suitable...?
+CIRCLE_RADIUS = 5;  // 6, 6.5, 7 are suitable...?
 ANGLE_IN_OCS = Math.PI / 6;
 
 TEST = 0;
