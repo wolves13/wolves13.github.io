@@ -34,7 +34,7 @@ var setSeed = function(x, y, obj) {
     OSVars.occupied[x][y] = { beadType: obj.beadType, index : obj.index, bondNum : obj.bondNum };
     var overCtx = document.getElementById('overCanvas').getContext('2d');
     drawBeadCircle(x, y, overCtx, 'red');
-    //drawBeadType(x, y, obj.beadType, overCtx, 'red');
+    drawBeadType(x, y, obj.beadType, overCtx, 'red');
 };
 
 //色指定
