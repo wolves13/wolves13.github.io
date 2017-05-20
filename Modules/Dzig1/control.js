@@ -166,7 +166,7 @@ var thirdSettings = function (  ) {
     }else{
     	startpoint='Bottom';
     }
-    var Start_str = "Start at the"+startpoint;
+    var Start_str = "Start at the "+startpoint;
     var animationcheck = "Animation :" ;
     secondSettingDiv.innerHTML =BitNum_str + '<br><br>'+Input_str + '<br><br>'+Start_str+'<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
