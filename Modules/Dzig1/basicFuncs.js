@@ -926,7 +926,7 @@ var loopopt = function(){
 		}else{
 	(OSVars.step)++;
 	//return loopopt();
-	setTimeout(loopopt,10);
+	setTimeout(loopopt,100);
 	}
 	}else{
     	resolve(st);
