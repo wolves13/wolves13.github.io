@@ -35,7 +35,7 @@ var firstNextPushed = function () {
     var i;
     var d = document.forms.delay;
     var a = document.forms.arity;   // ラジオボタンの配列
-    var wl = document.forms.wordLength;
+    //var wl = document.forms.wordLength;
     var arity, delay;
 
     if ( d.value !== null  &&  d.value !== '' ){
@@ -49,7 +49,7 @@ var firstNextPushed = function () {
 	}
     }
     delay = d.value;
-
+	
     for (i=0; i < a.length; i++) {
 	if ( a[i].checked ){
 	    // Arityを選択された値にセットする.
@@ -61,7 +61,7 @@ var firstNextPushed = function () {
 	alert('Pleae select arity.');
 	return false;
     }
-
+	/*
     if ( wl.value !== null  &&  wl.value !== '' ){
 	if ( isNaN( wl.value ) ){
 
@@ -72,10 +72,10 @@ var firstNextPushed = function () {
 	    return false;
 	}
     }
-
+	*/
     // simulator へ反映
     init_a_d( {a: 3, d: 3} );
-    OSVars.cons.len = parseInt( wl.value, 10 );
+    //OSVars.cons.len = parseInt( wl.value, 10 );
 
     // 次の設定画面を生成する.
     return secondSettings(arity, delay);
@@ -111,11 +111,12 @@ var secondSettings = function (arity, delay) {
     var delayLabel = fm.delay.parentNode;
     delayLabel.removeChild( fm.delay );
     delayLabel.innerHTML  = 'Delay : ' + delay;
-
+	/*
     var wordLen = fm.wordLength.value;
     var wordLenLabel = fm.wordLength.parentNode;
     wordLenLabel.removeChild( fm.wordLength );
     wordLenLabel.innerHTML = 'Word Length : ' + wordLen;
+    */
 	var bitDiv=document.getElementById('bitDiv');
 	var newbitDiv=document.createElement('div');
 	newbitDiv.innerHTML = 'Bit Number : ' + bitNum;
@@ -125,7 +126,17 @@ var secondSettings = function (arity, delay) {
     secondSettingDiv.style.visibility = "visible";
     secondSettingDiv.style.backgroundColor = "lightblue";
     firstSettingDiv.style.backgroundColor = "white";
-
+	var inputDiv = document.getElementById('inputDiv');
+	var newInputDiv = document.createElement('div');
+	if(bitNum==1){
+	newInputDiv.innerHTML = 'input :[<select name="inputNum1"><option value="0">0</option><option value="1">1</option></select>]';
+	}else if(bitNum==2){
+	newInputDiv.innerHTML = 'input :[<select name="inputNum1"><option value="0">0</option><option value="1">1</option></select>,<select name="inputNum2"><option value="0">0</option><option value="1">1</option></select>]';
+	}else{
+	newInputDiv.innerHTML = 'input :[<select name="inputNum1"><option value="0">0</option><option value="1">1</option></select>,<select name="inputNum2"><option value="0">0</option><option value="1">1</option></select>,<select name="inputNum3"><option value="0">0</option><option value="1">1</option></select>]';
+	}
+	secondSettingDiv.replaceChild(newInputDiv,inputDiv);
+	OSVars.cons.len=bitNum*24+30*(bitNum-1)+1;
     var nextBtnMsgDiv = document.getElementById('btnMsg');
     fm.onsubmit = secondNextPushed;
     return false;
@@ -136,11 +147,19 @@ var secondNextPushed = function () {
     var beadTypeNum = 3000;
     var inputNumber;
     // word を OS-simulator へ反映する.
-    var input=fm.inputNum1;
-    var inputNumber = parseInt(input.value);
-    v3[0]=inputNumber;
-    v3[1]=0;
-    v3[2]=0;
+    var input1=fm.inputNum1;
+    var inputNumber1 = parseInt(input1.value);
+    if(bitNum>1){
+    var input2=fm.inputNum2;
+    var inputNumber2 = parseInt(input2.value);
+    if(bitNum>2){
+    var input3=fm.inputNum3;
+    var inputNumber3 = parseInt(input3.value);
+    }
+    }
+    v3[0]=inputNumber1;
+    v3[1]=inputNumber2;
+    v3[2]=inputNumber3;
    	var startP = fm.startTB;
    	carry=startP.value;
     Seedfunction(bitNum,v3,carry);
@@ -159,9 +178,16 @@ var thirdSettings = function (  ) {
     firstSettingDiv.remove( newDiv );
     // Seedの設定画面を生成.
     var BitNum_str = "Bit Number : "+bitNum;
-    var Input_str = "Input : ["+v3[0]+","+v3[1]+"]";
+    var Input_str;
+    if(bitNum==1){
+    	Input_str = "Input : [ "+v3[0]+" ]";
+    }else if(bitNum==2){
+    	Input_str = "Input : [ "+v3[0]+", "+v3[1]+" ]";
+    }else{
+    	Input_str = "Input : [ "+v3[0]+", "+v3[1]+", "+v3[2]+" ]";
+    }
     var startpoint;
-    if(carry==false){
+    if(carry==0){
     	startpoint='Top';
     }else{
     	startpoint='Bottom';

@@ -11,7 +11,7 @@ start_x = 0;
 start_y = 0;
 var bitNum,direction;
 var v3=[];
-var carry=true;
+var carry;
 var nonDetRoutes = [];   // nondeterministic なとき, 複数のRouteを保存する用.
 var nonDetHbonds = [];   // nondeterministic なとき, 複数のHbondの組を保存する用.
 
@@ -117,8 +117,7 @@ setSeed(31+seedx+i*18, 7+seedy , { beadType: 64, index : -3, bondNum : 0 } );
 
 setSeed(32+seedx+(bitNum-1)*18, 9+seedy , { beadType: 255, index : -3, bondNum : 0 } );
 //start point with carry
-
-if(carry==true){
+if(carry==1){
 setSeed(31+seedx+(bitNum-1)*18, 8+seedy , { beadType: 256, index : -3, bondNum : 0 } );
 setSeed(31+seedx+(bitNum-1)*18, 9+seedy , { beadType: 257, index : -3, bondNum : 0 } );
 setSeed(32+seedx+(bitNum-1)*18, 10+seedy , { beadType: 258, index : -3, bondNum : 0 } );

@@ -49,11 +49,13 @@
 	<input type="text" name="delay" size="2" value="3" />
       </label>
       <br><br>
+      <!--
       <label>
 	Word Length :
-	<input type="text" name="wordLength" size="3" value="1000" />
+	<input type="text" name="wordLength" size="3" value="49" />
       </label>
       <br><br>
+      -->
       <div id="bitDiv">
       Bit_number :
     <br><label> <input type="radio"  name="bitNum" value="1"checked=yes/>1</label>
@@ -66,8 +68,11 @@
     <br>
 
     <div id="secondSettingDiv" class="setting2" style="visibility:hidden">
- 
-      input :[
+ 	<!--Here input-->
+      <div id="inputDiv">
+      </div>
+      
+      <!--
     <select name="inputNum1">
 	<option value="0">0</option>
 	<option value="1">1</option>
@@ -83,13 +88,14 @@
 	<option value="0">0</option>
 	<option value="1">1</option>
 	</select>
-	-->
 	]
+	-->
+	
 	<br><br>
 	Start at :
 	<select name="startTB">
-	<option value="false">Top</option>
-	<option value="true">Bottom</option>
+	<option value=0>Top</option>
+	<option value=1>Bottom</option>
 	</select>
     </div>
      <input type="submit" name="nextButton" value="Next" />
