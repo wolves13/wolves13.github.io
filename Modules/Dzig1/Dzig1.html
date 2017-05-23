@@ -2,6 +2,7 @@
 <html><head>  <title>Oritatami Simulator with Canvas</title>
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
+
 <style>
   body {
     font-size   : 12pt;
@@ -33,22 +34,24 @@
     <div id="firstSettingDiv" style="background-color : lightblue">
 
     <div id="arityDiv">
-	Arity :
+	Arity :3
+	<!--
 	<br><label> <input type="radio"  name="arity" value="1"/>1</label>
 	<br><label> <input type="radio"  name="arity" value="2"/>2</label>
 	<br><label> <input type="radio"  name="arity" value="3" checked=yes/>3</label>
 	<br><label> <input type="radio"  name="arity" value="4"/>4</label>
 	<br><label> <input type="radio"  name="arity" value="5"/>5(Max)</label>
+	-->
 	<br>
     </div>
 
       <br>
 
       <label>
-	Delay :
-	<input type="text" name="delay" size="2" value="3" />
+	Delay :3
+	
       </label>
-      <br><br>
+
       <!--
       <label>
 	Word Length :
@@ -56,33 +59,44 @@
       </label>
       <br><br>
       -->
-      <div id="bitDiv">
-      Bit_number :
-    <br><label> <input type="radio"  name="bitNum" value="1"checked=yes/>1</label>
-	<br><label> <input type="radio"  name="bitNum" value="2"/>2</label>
-	<br><label> <input type="radio"  name="bitNum" value="3"/>3</label>
-	<br><br>
-	</div>
+     
     </div>
 
     <br>
 
     <div id="secondSettingDiv" class="setting2" style="visibility:hidden">
  	<!--Here input-->
-      <div id="inputDiv">
-      </div>
+  	<div id="inputDiv">
+      Chose the conformation
+      <br>
+      <label> <input type="radio"  name="inputNum" value="0" id = "input_id1" checked=yes/>
+      	<IMG src="Dzig1-20.png" width="250" height="150" onClick="document.getElementById('input_id1').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="1" id = "input_id2" />
+      	<IMG src="Dzig1-21.png" width="250" height="150" onClick="document.getElementById('input_id2').checked=true">
+      </label>
+      <br>
+      <label> <input type="radio"  name="inputNum" value="0" id = "radio_id3"/>
+      	<IMG src="Dzig1-f0.png" width="250" height="150" onClick="document.getElementById('radio_id3').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="1" id = "radio_id4"/>
+      	<IMG src="Dzig1-1.png" width="250" height="150" onClick="document.getElementById('radio_id4').checked=true">
+      </label>
+     </div>
+
       
      
-	
-	<br><br>
+	<!--
+	<br>
 	Start at :
 	<select name="startTB">
 	<option value=1>Bottom</option>
 	<option value=0>Top</option>
 	</select>
+	-->
     </div>
      <input type="submit" name="nextButton" value="Next" />
-    <div id="btnMsg"> (Bead types, Word) </div>
+    <div id="btnMsg">  </div>
   </form>
 
   <canvas id="gridCanvas" width="5000" height="5000"> </canvas>

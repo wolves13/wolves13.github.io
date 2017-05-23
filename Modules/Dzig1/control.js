@@ -37,7 +37,7 @@ var firstNextPushed = function () {
     var a = document.forms.arity;   // ラジオボタンの配列
     //var wl = document.forms.wordLength;
     var arity, delay;
-
+	/*
     if ( d.value !== null  &&  d.value !== '' ){
 	if ( isNaN( d.value ) ){
 
@@ -61,6 +61,7 @@ var firstNextPushed = function () {
 	alert('Pleae select arity.');
 	return false;
     }
+    */
 	/*
     if ( wl.value !== null  &&  wl.value !== '' ){
 	if ( isNaN( wl.value ) ){
@@ -78,16 +79,18 @@ var firstNextPushed = function () {
     //OSVars.cons.len = parseInt( wl.value, 10 );
 
     // 次の設定画面を生成する.
-    return secondSettings(arity, delay);
+    return secondSettings();
 };
 
-var secondSettings = function (arity, delay) {
+var secondSettings = function () {
 
     var fm = document.forms;
     var firstSettingDiv = document.getElementById('firstSettingDiv');
     var secondSettingDiv = document.getElementById('secondSettingDiv');    
     
-    var word = fm.word; 	
+    var word = fm.word;
+    bitNum=1;
+    /*
 	var bit = fm.bitNum;  
     //console.log(start_x);
  
@@ -99,43 +102,45 @@ var secondSettings = function (arity, delay) {
 	    break;
 	}
     }
-    
+    */
     //firstSettingDiv.removeChild( checkBoxLabel );          // Node 削除
 
     var arityDiv = document.getElementById('arityDiv');
     var newDiv = document.createElement('div');
-    newDiv.innerHTML = 'Arity : ' + arity;
+    newDiv.innerHTML = 'Arity : ' + 3;
     firstSettingDiv.replaceChild( newDiv, arityDiv );
 
 
-    var delayLabel = fm.delay.parentNode;
-    delayLabel.removeChild( fm.delay );
-    delayLabel.innerHTML  = 'Delay : ' + delay;
+    
 	/*
     var wordLen = fm.wordLength.value;
     var wordLenLabel = fm.wordLength.parentNode;
     wordLenLabel.removeChild( fm.wordLength );
     wordLenLabel.innerHTML = 'Word Length : ' + wordLen;
     */
+   /*
 	var bitDiv=document.getElementById('bitDiv');
 	var newbitDiv=document.createElement('div');
 	newbitDiv.innerHTML = 'Bit Number : ' + bitNum;
 	firstSettingDiv.replaceChild(newbitDiv,bitDiv);
+	*/
     // SecondSettingDiv を可視化.
     
     secondSettingDiv.style.visibility = "visible";
     secondSettingDiv.style.backgroundColor = "lightblue";
     firstSettingDiv.style.backgroundColor = "white";
+    /*
 	var inputDiv = document.getElementById('inputDiv');
 	var newInputDiv = document.createElement('div');
 	if(bitNum==1){
-	newInputDiv.innerHTML = 'input :[<select name="inputNum1"><option value="0">0</option><option value="1">1</option></select>]';
+	newInputDiv.innerHTML = ';
 	}else if(bitNum==2){
 	newInputDiv.innerHTML = 'input :[<select name="inputNum1"><option value="0">0</option><option value="1">1</option></select>,<select name="inputNum2"><option value="0">0</option><option value="1">1</option></select>]';
 	}else{
 	newInputDiv.innerHTML = 'input :[<select name="inputNum1"><option value="0">0</option><option value="1">1</option></select>,<select name="inputNum2"><option value="0">0</option><option value="1">1</option></select>,<select name="inputNum3"><option value="0">0</option><option value="1">1</option></select>]';
 	}
 	secondSettingDiv.replaceChild(newInputDiv,inputDiv);
+	*/
 	OSVars.cons.len=bitNum*24+30*(bitNum-1)+1;
     var nextBtnMsgDiv = document.getElementById('btnMsg');
     fm.onsubmit = secondNextPushed;
@@ -147,21 +152,22 @@ var secondNextPushed = function () {
     var beadTypeNum = 3000;
     var inputNumber;
     // word を OS-simulator へ反映する.
-    var input1=fm.inputNum1;
-    var inputNumber1 = parseInt(input1.value);
-    if(bitNum>1){
-    var input2=fm.inputNum2;
-    var inputNumber2 = parseInt(input2.value);
-    if(bitNum>2){
-    var input3=fm.inputNum3;
-    var inputNumber3 = parseInt(input3.value);
+    var inputID=fm.inputNum;
+    for(i=0;i<4;i++){
+    if ( inputID[i].checked ){
+    	if(i<1){
+    		carry=0;
+    	}else{
+    		carry=1;
+    	}
+    var input1=parseInt(inputID[i].value);
+    v3[0]=input1;
     }
     }
-    v3[0]=inputNumber1;
-    v3[1]=inputNumber2;
-    v3[2]=inputNumber3;
+    /*
    	var startP = fm.startTB;
    	carry=startP.value;
+   	*/
     Seedfunction(bitNum,v3,carry);
     return thirdSettings(  );
 };
@@ -177,7 +183,7 @@ var thirdSettings = function (  ) {
     var newDiv = document.createElement('div');
     firstSettingDiv.remove( newDiv );
     // Seedの設定画面を生成.
-    var BitNum_str = "Bit Number : "+bitNum;
+    
     var Input_str;
     if(bitNum==1){
     	Input_str = "Input : [ "+v3[0]+" ]";
@@ -194,7 +200,7 @@ var thirdSettings = function (  ) {
     }
     var Start_str = "Start at the "+startpoint;
     var animationcheck = "Animation :" ;
-    secondSettingDiv.innerHTML =BitNum_str + '<br><br>'+Input_str + '<br><br>'+Start_str+'<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
 	
     OSVars.cons.beadTypeNum = parseInt( beadTypeNum, 10 );

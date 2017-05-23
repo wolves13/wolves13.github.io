@@ -23,7 +23,7 @@ var adjacents = [ {x: 1, y: 0}, {x: -1, y: 0},
 // Oritataim System が持つべき変数群を収める名前空間.
 var OSVars = {
     cons : {
-	     alpha : 2,         // alpha, deltaはこの値を上書きする.
+	     alpha : 3,         // alpha, deltaはこの値を上書きする.
              delta : 3,
              len   : 15,        // 高分子鎖の長さ (seedも含める) .
 	     beadTypeNum : 0    // 高分子の種類.
