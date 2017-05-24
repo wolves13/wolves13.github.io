@@ -5,8 +5,8 @@
 
 //////////
 // Grobal な 値の定義
-INITIAL_GRID_SIZE_X = 10000;
-INITIAL_GRID_SIZE_Y = 10000;
+INITIAL_GRID_SIZE_X = 1000;
+INITIAL_GRID_SIZE_Y = 1000;
 start_x = 0;
 start_y = 0;
 var bitNum,direction;

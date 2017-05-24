@@ -180,18 +180,13 @@ var thirdSettings = function (  ) {
 	var firstSettingDiv = document.getElementById('firstSettingDiv');
     var secondSettingDiv = document.getElementById('secondSettingDiv');
     var fm = document.forms;
+    var inputCheck = fm.inputNum;
     var newDiv = document.createElement('div');
     firstSettingDiv.remove( newDiv );
     // Seedの設定画面を生成.
     
-    var Input_str;
-    if(bitNum==1){
-    	Input_str = "Input : [ "+v3[0]+" ]";
-    }else if(bitNum==2){
-    	Input_str = "Input : [ "+v3[0]+", "+v3[1]+" ]";
-    }else{
-    	Input_str = "Input : [ "+v3[0]+", "+v3[1]+", "+v3[2]+" ]";
-    }
+    var Input_str = "Input : [ "+v3[0]+" ]";;
+
     var startpoint;
     if(carry==0){
     	startpoint='Top';
@@ -200,7 +195,25 @@ var thirdSettings = function (  ) {
     }
     var Start_str = "Start at the "+startpoint;
     var animationcheck = "Animation :" ;
-    secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+ animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    var conformation_str = "Conformation :";
+    
+    
+   	if(v3[0]==0){
+   		if(carry==0){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-20.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			console.log("here");
+   		}else{
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-f0.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}
+   	}else{
+   		if(carry==0){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-21.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else{
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-1.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}
+   	}
+   	
+    //secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
 	
     OSVars.cons.beadTypeNum = parseInt( beadTypeNum, 10 );

@@ -1021,8 +1021,8 @@ var OSStatus = function(runStatus){
 	
     } else {
 	var p = document.createElement('p');
-	p.innerHTML = '========= Deterministic ==========';
-	fm.appendChild( p );
+	//p.innerHTML = '========= Deterministic ==========';
+	//fm.appendChild( p );
     }
 };
 
