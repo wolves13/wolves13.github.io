@@ -155,7 +155,7 @@ var secondNextPushed = function () {
     var inputID=fm.inputNum;
     for(i=0;i<4;i++){
     if ( inputID[i].checked ){
-    	if(i<1){
+    	if(i<2){
     		carry=0;
     	}else{
     		carry=1;
