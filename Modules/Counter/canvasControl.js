@@ -1,17 +1,14 @@
-﻿
-/*
+﻿/*
   Canvas上での描画に関する関数をまとめる.
   <canvasControl.js>
 */
 
 /*  グローバル変数定義  */
 
-UNIT_DIST_X = 7;
-UNIT_DIST_Y = 7;
+UNIT_DIST_X = 25;
+UNIT_DIST_Y = 25;
 
-
-
-CIRCLE_RADIUS = 4.5;  // 6, 6.5, 7 are suitable...?
+CIRCLE_RADIUS = 8;  // 6, 6.5, 7 are suitable...?
 ANGLE_IN_OCS = Math.PI / 6;
 
 TEST = 0;
@@ -63,10 +60,9 @@ var drawGrid = function(context, color, stepx, stepy, gridOrigin) {
 var getPointOnOCS = function (x, y) {
     
     var angle = ANGLE_IN_OCS;
-    var origin = (sizeY/2)*(UNIT_DIST_Y);
     
     return {
-	x : (x * UNIT_DIST_X)  -  (y * UNIT_DIST_Y) * Math.sin( angle )+origin,
+	x : (x * UNIT_DIST_X)  -  (y * UNIT_DIST_Y) * Math.sin( angle ),
 	y : (y * UNIT_DIST_Y)
     };
 };
@@ -76,10 +72,10 @@ var drawBeadCircle = function(x, y, context, color) {
 
     var centerP = getPointOnOCS(x, y);
     context.strokeStyle =  color ? color : 'black' ;
-    context.fillStyle = color? color: 'black' ;
     context.beginPath();
     context.arc(centerP.x, centerP.y, CIRCLE_RADIUS, 0, Math.PI*2 );
     context.stroke();
+
     context.restore();
 };
 
@@ -110,7 +106,7 @@ var drawBeadType = function(x, y, beadType, context, color){
     var text = beadType.toString();
     var centerP = getPointOnOCS(x, y);
 
-    context.font = '2px century';               // ここでbeadType のfontを決定してる.
+    context.font = '8px century';               // ここでbeadType のfontを決定してる.
     context.textBaseline = 'middle';    
     context.textAlign = 'center';
     context.fillStyle = color ? color : 'black';
@@ -152,23 +148,18 @@ var reflectFixedPath = function( ) {
     var i;
     var p, bead;
     var initialStep = OSVars.initialStep;
+
     for( i = initialStep ; i < OSVars.step ; i++ ){
 	p = OSVars.w_path[ i ];
-	bead = OSVars.occupied[p.x][p.y];
-	drawBeadCircle(p.x, p.y, overCtx);
-	drawBeadType(p.x, p.y, OSVars.word[i], overCtx);
 	bead = OSVars.occupied[p.x][p.y];
 	drawBeadCircle(p.x, p.y, overCtx);
 	drawBeadType(p.x, p.y, OSVars.word[i], overCtx);
 	if ( i !== 0 ) {
 	    var previous = OSVars.w_path[i-1];
 	    drawChain( previous, p, overCtx);
-	    drawChain( previous, p, overCtx);
 	}
     }
 };
-
-
 
 var reflectFixedHbond = function() {
     var overCtx = document.getElementById('overCanvas').getContext('2d');
@@ -193,7 +184,7 @@ var reflectNonDetRoute = function () {
     var step = OSVars.step;
     var d = OSVars.cons.delta;
     var idx = 0;                                      // クロージャで毎回ここが変化する.
-    var img = overCtx.getImageData(0, 0, 6000, 6000);
+    var img = overCtx.getImageData(0, 0, 1000, 600);
     
     var fragColor = 'blue';  // 暫定色だけどよさげ
     var bondColor = 'purple';
@@ -242,6 +233,7 @@ var reflectTmpRoute = function ( route, img ) {
     var step = OSVars.step;
     var d = OSVars.cons.delta;
     var i, p;
+
     for(i=0; i < route.length ; i++){
 	p = route[i];
 	drawBeadCircle(p.x, p.y, overCtx, 'blue');
@@ -259,13 +251,13 @@ var reflectTmpRoute = function ( route, img ) {
 
 
 // 座標システムを, 斜交座標のものに変換する.
-var changeToOCS = function( context,maxY ) {
+var changeToOCS = function( context ) {
 
     // cは, transform()に与える引数.
     // x' = (a*x) + (c*y) + e の中の 'c'.
     var c =  - Math.sin( ANGLE_IN_OCS );
-	var origin = (maxY/2)*(UNIT_DIST_Y);
-    context.transform(1, 0, c, 1, origin, 0);
+
+    context.transform(1, 0, c, 1, 0, 0);
 };
 
 //////////
@@ -275,19 +267,16 @@ var gridContext = gridCanvas.getContext('2d');
 var overCanvas =  document.getElementById('overCanvas');
 var overContext =  overCanvas.getContext('2d');
 
+changeToOCS( gridContext );  // gridContextを斜交座標システムへ変換
+drawGrid(gridContext, 'lightgray', UNIT_DIST_X, UNIT_DIST_Y );
+
+
 /* 軸ラベルの描画 */
   // 座標最大値の計算
 var sizeX =  ( gridContext.canvas.width / UNIT_DIST_X );
 var sizeY =  ( gridContext.canvas.height / UNIT_DIST_Y );
 console.log('sizeX : ' + sizeX);
 console.log('sizeY : ' + sizeY);
-
-
-changeToOCS( gridContext,sizeY );  // gridContextを斜交座標システムへ変換
-
-drawGrid(gridContext, 'lightgray', UNIT_DIST_X, UNIT_DIST_Y );
-
-
 
 var textX;
 var i;
@@ -302,5 +291,5 @@ for(i = 1 ; i <= sizeX ; i++ ) {
 gridContext.textBaseline = 'middle';
 for(i = 1 ; i <= sizeY ; i++ ) {
     textY = i.toString();
-    //gridContext.strokeText(textY, 0, UNIT_DIST_Y * i);
+    gridContext.strokeText(textY, (UNIT_DIST_X * Math.sin(ANGLE_IN_OCS) ) * i + UNIT_DIST_X/3, UNIT_DIST_Y * i);
 }
