@@ -697,7 +697,7 @@ function Rules(){
 	SetColor('blue',2);
 	SetColor('blue',5);
 	SetColor('purple',7);
-	SetColor('purple',10);
+	//SetColor('purple',10);
 	SetColor('green',12);
 	SetColor('green',15);
 	SetColor('green',17);

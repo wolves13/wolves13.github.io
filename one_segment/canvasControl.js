@@ -6,12 +6,12 @@
 
 /*  グローバル変数定義  */
 
-UNIT_DIST_X = 7;
-UNIT_DIST_Y = 7;
+UNIT_DIST_X = 12;
+UNIT_DIST_Y = 12;
 
 
 
-CIRCLE_RADIUS = 4.5;  // 6, 6.5, 7 are suitable...?
+CIRCLE_RADIUS = 5.5;  // 6, 6.5, 7 are suitable...?
 ANGLE_IN_OCS = Math.PI / 6;
 
 TEST = 0;
@@ -80,6 +80,7 @@ var drawBeadCircle = function(x, y, context, color) {
     context.beginPath();
     context.arc(centerP.x, centerP.y, CIRCLE_RADIUS, 0, Math.PI*2 );
     context.stroke();
+
     context.restore();
 };
 
