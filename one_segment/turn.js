@@ -84,7 +84,9 @@
     ColorChange(901,940,'green');
     ColorChange(1400,1450,'purple');
     ColorChange(1500,1536,'blue');
-    
+    ColorChange(1550,1590,'red'); 
+    //ColorChange(1000,1012,'yellow');
+
 
 
 
