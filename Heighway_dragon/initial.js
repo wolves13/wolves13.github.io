@@ -67,7 +67,7 @@ function Seedfunction(bitNum){
 var seedx = start_x;//seed position
 var seedy = start_y;
 console.log(seedx);
-var v3 =[0,0,1,1,0,1,0];
+var v3 =[0,0,0,0,0,0,0];
 
 
 
@@ -117,7 +117,7 @@ setSeed(36+seedx+(bitNum-1)*18, 10+seedy , { beadType: 19, index : -3, bondNum :
 setSeed(32+seedx+(bitNum-1)*18, 8+seedy , { beadType: 200, index : -3, bondNum : 0 } );
 
 //start point with carry
-var carry=true;
+var carry=false;
 if(carry==true){
 setSeed(31+seedx+(bitNum-1)*18, 8+seedy , { beadType: 28, index : -3, bondNum : 0 } );
 setSeed(33+seedx+(bitNum-1)*18, 10+seedy , { beadType: 30, index : -3, bondNum : 2 } );

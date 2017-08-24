@@ -78,7 +78,7 @@ var drawBeadCircle = function(x, y, context, color) {
     context.strokeStyle =  color ? color : 'black' ;
     context.fillStyle = color? color: 'black' ;
     context.beginPath();
-   	context.lineWidth = 0.6;
+   	context.lineWidth = 1.5;
     context.arc(centerP.x, centerP.y, CIRCLE_RADIUS, 0, Math.PI*2 );
     context.stroke();
     context.restore();
@@ -87,7 +87,7 @@ var drawBeadCircle = function(x, y, context, color) {
 // 円の半径と, UNIT_DISTANCEの値から計算した値を変数にしたほうがよい.(あとで)
 var drawChain = function(pA, pB, context, color) {
     context.save();
-    context.lineWidth = 1.5;
+    context.lineWidth = 1.0;
     var p1, p2;
     var p;
     context.strokeStyle = color ?  color : 'black';
