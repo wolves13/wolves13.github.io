@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html><head>  <title>Oritatami Simulator with Canvas</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<style>
+  body {
+    font-size   : 12pt;
+  }
+  #gridCanvas {
+    visibility :  hidden;
+    position   :  absolute;
+    left       :  50px ;
+    top        :  550px;
+    margin     :  10px;
+    cursor     :  pointer;
+    background :  white;
+  }
+  #overCanvas {
+    visibility  : hidden;
+    position    : absolute;
+    left        : 50px ;
+    top         : 550px;
+    margin   : 10px;
+    cursor   : pointer;
+  }
+</style>
+</head>
+
+<body>
+  <div style="background-color : pink">OS-simulator settings of DFAO</div>
+  <br>
+  <form name="forms" onsubmit="return false" >
+    <div id="firstSettingDiv" style="background-color : lightblue">
+
+    <div id="arityDiv">
+	Arity :3
+	<!--
+	<br><label> <input type="radio"  name="arity" value="1"/>1</label>
+	<br><label> <input type="radio"  name="arity" value="2"/>2</label>
+	<br><label> <input type="radio"  name="arity" value="3" checked=yes/>3</label>
+	<br><label> <input type="radio"  name="arity" value="4"/>4</label>
+	<br><label> <input type="radio"  name="arity" value="5"/>5(Max)</label>
+	-->
+	<br>
+    </div>
+
+      <br>
+
+      <label>
+	Delay :3
+	
+      </label>
+
+      <!--
+      <label>
+	Word Length :
+	<input type="text" name="wordLength" size="3" value="49" />
+      </label>
+      <br><br>
+      -->
+     
+    </div>
+
+    <br>
+
+    <div id="secondSettingDiv" class="setting2" style="visibility:hidden">
+ 	<!--Here input-->
+  	<div id="inputDiv">
+      Chose the conformation
+      <br>
+      <label> <input type="radio"  name="inputNum" value="0" id = "input_id1" checked=yes/>
+      	DFAOlast0-0
+      	<IMG src="Co_zigb0.png"  width="150" height="100" onClick="document.getElementById('input_id1').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="1" id = "input_id2" />
+      	body-gx-t0
+      	<IMG src="Co_zigb1.png"  width="150" height="100" onClick="document.getElementById('input_id2').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="10" id = "input_id11" />
+      	body-gx-b0
+      	<IMG src="Co_zigb1.png"  width="150" height="100" onClick="document.getElementById('input_id11').checked=true">
+      </label>
+      <br>
+      <label> <input type="radio"  name="inputNum" value="2" id = "radio_id3"/>
+      	body-lgy-0
+      	<IMG src="Co_zigu0.png"  width="150" height="100" onClick="document.getElementById('radio_id3').checked=true">
+      </label>
+      
+      <label> <input type="radio"  name="inputNum" value="3" id = "radio_id4"/>
+      	turn-lgp-0
+      	<IMG src="Co_zigu1.png" width="150" height="100" onClick="document.getElementById('radio_id4').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="4" id = "radio_id5"/>
+      	move-0
+      	<IMG src="Co_zigu1.png" width="150" height="100" onClick="document.getElementById('radio_id5').checked=true">
+      </label>
+      <br>
+      <label> <input type="radio"  name="inputNum" value="5" id = "input_id6" checked=yes/>
+      	DFAOlast1
+      	<IMG src="Co_zigb0.png"  width="150" height="100" onClick="document.getElementById('input_id6').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="6" id = "input_id7" />
+      	body-gx-t1
+      	<IMG src="Co_zigb1.png"  width="150" height="100" onClick="document.getElementById('input_id7').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="11" id = "input_id12" />
+      	body-gx-b1
+      	<IMG src="Co_zigb1.png"  width="150" height="100" onClick="document.getElementById('input_id12').checked=true">
+      </label>
+      <br>
+      <label> <input type="radio"  name="inputNum" value="7" id = "radio_id8"/>
+      	body-lgy-1
+      	<IMG src="Co_zigu0.png"  width="150" height="100" onClick="document.getElementById('radio_id8').checked=true">
+      </label>
+      
+      <label> <input type="radio"  name="inputNum" value="8" id = "radio_id9"/>
+      	turn-lgp-1
+      	<IMG src="Co_zigu1.png" width="150" height="100" onClick="document.getElementById('radio_id9').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="9" id = "radio_id10"/>
+      	move-1
+      	<IMG src="Co_zigu1.png" width="150" height="100" onClick="document.getElementById('radio_id10').checked=true">
+      </label>
+     </div>
+
+      
+     
+	<!--
+	<br>
+	Start at :
+	<select name="startTB">
+	<option value=1>Bottom</option>
+	<option value=0>Top</option>
+	</select>
+	-->
+    </div>
+     <input type="submit" name="nextButton" value="Next" />
+    <div id="btnMsg">  </div>
+  </form>
+
+  <canvas id="gridCanvas" width="1000" height="1000"> </canvas>
+  <canvas id="overCanvas" width="1000" height="1000"> </canvas>
+  <!-- 前後関係は, 後に記述した要素が前面になる  -->
+
+  <script type="text/javascript" src="basicFuncs.js"></script>
+  <script type="text/javascript" src="BeadType.js"></script>
+  <script type="text/javascript" src="rule.js"></script>
+  <script type="text/javascript" src="canvasControl.js"></script>
+  <script type="text/javascript" src="initial.js"></script>
+  <script type="text/javascript" src="turn.js"></script>
+  <script type="text/javascript" src="control.js"></script>
+  <script type="text/javascript" src="testFuncs.js"></script>
+  <script type="text/javascript" src="workerTest.js"></script>
+  <script type="text/javascript" src="make_turn_part.js"></script>
+  <noscript>JavaScriptが利用できません。</noscript>
+</body></html>
