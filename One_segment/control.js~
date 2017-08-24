@@ -230,13 +230,10 @@ var thirdSettings = function (  ) {
    	//Completion
    	
  	ColorChange(13,18,'black');
- 	//ColorChange(49,54,'black');
- 	ColorChange(113,118,'black');
- 	//ColorChange(140,146,'black');
+ 	ColorChange(81,86,'black');
+ 	ColorChange(143,148,'black');
+ 	ColorChange(191,196,'black');
     complement(OSVars.cons.beadTypeNum);
-    var maxnum;
-    //maxnum=checktype(); //Bead type checker
-    console.log(maxnum);
    	//////////////////////////////////////////////
    	
     ///////////////////////////////////////////////////////////////
@@ -276,7 +273,6 @@ function Confirmation(UseBeads){
 	this.prenum = 0;
 	this.rule  =[];
 	this.WIrule =[];
-	this.WIrule2 =[];
 	this.PRErule = [];
 	this.number = 0;
 	this.color = 'black';
@@ -372,14 +368,6 @@ var CopyCF = function(origin,copy){
 	}
 	for(var i=1;i<=Confirmations[origin].Beads;i++){
 		for(var j=after;j<=searchNum+after;j++){
-			if(Confirmations[origin].WIrule2[i][j]==true){
-				Confirmations[copy].WIrule2[i][j]=true;
-				
-			}
-		}
-	}
-	for(var i=1;i<=Confirmations[origin].Beads;i++){
-		for(var j=after;j<=searchNum+after;j++){
 			if(Confirmations[origin].PRErule[i][j]==true){
 				Confirmations[copy].PRErule[i][j]=true;
 			}
@@ -411,7 +399,6 @@ function SetCFR(StartNum,InputNum,precon,number){
 	for(var i=1;i<=Confirmations[number].Beads;i++){
 		for(var j=after-6;j<=searchNum+after;j++){
 			if(Confirmations[number].WIrule2[i][j]==true){
-				console.log("spe"+number);
 				OSVars.ruleset[i+StartNum][j+Confirmations[number].specialnum-after]=true;
 			}
 		}

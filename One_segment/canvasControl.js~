@@ -78,7 +78,6 @@ var drawBeadCircle = function(x, y, context, color) {
     context.strokeStyle =  color ? color : 'black' ;
     context.fillStyle = color? color: 'black' ;
     context.beginPath();
-   	context.lineWidth = 0.6;
     context.arc(centerP.x, centerP.y, CIRCLE_RADIUS, 0, Math.PI*2 );
     context.stroke();
     context.restore();
@@ -87,7 +86,7 @@ var drawBeadCircle = function(x, y, context, color) {
 // 円の半径と, UNIT_DISTANCEの値から計算した値を変数にしたほうがよい.(あとで)
 var drawChain = function(pA, pB, context, color) {
     context.save();
-    context.lineWidth = 1.5;
+    
     var p1, p2;
     var p;
     context.strokeStyle = color ?  color : 'black';
@@ -111,7 +110,7 @@ var drawBeadType = function(x, y, beadType, context, color){
     var text = beadType.toString();
     var centerP = getPointOnOCS(x, y);
 
-    context.font = '10px century';               // ここでbeadType のfontを決定してる.
+    context.font = '2px century';               // ここでbeadType のfontを決定してる.
     context.textBaseline = 'middle';    
     context.textAlign = 'center';
     context.fillStyle = color ? color : 'black';
@@ -122,9 +121,7 @@ var drawBeadType = function(x, y, beadType, context, color){
 
 var drawHbond  = function(pA, pB, context, color) {
     context.save();
-	context.lineWidth = 1;
-	context.setLineDash([2,1,2,1]);
-	
+
     var pp1, pp2;
     var p1 = getPointOnOCS(pA.x, pA.y);
     var p2 = getPointOnOCS(pB.x, pB.y);
