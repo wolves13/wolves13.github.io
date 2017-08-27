@@ -4,7 +4,6 @@
 	//////////////////////////
 	//need for both
 	//OSVars.ruleset[][] = true;
-
 /*
 	//masuda ver
 	//left to right size 18

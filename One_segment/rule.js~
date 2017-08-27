@@ -1,8 +1,7 @@
 ﻿
 //Rulesetをここで定める
 function Rules(){
-    //1part
-    
+	//1part   
 
 	setConfirmation(18,0);
 	FirstCF(30,0);

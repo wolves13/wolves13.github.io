@@ -4,7 +4,6 @@
 
 
 //1つ改行
-
 function br1(){  document.writeln('<br>');}
 // 2つ改行
 function br2(){  document.writeln('<br><br>');}
