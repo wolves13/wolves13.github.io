@@ -51,7 +51,7 @@
       <br><br>
       <label>
 	Word Length :
-	<input type="text" name="wordLength" size="3" value="5000000" />
+	<input type="text" name="wordLength" size="3" value="2000000" />
       </label>
     </div>
 
@@ -61,14 +61,14 @@
       Bit_number :
     <br><label> <input type="radio"  name="bitNum" value="1"/>1</label>
 	<br><label> <input type="radio"  name="bitNum" value="2"/>2</label>
-	<br><label> <input type="radio"  name="bitNum" value="3"/>3</label>
-	<br><label> <input type="radio"  name="bitNum" value="4"checked=yes/>4</label>
+	<br><label> <input type="radio"  name="bitNum" value="3"checked=yes/>3</label>
+	<br><label> <input type="radio"  name="bitNum" value="4"/>4</label>
 	<br><label> <input type="radio"  name="bitNum" value="5" />5</label>
 	<br><label> <input type="radio"  name="bitNum" value="6"/>6</label>
 	<br><br>
 	   <label>
 	Body_height :
-	<input type="text" name="dragon_height" size="2" value="2" />
+	<input type="text" name="dragon_height" size="2" value="1" />
       </label>
       <br>
       <label>
@@ -90,8 +90,8 @@
     <div id="btnMsg"> (Bead types, Word) </div>
   </form>
 
-  <canvas id="gridCanvas" width="6000" height="6000"> </canvas>
-  <canvas id="overCanvas" width="5700" height="5700"> </canvas>
+  <canvas id="gridCanvas" width="5000" height="5000"> </canvas>
+  <canvas id="overCanvas" width="4000" height="4000"> </canvas>
   <!-- 前後関係は, 後に記述した要素が前面になる  -->
 
   <script type="text/javascript" src="basicFuncs.js"></script>
@@ -99,10 +99,10 @@
   <script type="text/javascript" src="rule.js"></script>
   <script type="text/javascript" src="canvasControl.js"></script>
   <script type="text/javascript" src="initial.js"></script>
-  <script type="text/javascript" src="turn2.js"></script>
+  <script type="text/javascript" src="turn.js"></script>
   <script type="text/javascript" src="control.js"></script>
   <script type="text/javascript" src="testFuncs.js"></script>
   <script type="text/javascript" src="workerTest.js"></script>
-  <script type="text/javascript" src="make_turn_part2.js"></script>
+  <script type="text/javascript" src="make_turn_part.js"></script>
   <noscript>JavaScriptが利用できません。</noscript>
 </body></html>
