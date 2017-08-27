@@ -6,21 +6,7 @@
 	//OSVars.ruleset[][] = true;
 
 /*
-	//masuda ver
-	//left to right size 18
-	var r6=0;
-	OSVars.ruleset[3][102]=true;
-	OSVars.ruleset[2][101]=true;
-	OSVars.ruleset[6][201]=true;
-	OSVars.ruleset[9][4]=true;
-	OSVars.ruleset[7][202]=true;
-	OSVars.ruleset[11][102]=true;
-	OSVars.ruleset[12][7]=true;
-	OSVars.ruleset[2][5]=true;
-	OSVars.ruleset[14][11]=true;
-	OSVars.ruleset[15][10]=true;
-	OSVars.ruleset[18][205]=true;
-	OSVars.ruleset[15][17]=true;
+	
 
 	//
 	OSVars.ruleset[2][212]=true;
@@ -46,7 +32,7 @@
 
 //masuda ver
 	
-	var r6=387;
+    var r6=387;
     var r6_2=405;
     var r6_sp = 423; //750
     var rss = 744;//+2000
