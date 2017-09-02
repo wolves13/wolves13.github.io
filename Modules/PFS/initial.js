@@ -86,7 +86,8 @@ setSeed(27+seedx+i*18, 7+seedy , { beadType: 302, index : -3, bondNum : 0 } );
 }else if(v3[i]==1){
 
 //top
-setSeed(23+seedx+i*18, 7+seedy , { beadType: 502, index : -3, bondNum : 0 } );setSeed(23+seedx+i*18, 7+seedy , { beadType: 302, index : -3, bondNum : 0 } );
+
+setSeed(23+seedx+i*18, 7+seedy , { beadType: 302, index : -3, bondNum : 0 } );
 setSeed(24+seedx+i*18, 7+seedy , { beadType: 297, index : -3, bondNum : 0 } );
 setSeed(25+seedx+i*18, 7+seedy , { beadType: 296, index : -3, bondNum : 0 } );
 setSeed(26+seedx+i*18, 7+seedy , { beadType: 291, index : -3, bondNum : 0 } );
