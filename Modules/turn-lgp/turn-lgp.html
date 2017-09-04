@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html><head>  <title>Oritatami Simulator with Canvas</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+
+<style>
+  body {
+    font-size   : 12pt;
+  }
+  #gridCanvas {
+    visibility :  hidden;
+    position   :  absolute;
+    left       :  50px ;
+    top        :  550px;
+    margin     :  10px;
+    cursor     :  pointer;
+    background :  white;
+  }
+  #overCanvas {
+    visibility  : hidden;
+    position    : absolute;
+    left        : 50px ;
+    top         : 550px;
+    margin   : 10px;
+    cursor   : pointer;
+  }
+</style>
+</head>
+
+<body>
+  <div style="background-color : pink">OS-simulator settings of DFAO</div>
+  <br>
+  <form name="forms" onsubmit="return false" >
+    <div id="firstSettingDiv" style="background-color : lightblue">
+
+    <div id="arityDiv">
+	Arity :3
+	<!--
+	<br><label> <input type="radio"  name="arity" value="1"/>1</label>
+	<br><label> <input type="radio"  name="arity" value="2"/>2</label>
+	<br><label> <input type="radio"  name="arity" value="3" checked=yes/>3</label>
+	<br><label> <input type="radio"  name="arity" value="4"/>4</label>
+	<br><label> <input type="radio"  name="arity" value="5"/>5(Max)</label>
+	-->
+	<br>
+    </div>
+
+      <br>
+
+      <label>
+	Delay :3
+
+      </label>
+
+      <!--
+      <label>
+	Word Length :
+	<input type="text" name="wordLength" size="3" value="49" />
+      </label>
+      <br><br>
+      -->
+
+    </div>
+
+    <br>
+
+    <div id="secondSettingDiv" class="setting2" style="visibility:hidden">
+ 	<!--Here input-->
+  	<div id="inputDiv">
+      Chose the conformation
+      <br>
+      <label> <input type="radio"  name="inputNum" value="0" id = "input_id1" checked=yes/>
+      	turn-lgp-0
+      	<IMG src="Dzig1-20.png" width="250" height="150" onClick="document.getElementById('input_id1').checked=true">
+      </label>
+      <label> <input type="radio"  name="inputNum" value="1" id = "input_id2" />
+      	turn-lgp-1
+      	<IMG src="Dzig1-21.png" width="250" height="150" onClick="document.getElementById('input_id2').checked=true">
+      </label>
+      <br>
+     </div>
+
+
+
+	<!--
+	<br>
+	Start at :
+	<select name="startTB">
+	<option value=1>Bottom</option>
+	<option value=0>Top</option>
+	</select>
+	-->
+    </div>
+     <input type="submit" name="nextButton" value="Next" />
+    <div id="btnMsg">  </div>
+  </form>
+
+  <canvas id="gridCanvas" width="1000" height="1000"> </canvas>
+  <canvas id="overCanvas" width="1000" height="1000"> </canvas>
+  <!-- 前後関係は, 後に記述した要素が前面になる  -->
+
+  <script type="text/javascript" src="basicFuncs.js"></script>
+  <script type="text/javascript" src="BeadType.js"></script>
+  <script type="text/javascript" src="rule.js"></script>
+  <script type="text/javascript" src="canvasControl.js"></script>
+  <script type="text/javascript" src="initial.js"></script>
+  <script type="text/javascript" src="turn.js"></script>
+  <script type="text/javascript" src="control.js"></script>
+  <script type="text/javascript" src="testFuncs.js"></script>
+  <script type="text/javascript" src="workerTest.js"></script>
+  <script type="text/javascript" src="make_turn_part.js"></script>
+  <noscript>JavaScriptが利用できません。</noscript>
+</body></html>
