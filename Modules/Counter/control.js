@@ -153,12 +153,14 @@ var secondNextPushed = function () {
     var inputNumber;
     // word を OS-simulator へ反映する.
     var inputID=fm.inputNum;
-    for(i=0;i<4;i++){
+    for(i=0;i<6;i++){
     if ( inputID[i].checked ){
     	if(i<2){
     		carry=0;
-    	}else{
+    	}else if(i<4&&i>1){
     		carry=1;
+    	}else{
+    		carry=0;
     	}
     var input1=parseInt(inputID[i].value);
     v3[0]=input1;
