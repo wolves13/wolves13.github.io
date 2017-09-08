@@ -21,27 +21,9 @@ function setBeadTypes(){
 	var leng =1;//Dragon_length
 	var bitnum=bitNum;//bit
 	
+
+	useBead(20,1);
 	
 
-	
-	//4con
-
-	for(var i=0;i<bitnum;i++){
-		useBead(20,1);
-		if(i==bitnum-1){
-			useBead(22,1);
-			useBead(31,1);
-		}else{
-			useBead(21,1);
-			useBead(28,1);
-			useBead(29,1);
-		}
-	}
-	
-	useBead(14,1);//right_turn4
-	
-	//propagate_Information
-	
-	direction++;
 	}	
 }
