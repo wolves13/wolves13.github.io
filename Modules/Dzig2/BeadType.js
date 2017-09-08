@@ -24,38 +24,9 @@ function setBeadTypes(){
 	
 
 	//2nd_Automaton
-	for(var i=0;i<bitnum;i++){
-		useBead(17,1);
-		if(i==bitnum-1){
-		useBead(23,1);
-		useBead(18,1);
-		useBead(27,1);
-		}else{
-		useBead(23,1);
-		useBead(27,1);
-		useBead(13,1);
-		}
-		}
 	
-	useBead(30,1);//left_turn4
-	
-	//4con
-	useBead(28,1);
-		useBead(29,1);
-		useBead(19,1);
-	for(var i=0;i<bitnum;i++){
-		useBead(20,1);
-		if(i==bitnum-1){
-			useBead(22,1);
-			useBead(31,1);
-		}else{
-			useBead(21,1);
-			useBead(28,1);
-			useBead(29,1);
-		}
-	}
-	
-	useBead(14,1);//right_turn4
+	useBead(17,1);
+	useBead(23,1);
 	
 	//propagate_Information
 	
