@@ -141,7 +141,7 @@ var secondSettings = function () {
 	}
 	secondSettingDiv.replaceChild(newInputDiv,inputDiv);
 	*/
-	OSVars.cons.len=bitNum*12+30*(bitNum-1)+1;
+	OSVars.cons.len=bitNum*18+30*(bitNum-1)+1;
     var nextBtnMsgDiv = document.getElementById('btnMsg');
     fm.onsubmit = secondNextPushed;
     return false;

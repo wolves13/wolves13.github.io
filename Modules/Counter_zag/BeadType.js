@@ -22,10 +22,7 @@ function setBeadTypes(){
 	var bitnum=bitNum;//bit
 	
 	/////////////////
-	for(var type=87;type<=99;type++){
-				OSVars.word[presentnum]=type;
-				presentnum++;
-			}
+	useBead(5,1);
 	
 	
 	direction++;
