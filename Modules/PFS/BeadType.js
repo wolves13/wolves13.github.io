@@ -25,14 +25,8 @@ function setBeadTypes(){
 
 	
 	//4con
-
-
 	useBead(31,1);
-		
-	useBead(14,1);//right_turn4
-	
-	//propagate_Information
-	
+
 	direction++;
 	}	
 }
