@@ -8,37 +8,36 @@ Block = function (name, size, num) {
 
 
 
-var lss = new Block('lss', 36, 2100);
-var lsg = new Block('lsg', 38, 2200);
-var lgs = new Block('lgs', 37, 2300);
-var rss = new Block('rss', 18, 2400);
-var rsg = new Block('rsg', 23, 2500);
-var rgs = new Block('rgs', 22, 2600);
+var lss = new Block('lss', 36, 633);
+var lsg = new Block('lsg', 38, 669);
+var lgs = new Block('lgs', 37, 707);
+var rss = new Block('rss', 18, 744);
+var rsg = new Block('rsg', 23, 762);
+var rgs = new Block('rgs', 22, 785);
 
-var r6 = new Block('r6', 18, 700);
-var r6_2 = new Block('r6_2', 18, 720);
-var r6_sp = new Block('r6_sp', 18, 750);
+var r6 = new Block('r6', 18, 387);
+var r6_2 = new Block('r6_2', 18, 405);
+var r6_sp = new Block('r6_sp', 6, 423); //750
 
-var l6 = new Block('l6', 18, 1800);
-var l6_sp = new Block('l6_sp', 18, 1850);
+var l6 = new Block('l6', 18, 429);
+var l6_sp = new Block('l6_sp', 6, 447);
 
-var sl4 = new Block('sl4', 12, 900);
-var sl4_sp = new Block('sl4_sp', 12, 950);
+var sl4 = new Block('sl4', 12, 453);
+var sl4_sp = new Block('sl4_sp', 6, 465);
 
-var glider_r = new Block('glider_r', 18, 1000);
-var glider_l = new Block('glider_l', 12, 1003);
-var glider_turn_r = new Block('glider_turn_r', 18, 1100);
-var glider_turn_l = new Block('glider_turn_l', 12, 1150);
-var glider_sp = new Block('glider_sp', 18, 1200);
+var glider_r = new Block('glider_r', 18, 471);
+var glider_l = new Block('glider_l', 12, 474);
+var glider_turn_r = new Block('glider_turn_r', 18, 489);
+var glider_turn_l = new Block('glider_turn_l', 12, 507);
+var glider_sp = new Block('glider_sp', 6, 200); //1200
 
-var sp2 = new Block('sp2', 6, 1250);
-var sp3 = new Block('sp3', 6, 1260);
+var sp3 = new Block('sp3', 6, 519);
 
-var glider_tau_r = new Block('glider_tau_r', 18, 1300);
-var last_body = new Block('last_body', 36, 1500);
-var move = new Block('move', 18, 1550);
-var move_tau = new Block('move_tau', 18, 1570);
-var move_last = new Block('move_last', 18, 1600);
+var glider_tau_r = new Block('glider_tau_r', 18, 525);
+var last_body = new Block('last_body', 36, 543);
+var move = new Block('move', 18, 579);
+var move_tau = new Block('move_tau', 18, 597);
+var move_last = new Block('move_last', 18, 615);
 
 
 //var word = [];
@@ -54,7 +53,7 @@ make_r_glider = function (bit, imp_num) {
         words.push(glider_r);
     }
     for (var i = 1; i < bit; i++) {
-        words = words.concat([glider_sp, glider_sp]);
+        words = words.concat([glider_sp, glider_sp, glider_sp, glider_sp, glider_sp, glider_sp]);
 
 
         if (i == imp_num) {
@@ -83,7 +82,7 @@ make_l_glider = function (bit, imp_num) {
         words.push(sp3);
     }
     for (var i = 1; i < bit; i++) {
-        words = words.concat([glider_sp, glider_sp]);
+        words = words.concat([glider_sp, glider_sp, glider_sp, glider_sp, glider_sp, glider_sp]);
 
 
         if (i == imp_num) {
@@ -110,13 +109,13 @@ make_block_list = function (bit) {
     r6_word = [r6];
     r6_2_word = [r6_2];
     l6_word = [l6];
-    sl4_word = [sl4, sp2];
+    sl4_word = [sl4, sl4_sp];
 
     for (var i = 1; i < bit; i++) {
-        r6_word = r6_word.concat([r6_sp, r6_sp, r6]);
-        r6_2_word = r6_2_word.concat([r6_sp, r6_sp, r6_2]);
-        l6_word = l6_word.concat([l6_sp, l6_sp, l6]);
-        sl4_word = sl4_word.concat([sl4_sp, sp2, sl4_sp, sp2, sl4, sp2]);
+        r6_word = r6_word.concat([r6_sp, r6_sp, r6_sp, r6_sp, r6_sp, r6_sp, r6]);
+        r6_2_word = r6_2_word.concat([r6_sp, r6_sp, r6_sp, r6_sp, r6_sp, r6_sp, r6_2]);
+        l6_word = l6_word.concat([l6_sp, l6_sp, l6_sp, l6_sp, l6_sp, l6_sp, l6]);
+        sl4_word = sl4_word.concat([sl4_sp,sl4_sp,sl4_sp,sl4_sp,sl4_sp,sl4_sp,sl4,sl4_sp]);
     }
     r6_word.push(r6);
     r6_2_word.push(r6_2);
@@ -162,13 +161,13 @@ make_block_list_last = function (bit) {
     r6_word = [r6];
     r6_2_word = [r6_2];
     l6_word = [l6];
-    sl4_word = [sl4, sp2];
+    sl4_word = [sl4, sl4_sp];
 
     for (var i = 1; i < bit; i++) {
-        r6_word = r6_word.concat([r6_sp, r6_sp, r6]);
-        r6_2_word = r6_2_word.concat([r6_sp, r6_sp, r6_2]);
-        l6_word = l6_word.concat([l6_sp, l6_sp, l6]);
-        sl4_word = sl4_word.concat([sl4_sp, sp2, sl4_sp, sp2, sl4, sp2]);
+        r6_word = r6_word.concat([r6_sp, r6_sp,r6_sp, r6_sp,r6_sp, r6_sp, r6]);
+        r6_2_word = r6_2_word.concat([r6_sp, r6_sp,r6_sp, r6_sp,r6_sp, r6_sp, r6_2]);
+        l6_word = l6_word.concat([l6_sp, l6_sp, l6_sp, l6_sp, l6_sp, l6_sp, l6]);
+        sl4_word = sl4_word.concat([sl4_sp,sl4_sp,sl4_sp,sl4_sp,sl4_sp,sl4_sp, sl4,sl4_sp,]);
     }
     r6_word.push(r6);
     r6_2_word.push(r6_2);

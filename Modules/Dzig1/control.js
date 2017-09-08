@@ -265,10 +265,7 @@ var thirdSettings = function (  ) {
 	//////////////////////////////////////////////
    	//Completion
    	
- 	ColorChange(13,18,'black');
- 	ColorChange(81,86,'black');
- 	ColorChange(143,148,'black');
- 	ColorChange(191,196,'black');
+ 	
     complement(OSVars.cons.beadTypeNum);
    	//////////////////////////////////////////////
    	
