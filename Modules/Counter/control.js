@@ -207,7 +207,19 @@ var thirdSettings = function (  ) {
    		}else{
    			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu0.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    		}
-   	}else{
+   	}else if(v3[0]==1){
+   		if(carry==0){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else{
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}
+   	}else if(v3[0]==2){
+   		if(carry==0){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb0.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else{
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}
+   	}else if(v3[0]==3){
    		if(carry==0){
    			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    		}else{
