@@ -32,7 +32,7 @@ function setBeadTypes(){
 	var bitnum=bitNum;//bit
 	
 	//1st_counter
-	console.log(presentnum);
+	
 	for(var i=0;i<bitnum;i++){
 	useBead(0,1);
 	if(i!=bitnum-1){
