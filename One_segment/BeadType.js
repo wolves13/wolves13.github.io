@@ -32,7 +32,7 @@ function setBeadTypes(){
 	var bitnum=bitNum;//bit
 	
 	//1st_counter
-
+	console.log(presentnum);
 	for(var i=0;i<bitnum;i++){
 	useBead(0,1);
 	if(i!=bitnum-1){
@@ -50,9 +50,16 @@ function setBeadTypes(){
 	useBead(34,1);
 	}
 	}
-	useBead(744,1);//right_turn1
-	
 	var times =0;
+	if(times==leng){
+			useBead(4,1);
+			useBead(11,1);
+		}else{
+			useBead(744,1);//right_turn1
+	}
+	
+	
+	
 	while(times<leng){
 	//1st_copy
 		useBead(8,1);
