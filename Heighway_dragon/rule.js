@@ -182,6 +182,9 @@ function Rules(){
 	CFrule(15,6,5);
 	CFrule(15,17,5);
 	CFrule(18,6,5);
+	CFrule(2,17,5);
+	CFrule(3,16,5);
+	CFrule(10,17,5);
 	
 	
 	//right turn(up to low)

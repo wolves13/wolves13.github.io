@@ -16,18 +16,18 @@ var rsg = new Block('rsg', 23, 762);
 var rgs = new Block('rgs', 22, 785);
 
 var r6 = new Block('r6', 18, 387);
-var r6_2 = new Block('r6_2', 18, 405);
+var r6_2 = new Block('r6_2', 18, 48);
 var r6_sp = new Block('r6_sp', 6, 423); //750
 
 var l6 = new Block('l6', 18, 429);
 var l6_sp = new Block('l6_sp', 6, 447);
 
-var sl4 = new Block('sl4', 12, 453);
+var sl4 = new Block('sl4', 12, 0);
 var sl4_sp = new Block('sl4_sp', 6, 465);
 
 var glider_r = new Block('glider_r', 12, 338);
 var glider_l = new Block('glider_l', 12, 338);
-var glider_turn_r = new Block('glider_turn_r', 12, 492);
+var glider_turn_r = new Block('glider_turn_r', 12, 326);
 var glider_turn_l = new Block('glider_turn_l', 12, 507);
 var glider_sp = new Block('glider_sp', 6, 228); //1200
 
