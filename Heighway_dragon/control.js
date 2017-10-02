@@ -235,7 +235,7 @@ var thirdSettings = function (  ) {
  	//ColorChange(140,146,'black');
     complement(OSVars.cons.beadTypeNum);
     var maxnum;
-    maxnum=checktype(); //Bead type checker
+    //maxnum=checktype(); //Bead type checker
     console.log(maxnum);
    	//////////////////////////////////////////////
    	
