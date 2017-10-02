@@ -25,15 +25,15 @@ var l6_sp = new Block('l6_sp', 6, 447);
 var sl4 = new Block('sl4', 12, 453);
 var sl4_sp = new Block('sl4_sp', 6, 465);
 
-var glider_r = new Block('glider_r', 12, 474);
-var glider_l = new Block('glider_l', 12, 474);
+var glider_r = new Block('glider_r', 12, 338);
+var glider_l = new Block('glider_l', 12, 338);
 var glider_turn_r = new Block('glider_turn_r', 12, 492);
 var glider_turn_l = new Block('glider_turn_l', 12, 507);
-var glider_sp = new Block('glider_sp', 6, 200); //1200
+var glider_sp = new Block('glider_sp', 6, 228); //1200
 
 var glider_l_sp = new Block('glider_l_sp', 6, 519);
-var glider_r_sp1 = new Block('glider_r_sp1', 3, 471);
-var glider_r_sp2 = new Block('glider_r_sp2', 3, 486);
+var glider_r_sp1 = new Block('glider_r_sp1', 3, 489);
+var glider_r_sp2 = new Block('glider_r_sp2', 3, 504);
 
 var glider_tau_r = new Block('glider_tau_r', 18, 525);
 var last_body = new Block('last_body', 36, 543);
