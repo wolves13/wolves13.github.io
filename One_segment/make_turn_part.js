@@ -16,22 +16,24 @@ var rsg = new Block('rsg', 23, 762);
 var rgs = new Block('rgs', 22, 785);
 
 var r6 = new Block('r6', 18, 387);
-var r6_2 = new Block('r6_2', 18, 405);
+var r6_2 = new Block('r6_2', 18, 48);
 var r6_sp = new Block('r6_sp', 6, 423); //750
 
 var l6 = new Block('l6', 18, 429);
 var l6_sp = new Block('l6_sp', 6, 447);
 
-var sl4 = new Block('sl4', 12, 453);
+var sl4 = new Block('sl4', 12, 0);
 var sl4_sp = new Block('sl4_sp', 6, 465);
 
-var glider_r = new Block('glider_r', 18, 471);
-var glider_l = new Block('glider_l', 12, 474);
-var glider_turn_r = new Block('glider_turn_r', 18, 489);
+var glider_r = new Block('glider_r', 12, 338);
+var glider_l = new Block('glider_l', 12, 338);
+var glider_turn_r = new Block('glider_turn_r', 12, 326);
 var glider_turn_l = new Block('glider_turn_l', 12, 507);
-var glider_sp = new Block('glider_sp', 6, 200); //1200
+var glider_sp = new Block('glider_sp', 6, 228); //1200
 
-var sp3 = new Block('sp3', 6, 519);
+var glider_l_sp = new Block('glider_l_sp', 6, 519);
+var glider_r_sp1 = new Block('glider_r_sp1', 3, 489);
+var glider_r_sp2 = new Block('glider_r_sp2', 3, 504);
 
 var glider_tau_r = new Block('glider_tau_r', 18, 525);
 var last_body = new Block('last_body', 36, 543);
@@ -47,20 +49,28 @@ make_r_glider = function (bit, imp_num) {
 
 
     if (imp_num === 0) {
+        words.push(glider_r_sp1);
         words.push(glider_turn_r);
+        words.push(glider_r_sp2);
     }
     else {
+        words.push(glider_r_sp1);
         words.push(glider_r);
+        words.push(glider_r_sp2);
     }
     for (var i = 1; i < bit; i++) {
         words = words.concat([glider_sp, glider_sp, glider_sp, glider_sp, glider_sp, glider_sp]);
 
 
         if (i == imp_num) {
+            words.push(glider_r_sp1);
             words.push(glider_turn_r);
+            words.push(glider_r_sp2);
         }
         else {
+            words.push(glider_r_sp1);
             words.push(glider_r);
+            words.push(glider_r_sp2);
         }
     }
 
@@ -75,11 +85,11 @@ make_l_glider = function (bit, imp_num) {
 
     if (imp_num === 0) {
         words.push(glider_turn_l);
-        words.push(sp3);
+        words.push(glider_l_sp);
     }
     else {
         words.push(glider_l);
-        words.push(sp3);
+        words.push(glider_l_sp);
     }
     for (var i = 1; i < bit; i++) {
         words = words.concat([glider_sp, glider_sp, glider_sp, glider_sp, glider_sp, glider_sp]);
@@ -87,11 +97,11 @@ make_l_glider = function (bit, imp_num) {
 
         if (i == imp_num) {
             words.push(glider_turn_l);
-            words.push(sp3);
+            words.push(glider_l_sp);
         }
         else {
             words.push(glider_l);
-            words.push(sp3);
+            words.push(glider_l_sp);
         }
     }
 
