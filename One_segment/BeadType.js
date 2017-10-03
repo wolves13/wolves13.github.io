@@ -137,7 +137,7 @@ function setBeadTypes(){
 		useBead(20,1);
 		if(i==bitnum-1){
 			useBead(21,1);
-			useBead(31,1);
+			useBead(18,1);
 		}else{
 			useBead(21,1);
 			useBead(28,4);

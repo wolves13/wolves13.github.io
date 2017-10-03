@@ -499,6 +499,11 @@ function Rules(){
 	ICFrule(7,3,18);
 	ICFrule(12,3,18);
 	
+	ICFrule(6,12,18);//FPS
+	ICFrule(7,7,18);
+	ICFrule(12,1,18);
+	ICFrule(5,6,18);
+	
 	CFrule(1,8,18);
 	CFrule(2,7,18);
 	CFrule(4,7,18);
@@ -727,20 +732,31 @@ function Rules(){
 	SetColor('green',15);
 	SetColor('green',17);
 	SetColor('green',20);
-	SetColor('magenta',31);
+	SetColor('magenta',18);
 	SetColor('yellow',26);
 	SetColor('magenta',24);
 	SetColor('magenta',33);
 	SetColor('magenta',25);
 	setConfirmation(18,387);
 	setConfirmation(6,423);
+	////////////////////
+	setConfirmation(36,633);
+	PCFrule(2,1,633);
+	PCFrule(3,3,633);
+	PCFrule(3,2,633);
+	///////////////////
 	//SetCFR(startNum,InputConf,PreConf,UseConf)
 	SetCFR(387,0,0,387);
 	SetCFR(423,0,0,423);
 	
+	
 	SetCFR(0,387,0,0);
 	
 	SetCFR(18,423,0,1);//spacer_zig_sq6
+	
+	SetCFR(633,0,0,633);//left_turn_square_ubu
+	
+	//////////
 	//SetCFR(18,750,1,1);
 
 	SetCFR(30,0,2,3);//left_turn1
@@ -748,7 +764,8 @@ function Rules(){
 	SetCFR(66,0,3,34);//spacer_zag_sq6
 	SetCFR(66,0,4,4);
 	SetCFR(72,0,4,34);//spacer_zag_sq6_copy
-	
+	SetCFR(72,0,633,34);//toward ubu_turn
+		
 	SetCFR(48,0,34,5);//Counter_zag
 	SetCFR(744,0,5,744); //right_turn_ubu
 	SetCFR(48,0,34,5);
@@ -847,11 +864,11 @@ function Rules(){
 	SetCFR(326,17,28,20);
 	SetCFR(350,29,20,21);
 	SetCFR(228,0,21,28);
-	SetCFR(356,23,21,31);
+	SetCFR(311,23,21,18);
 	SetCFR(206,0,31,14);//right_turn
 
-	SetCFR(368,31,14,24);//tau
-	SetCFR(819,31,14,33);//another
+	SetCFR(368,18,14,24);//tau
+	SetCFR(819,18,14,33);//another
 	SetCFR(200,0,33,13);
 	SetCFR(200,0,24,13);
 	SetCFR(368,20,13,25);
