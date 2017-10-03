@@ -46,13 +46,13 @@ function setBeadTypes(){
 	
 	useBead(5,1);
 	if(i!=bitnum-1){
-	useBead(4,5);
+	useBead(28,5);
 	useBead(34,1);
 	}
 	}
 	var times =0;
 	if(times==leng){
-			useBead(4,1);
+			useBead(28,1);
 			useBead(11,1);
 		}else{
 			useBead(744,1);//right_turn1
@@ -77,13 +77,13 @@ function setBeadTypes(){
 		for(var i=0;i<bitnum;i++){
 		useBead(45,1);
 		if(i!=bitnum-1){
-		useBead(4,5);
+		useBead(28,5);
 		useBead(34,1);
 		}
 		}
 		times++;
 		if(times==leng){
-			useBead(4,1);
+			useBead(28,1);
 			useBead(11,1);
 		}else{
 			useBead(744,1);//right

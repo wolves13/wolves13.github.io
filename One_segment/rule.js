@@ -723,6 +723,8 @@ function Rules(){
 	/////////////////////////
 	CopyCF(0,2);//2はfirst=false
 	CopyCF(5,45);
+	CopyCF(13,28);
+	CopyCF(13,29);
 	SetColor('blue',0);
 	SetColor('blue',2);
 	SetColor('blue',5);
@@ -761,29 +763,29 @@ function Rules(){
 
 	SetCFR(30,0,2,3);//left_turn1
 	SpecialCF(1,5);//special_one
-	SetCFR(66,0,3,34);//spacer_zag_sq6
-	SetCFR(66,0,4,4);
-	SetCFR(72,0,4,34);//spacer_zag_sq6_copy
+	SetCFR(228,0,3,28);//spacer_zag_sq6
+	//SetCFR(66,0,4,4);
+	SetCFR(72,0,28,34);//spacer_zag_sq6_copy
 	SetCFR(72,0,633,34);//toward ubu_turn
 		
 	SetCFR(48,0,34,5);//Counter_zag
 	SetCFR(744,0,5,744); //right_turn_ubu
 	SetCFR(48,0,34,5);
 	SetCFR(48,0,3,5);
-	SetCFR(66,0,5,4);
+	SetCFR(228,0,5,28);
 	
 	//SetCFR(78,0,5,6);//right_turn1
 	SetCFR(78,0,423,6);
 	
 
-	SetCFR(118,4,744,8);//spacer_zig_zopy
+	SetCFR(118,28,744,8);//spacer_zig_zopy
 	SpecialCF(34,2);//special_one
 	SetCFR(0,5,8,2);	
 	//SetCFR(100,5,6,7);//copy_zig_2con
 	//SetColor('purple',8);
 	//SpecialCF(3,8);
-	SetCFR(118,4,2,8);//spacer_zig_zopy
-	SetCFR(118,4,8,8);
+	SetCFR(118,28,2,8);//spacer_zig_zopy
+	SetCFR(118,28,8,8);
 	SpecialCF(5,8);
 	SetCFR(30,0,2,3);
 	//SetCFR(100,5,8,7);
@@ -798,7 +800,7 @@ function Rules(){
 	//
 	SpecialCF(8,45);//copy_zag
 	SetCFR(48,2,34,45);
-	SetCFR(48,2,4,45);
+	SetCFR(48,2,28,45);
 	SetCFR(66,0,45,4);
 	//
 	SetCFR(744,0,45,744);
@@ -814,7 +816,7 @@ function Rules(){
 	SetCFR(66,0,9,4);
 	//
 	
-	SetCFR(158,0,4,11);//right_turn_sq_to_glider
+	SetCFR(158,0,28,11);//right_turn_sq_to_glider
 	//automaton 1st
 	SpecialCF(34,12);
 	SetCFR(176,5,11,12);//auto_1st_zig
@@ -824,8 +826,7 @@ function Rules(){
 	
 	SetCFR(200,0,26,13);
 	SetCFR(206,0,13,14);//left_turn3
-	CopyCF(13,28);
-	CopyCF(13,29);
+	
 	CFrule(2,6,29);
 	PCFrule(3,2,29);
 	SetCFR(228,0,14,28);
