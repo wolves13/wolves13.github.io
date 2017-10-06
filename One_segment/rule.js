@@ -62,6 +62,7 @@ function Rules(){
 	OSVars.ruleset[427][18]=true;
 	OSVars.ruleset[427][16]=true;
 	OSVars.ruleset[427][15]=true;
+	OSVars.ruleset[631][18]=true;
 	SpeCFrule(18,3,0);
 	/*
 	ICFrule(16,6,0);

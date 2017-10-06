@@ -178,8 +178,8 @@ function setBeadTypes(){
 	
 	//1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610, 1611, 1612, 1613, 1614, 1615, 1616, 1617, 1618,
 	for(var i=1;i<13;i++){
-		OSVars.word[presentnum]=i+807;
-		presentnum++;
+		//OSVars.word[presentnum]=i+807;
+		//presentnum++;
 	}
 	var turnspace = [424, 425, 426, 427, 428, 429 ];
 	var turnspacebit=[388,389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405 , 424, 425, 426, 427, 428, 429, 424, 425, 426, 427, 428, 429 ,424, 425, 426, 427, 428, 429, 424, 425, 426, 427, 428, 429 ,424, 425, 426, 427, 428, 429, 424, 425, 426, 427, 428, 429];
@@ -188,11 +188,13 @@ function setBeadTypes(){
 	
 	var spaceNum=0;
 
+	/*
 	while(turnspace[spaceNum]!=null){
 		OSVars.word[presentnum]=turnspace[spaceNum];
 		presentnum++;
 		spaceNum++;
 	}
+	*/
 	for(var i=0;i<bitNum;i++){
 		spaceNum=0;
 		if(i==bitNum-1){
