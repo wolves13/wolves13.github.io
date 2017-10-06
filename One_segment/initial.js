@@ -67,7 +67,7 @@ function Seedfunction(bitNum){
 var seedx = start_x;//seed position
 var seedy = start_y;
 console.log(seedx);
-var v3 =[1,0,0,1,0,1,0];
+var v3 =[1,0,0,0,0,1,0];
 
 
 

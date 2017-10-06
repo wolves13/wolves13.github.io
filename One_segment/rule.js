@@ -380,6 +380,7 @@ function Rules(){
 		CFrule((i+1)*3,3*i-2,15);
 	}
 	CFrule(2,5,15);
+	CFrule(17,20,15);
 	CFrule(10,19,15);
 	CFrule(14,17,15);
 	ICFrule(2,20,15);
@@ -395,6 +396,15 @@ function Rules(){
 	ICFrule(24,1,15);
 	ICFrule(24,3,15);
 	ICFrule(24,7,15);
+	
+	SpeCFrule(24,13,15);
+	SpeCFrule(24,15,15);
+	SpeCFrule(24,19,15);
+	SpeCFrule(14,18,15);
+	SpeCFrule(15,18,15);
+	SpeCFrule(14,20,15);
+	SpeCFrule(15,20,15);
+	
 	
 	//right_turn(glider)
 	setConfirmation(11,16);
@@ -725,6 +735,13 @@ function Rules(){
 	CopyCF(5,45);
 	CopyCF(13,28);
 	CopyCF(13,29);
+	setConfirmation(12,252);
+	PCFrule(3,3,252);
+	PCFrule(7,3,252);
+	ICFrule(2,4,252);
+	ICFrule(3,4,252);
+	ICFrule(12,3,252);
+	ICFrule(12,1,252);
 	SetColor('blue',0);
 	SetColor('blue',2);
 	SetColor('blue',5);
@@ -732,6 +749,7 @@ function Rules(){
 	SetColor('purple',10);
 	SetColor('green',12);
 	SetColor('green',15);
+	SetColor('green',252);
 	SetColor('green',17);
 	SetColor('green',20);
 	SetColor('magenta',18);
@@ -812,7 +830,7 @@ function Rules(){
 	
 	SetCFR(72,0,9,34);
 	
-	SetCFR(118,34,7,8);
+	//SetCFR(118,34,7,8);
 	SetCFR(66,0,9,4);
 	//
 	
@@ -860,19 +878,32 @@ function Rules(){
 	//SetCFR(550,0,27,30);//left_turn
 
 	//Automaton_2nd_propagate
-	SetCFR(323,0,28,19);
+	SetCFR(118,28,14,8);//test
+	SetCFR(323,0,8,19);//18-8
 	SetCFR(326,17,19,20);
-	SetCFR(326,17,28,20);
+	SetCFR(326,17,8,20);
 	SetCFR(350,29,20,21);
+	SetCFR(118,28,21,8);//test
 	SetCFR(228,0,21,28);
 	SetCFR(311,23,21,18);
 	SetCFR(206,0,31,14);//right_turn
 
 	SetCFR(368,18,14,24);//tau
+	SetCFR(368,20,13,25);
 	SetCFR(819,18,14,33);//another
+	SpecialCF(20,15);
+	SetCFR(240,12,29,15);
+	SetCFR(252,18,14,252);
+	SetCFR(252,18,34,252);
+	
+	SetCFR(72,0,252,34);
+	SetCFR(72,0,33,34);
+	SetCFR(72,0,34,34);
+	SetCFR(206,0,34,14);
+	
 	SetCFR(200,0,33,13);
 	SetCFR(200,0,24,13);
-	SetCFR(368,20,13,25);
+	
 	SetCFR(200,0,25,13);
 	SetCFR(380,0,14,32);//glider to square
 	SetCFR(66,0,32,4);

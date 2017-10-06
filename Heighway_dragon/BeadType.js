@@ -46,13 +46,13 @@ function setBeadTypes(){
 	
 	useBead(5,1);
 	if(i!=bitnum-1){
-	useBead(4,5);
+	useBead(28,5);
 	useBead(34,1);
 	}
 	}
 	var times =0;
 	if(times==leng){
-			useBead(4,1);
+			useBead(28,1);
 			useBead(11,1);
 		}else{
 			useBead(744,1);//right_turn1
@@ -77,13 +77,13 @@ function setBeadTypes(){
 		for(var i=0;i<bitnum;i++){
 		useBead(45,1);
 		if(i!=bitnum-1){
-		useBead(4,5);
+		useBead(28,5);
 		useBead(34,1);
 		}
 		}
 		times++;
 		if(times==leng){
-			useBead(4,1);
+			useBead(28,1);
 			useBead(11,1);
 		}else{
 			useBead(744,1);//right
@@ -129,7 +129,7 @@ function setBeadTypes(){
 	}
 	
 	useBead(14,1);//left_turn
-	useBead(28,3);
+	useBead(8,3);
 	useBead(19,1);//length:3 調整のため
 	
 	//4con
@@ -137,10 +137,10 @@ function setBeadTypes(){
 		useBead(20,1);
 		if(i==bitnum-1){
 			useBead(21,1);
-			useBead(31,1);
+			useBead(18,1);
 		}else{
 			useBead(21,1);
-			useBead(28,4);
+			useBead(8,4);
 		}
 	}
 	
@@ -148,19 +148,19 @@ function setBeadTypes(){
 	
 	//propagate_Information
 	if(direction%2==0){
-	useBead(25,1);//tau
+	useBead(252,1);//tau
 	}else{
 	useBead(33,1);
 	}
 	
-	useBead(13,1);
+	useBead(34,1);
 	
 	for(var i=0;i<bitnum;i++){
-		useBead(25,1);
+		useBead(252,1);
 		if(i!=bitnum-1){
-		useBead(13,7);
+		useBead(34,7);
 		}else{
-		useBead(13,1);	
+		useBead(34,1);	
 		}
 	}
 	useBead(14,1);

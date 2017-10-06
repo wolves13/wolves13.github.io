@@ -380,6 +380,7 @@ function Rules(){
 		CFrule((i+1)*3,3*i-2,15);
 	}
 	CFrule(2,5,15);
+	CFrule(17,20,15);
 	CFrule(10,19,15);
 	CFrule(14,17,15);
 	ICFrule(2,20,15);
@@ -395,6 +396,15 @@ function Rules(){
 	ICFrule(24,1,15);
 	ICFrule(24,3,15);
 	ICFrule(24,7,15);
+	
+	SpeCFrule(24,13,15);
+	SpeCFrule(24,15,15);
+	SpeCFrule(24,19,15);
+	SpeCFrule(14,18,15);
+	SpeCFrule(15,18,15);
+	SpeCFrule(14,20,15);
+	SpeCFrule(15,20,15);
+	
 	
 	//right_turn(glider)
 	setConfirmation(11,16);
@@ -498,6 +508,11 @@ function Rules(){
 	SpeCFrule(6,3,18);
 	ICFrule(7,3,18);
 	ICFrule(12,3,18);
+	
+	ICFrule(6,12,18);//FPS
+	ICFrule(7,7,18);
+	ICFrule(12,1,18);
+	ICFrule(5,6,18);
 	
 	CFrule(1,8,18);
 	CFrule(2,7,18);
@@ -718,6 +733,15 @@ function Rules(){
 	/////////////////////////
 	CopyCF(0,2);//2はfirst=false
 	CopyCF(5,45);
+	CopyCF(13,28);
+	CopyCF(13,29);
+	setConfirmation(12,252);
+	PCFrule(3,3,252);
+	PCFrule(7,3,252);
+	ICFrule(2,4,252);
+	ICFrule(3,4,252);
+	ICFrule(12,3,252);
+	ICFrule(12,1,252);
 	SetColor('blue',0);
 	SetColor('blue',2);
 	SetColor('blue',5);
@@ -725,48 +749,61 @@ function Rules(){
 	SetColor('purple',10);
 	SetColor('green',12);
 	SetColor('green',15);
+	SetColor('green',252);
 	SetColor('green',17);
 	SetColor('green',20);
-	SetColor('magenta',31);
+	SetColor('magenta',18);
 	SetColor('yellow',26);
 	SetColor('magenta',24);
 	SetColor('magenta',33);
 	SetColor('magenta',25);
 	setConfirmation(18,387);
 	setConfirmation(6,423);
+	////////////////////
+	setConfirmation(36,633);
+	PCFrule(2,1,633);
+	PCFrule(3,3,633);
+	PCFrule(3,2,633);
+	///////////////////
 	//SetCFR(startNum,InputConf,PreConf,UseConf)
 	SetCFR(387,0,0,387);
 	SetCFR(423,0,0,423);
 	
+	
 	SetCFR(0,387,0,0);
 	
 	SetCFR(18,423,0,1);//spacer_zig_sq6
+	
+	SetCFR(633,0,0,633);//left_turn_square_ubu
+	
+	//////////
 	//SetCFR(18,750,1,1);
 
 	SetCFR(30,0,2,3);//left_turn1
 	SpecialCF(1,5);//special_one
-	SetCFR(66,0,3,34);//spacer_zag_sq6
-	SetCFR(66,0,4,4);
-	SetCFR(72,0,4,34);//spacer_zag_sq6_copy
-	
+	SetCFR(228,0,3,28);//spacer_zag_sq6
+	//SetCFR(66,0,4,4);
+	SetCFR(72,0,28,34);//spacer_zag_sq6_copy
+	SetCFR(72,0,633,34);//toward ubu_turn
+		
 	SetCFR(48,0,34,5);//Counter_zag
 	SetCFR(744,0,5,744); //right_turn_ubu
 	SetCFR(48,0,34,5);
 	SetCFR(48,0,3,5);
-	SetCFR(66,0,5,4);
+	SetCFR(228,0,5,28);
 	
 	//SetCFR(78,0,5,6);//right_turn1
 	SetCFR(78,0,423,6);
 	
 
-	SetCFR(118,4,744,8);//spacer_zig_zopy
+	SetCFR(118,28,744,8);//spacer_zig_zopy
 	SpecialCF(34,2);//special_one
 	SetCFR(0,5,8,2);	
 	//SetCFR(100,5,6,7);//copy_zig_2con
 	//SetColor('purple',8);
 	//SpecialCF(3,8);
-	SetCFR(118,4,2,8);//spacer_zig_zopy
-	SetCFR(118,4,8,8);
+	SetCFR(118,28,2,8);//spacer_zig_zopy
+	SetCFR(118,28,8,8);
 	SpecialCF(5,8);
 	SetCFR(30,0,2,3);
 	//SetCFR(100,5,8,7);
@@ -781,7 +818,7 @@ function Rules(){
 	//
 	SpecialCF(8,45);//copy_zag
 	SetCFR(48,2,34,45);
-	SetCFR(48,2,4,45);
+	SetCFR(48,2,28,45);
 	SetCFR(66,0,45,4);
 	//
 	SetCFR(744,0,45,744);
@@ -793,11 +830,11 @@ function Rules(){
 	
 	SetCFR(72,0,9,34);
 	
-	SetCFR(118,34,7,8);
+	//SetCFR(118,34,7,8);
 	SetCFR(66,0,9,4);
 	//
 	
-	SetCFR(158,0,4,11);//right_turn_sq_to_glider
+	SetCFR(158,0,28,11);//right_turn_sq_to_glider
 	//automaton 1st
 	SpecialCF(34,12);
 	SetCFR(176,5,11,12);//auto_1st_zig
@@ -807,8 +844,7 @@ function Rules(){
 	
 	SetCFR(200,0,26,13);
 	SetCFR(206,0,13,14);//left_turn3
-	CopyCF(13,28);
-	CopyCF(13,29);
+	
 	CFrule(2,6,29);
 	PCFrule(3,2,29);
 	SetCFR(228,0,14,28);
@@ -842,19 +878,32 @@ function Rules(){
 	//SetCFR(550,0,27,30);//left_turn
 
 	//Automaton_2nd_propagate
-	SetCFR(323,0,28,19);
+	SetCFR(118,28,14,8);//test
+	SetCFR(323,0,8,19);//18-8
 	SetCFR(326,17,19,20);
-	SetCFR(326,17,28,20);
+	SetCFR(326,17,8,20);
 	SetCFR(350,29,20,21);
+	SetCFR(118,28,21,8);//test
 	SetCFR(228,0,21,28);
-	SetCFR(356,23,21,31);
+	SetCFR(311,23,21,18);
 	SetCFR(206,0,31,14);//right_turn
 
-	SetCFR(368,31,14,24);//tau
-	SetCFR(819,31,14,33);//another
+	SetCFR(368,18,14,24);//tau
+	SetCFR(368,20,13,25);
+	SetCFR(819,18,14,33);//another
+	SpecialCF(20,15);
+	SetCFR(240,12,29,15);
+	SetCFR(252,18,14,252);
+	SetCFR(252,18,34,252);
+	
+	SetCFR(72,0,252,34);
+	SetCFR(72,0,33,34);
+	SetCFR(72,0,34,34);
+	SetCFR(206,0,34,14);
+	
 	SetCFR(200,0,33,13);
 	SetCFR(200,0,24,13);
-	SetCFR(368,20,13,25);
+	
 	SetCFR(200,0,25,13);
 	SetCFR(380,0,14,32);//glider to square
 	SetCFR(66,0,32,4);

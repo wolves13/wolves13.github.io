@@ -236,7 +236,7 @@ var thirdSettings = function (  ) {
     complement(OSVars.cons.beadTypeNum);
     var maxnum;
     //maxnum=checktype(); //Bead type checker
-    console.log(maxnum);
+    console.log("bead type: "+maxnum);
    	//////////////////////////////////////////////
    	
     ///////////////////////////////////////////////////////////////
