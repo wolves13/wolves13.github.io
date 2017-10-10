@@ -96,6 +96,8 @@ function Rules(){
 	ICFrule(3,4,1);//
 	OSVars.ruleset[21][403]=true;
 	OSVars.ruleset[22][403]=true;
+	OSVars.ruleset[21][351]=true;
+	OSVars.ruleset[22][351]=true;
 
 	ICFrule(6,3,1);
 	ICFrule(7,4,1);
@@ -109,6 +111,7 @@ function Rules(){
 	CFrule(12,3,1);
 	ICFrule(12,4,1);
 	OSVars.ruleset[30][403]=true;
+	OSVars.ruleset[30][351]=true;
 	CFrule(11,4,1);
 	OSVars.ruleset[27][403]=true;
 	OSVars.ruleset[28][403]=true;
