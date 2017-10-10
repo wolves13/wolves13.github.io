@@ -36,7 +36,7 @@ function setBeadTypes(){
 	for(var i=0;i<bitnum;i++){
 	useBead(0,1);
 	if(i!=bitnum-1){
-	useBead(1,3);
+	useBead(1,3);//counter_space
 	}
 	}
 	useBead(3,1);//left_turn1
@@ -44,7 +44,7 @@ function setBeadTypes(){
 	useBead(34,1);
 	for(var i=0;i<bitnum;i++){
 	
-	useBead(5,1);
+	useBead(5,1);//Counter_zag
 	if(i!=bitnum-1){
 	useBead(28,5);
 	useBead(34,1);
@@ -75,7 +75,7 @@ function setBeadTypes(){
 	//2nd_copy
 		useBead(34,1);
 		for(var i=0;i<bitnum;i++){
-		useBead(45,1);
+		useBead(5,1);
 		if(i!=bitnum-1){
 		useBead(28,5);
 		useBead(34,1);
@@ -148,7 +148,7 @@ function setBeadTypes(){
 	
 	//propagate_Information
 	if(direction%2==0){
-	useBead(252,1);//tau
+	useBead(190,1);//tau
 	}else{
 	useBead(33,1);
 	}
@@ -156,7 +156,7 @@ function setBeadTypes(){
 	useBead(34,1);
 	
 	for(var i=0;i<bitnum;i++){
-		useBead(252,1);
+		useBead(190,1);
 		if(i!=bitnum-1){
 		useBead(34,7);
 		}else{
@@ -176,25 +176,18 @@ function setBeadTypes(){
 	turnNum++;
 	}
 	
-	//1601, 1602, 1603, 1604, 1605, 1606, 1607, 1608, 1609, 1610, 1611, 1612, 1613, 1614, 1615, 1616, 1617, 1618,
+	
 	for(var i=1;i<13;i++){
 		//OSVars.word[presentnum]=i+807;
 		//presentnum++;
 	}
-	var turnspace = [424, 425, 426, 427, 428, 429 ];
-	var turnspacebit=[388,389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405 , 424, 425, 426, 427, 428, 429, 424, 425, 426, 427, 428, 429 ,424, 425, 426, 427, 428, 429, 424, 425, 426, 427, 428, 429 ,424, 425, 426, 427, 428, 429, 424, 425, 426, 427, 428, 429];
-	var turnspacelast=[388,389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405 , 424, 425, 426, 427, 428, 429];
-	
+	var turnspace = [354, 355, 356, 357, 358, 359 ];
+	var turnspacebit=[336,337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353 , 354, 355, 356, 357, 358, 359, 354, 355, 356, 357, 358, 359 ,354, 355, 356, 357, 358, 359, 354, 355, 356, 357, 358, 359 ,354, 355, 356, 357, 358, 359, 354, 355, 356, 357, 358, 359];
+	var turnspacelast=[336,337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353 , 354, 355, 356, 357, 358, 359];
 	
 	var spaceNum=0;
 
-	/*
-	while(turnspace[spaceNum]!=null){
-		OSVars.word[presentnum]=turnspace[spaceNum];
-		presentnum++;
-		spaceNum++;
-	}
-	*/
+	
 	for(var i=0;i<bitNum;i++){
 		spaceNum=0;
 		if(i==bitNum-1){

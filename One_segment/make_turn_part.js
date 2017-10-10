@@ -8,45 +8,45 @@ Block = function (name, size, num) {
 
 
 
-var ls1 = new Block('ls1', 6, 669);
-var ls2 = new Block('ls2', 9, 675);
-var lsg_end = new Block('lsg_end',11,684);
-var lg = new Block('lg', 10, 695);
-var rss = new Block('rss', 18, 744);
-var rsg = new Block('rsg', 17, 744);
-var rgs = new Block('rgs', 22, 785);
+var ls1 = new Block('ls1', 6, 509);
+var ls2 = new Block('ls2', 9, 515);
+var lsg_end = new Block('lsg_end',11,524);
+var lg = new Block('lg', 10, 535);
+var rss = new Block('rss', 18, 78);//
+var rsg = new Block('rsg', 17, 78);//
+var rgs = new Block('rgs', 22, 545);
 
 
-var r6 = new Block('r6', 18, 387);
-var r6_2 = new Block('r6_2', 18, 48);
-var r6_sp = new Block('r6_sp', 6, 423); //750
-var r6_sp_latter_half =new Block('r6_sp_latter_half',3,426);
+var r6 = new Block('r6', 18, 335);//origin_388
+var r6_2 = new Block('r6_2', 18, 54);//
+var r6_sp = new Block('r6_sp', 6, 353); //750
+var r6_sp_latter_half =new Block('r6_sp_latter_half',3,356);//
 
-var l6 = new Block('l6', 18, 429);
-var l6_sp = new Block('l6_sp', 6, 447);
+var l6 = new Block('l6', 18, 359);
+var l6_sp = new Block('l6_sp', 6, 377);
 
-var sl4 = new Block('sl4', 12, 0);
-var sl4_sp = new Block('sl4_sp', 6, 465);
+var sl4 = new Block('sl4', 12, 0);//
+var sl4_sp = new Block('sl4_sp', 6, 383);
 
-var glider_r = new Block('glider_r', 12, 338);
-var glider_l = new Block('glider_l', 12, 338);
-var glider_turn_r = new Block('glider_turn_r', 12, 326);
-var glider_turn_l = new Block('glider_turn_l', 12, 507);
-var glider_sp = new Block('glider_sp', 6, 228); 
-var glider_sp_first_half = new Block('glider_sp_first_half', 3, 228); 
-var glider_sp_rsg = new Block('glider_sp_rsg',6,200);
+var glider_r = new Block('glider_r', 12, 276);//
+var glider_l = new Block('glider_l', 12, 276);//
+var glider_turn_r = new Block('glider_turn_r', 12, 264);//
+var glider_turn_l = new Block('glider_turn_l', 12, 389);
+var glider_sp = new Block('glider_sp', 6, 72); //
+var glider_sp_first_half = new Block('glider_sp_first_half', 3, 72); //
+var glider_sp_rsg = new Block('glider_sp_rsg',6,144);//
 
-var glider_l_sp = new Block('glider_l_sp', 6, 519);
-var glider_r_sp1 = new Block('glider_r_sp1', 3, 489);
-var glider_r_sp2 = new Block('glider_r_sp2', 3, 504);
+var glider_l_sp = new Block('glider_l_sp', 6, 401);
+var glider_r_sp1 = new Block('glider_r_sp1', 3, 407);
+var glider_r_sp2 = new Block('glider_r_sp2', 3, 410);
 
-var glider_tau_r = new Block('glider_tau_r', 18, 525);
-var last_body = new Block('last_body', 36, 543);
-var move = new Block('move', 18, 579);
-var move_sp = new Block('move_sp', 6, 597);
-var move_last = new Block('move_last', 18, 615);
+var glider_tau_r = new Block('glider_tau_r', 18, 413);
+var last_body = new Block('last_body', 36, 431);
+var move = new Block('move', 18, 467);
+var move_sp = new Block('move_sp', 6, 485);
+var move_last = new Block('move_last', 18, 491);
 
-
+//we use 567 beadtype now.
 //var word = [];
 
 make_r_glider = function (bit, imp_num) {

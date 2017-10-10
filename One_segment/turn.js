@@ -1,47 +1,45 @@
 ﻿function turnRules(){
 
+	var DFAO_Turn = 301;
+	var AO = 190;
+	var AO_bar =301;
 	
-	var r6=387;
-    var r6_2=48;
-    var r6_sp = 423; //750
-    var rss = 744;//+2000
-    var l6 =429;//+1000
-    var l6_sp=447;//+1000
-    var ls1 = 669;//+2000
-    var ls2 = 675;
-    var lsg_end = 684;
-    var glider_r= 338;
-    var glider_turn_r = 326;
-    var glider_turn_l = 507;
-    var glider_sp =228; //1200
-    var glider_r_sp1 =489; //1200
-    var glider_r_sp2 =504; //1200
-    var glider_sp_rsg = 200;
+	var r6=335;//original_387
+    var r6_2=54;//
+    var r6_sp = 353;//original_423
+    var rss = 78;//original_744
+    var l6 =359;
+    var l6_sp=377;
+    var ls1 = 509;
+    var ls2 = 515;
+    var lsg_end = 524;
+    var glider_r= 276;//original_338
+    var glider_turn_r = 264;//original_326
+    var glider_turn_l = 389;
+    var glider_sp =72; //origin_228
+    var glider_r_sp1 =407; 
+    var glider_r_sp2 =410; 
+    var glider_sp_rsg = 144;//origin_200
     
-    var glider_tau_r=525;
-    var rgs =785;//+2000
-    var sl4 = 0;
-    var sp3 =519;
-    var sl4_sp = 465;
-    var lg=695;//+2000
-    var last_body = 543;
-    var move =579;
-    var move_sp = 597;
-    var move_last=615;
-    var ttco=1900;//trun_to_counter
-    var last=1950;//spacer
-    var sp2=2000;
+    var glider_tau_r=413;
+    var rgs =545;
+    var sl4 = 0;//
+    var glider_l_sp =401;
+    var sl4_sp = 383;
+    var lg=535;
+    var last_body = 431;
+    var move =467;
+    var move_sp = 485;
+    var move_last=491;
+    
+    //var sp2=2000;
 
-    ColorChange(388,405,'green');
-    ColorChange(406,423,'green');
-    ColorChange(430,447,'green');
-    
-    ColorChange(493,504,'purple');
-    ColorChange(508,519,'purple');
-    
-    ColorChange(526,542,'green');
-    ColorChange(454,465,'green');
-    ColorChange(598,615,'purple');
+    ColorChange(r6+1,r6+18,'green');
+    ColorChange(l6+1,l6+18,'green');
+    ColorChange(glider_tau_r+1,glider_tau_r+12,'green');
+    ColorChange(glider_turn_l+1,glider_turn_l+12,'green');
+    ColorChange(last_body+1,last_body+36,'blue');
+    ColorChange(move+1,move+18,'blue');
     
 
     
@@ -63,8 +61,8 @@
 
 
 
-    OSVars.ruleset[6+l6_sp][384]=true;
-    OSVars.ruleset[6+l6_sp][226]=true;
+    OSVars.ruleset[6+l6_sp][DFAO_Turn-3]=true;
+    OSVars.ruleset[6+l6_sp][170]=true;
     
 
 
@@ -76,17 +74,17 @@
 
     //r6 size 18
     
-    OSVars.ruleset[3+r6][385]=true;
-    OSVars.ruleset[2+r6][386]=true;
-    OSVars.ruleset[6+r6][261]=true;
-    OSVars.ruleset[6+r6][828]=true;
-    OSVars.ruleset[6+r6][256]=true;
-    OSVars.ruleset[6+r6][823]=true;
-    OSVars.ruleset[7+r6][256]=true;
-    OSVars.ruleset[7+r6][823]=true;
-    OSVars.ruleset[11+r6][385]=true;
-    OSVars.ruleset[18+r6][75]=true;
-    OSVars.ruleset[18+r6][225]=true;
+    OSVars.ruleset[3+r6][DFAO_Turn-2]=true;
+    OSVars.ruleset[2+r6][DFAO_Turn-1]=true;
+    OSVars.ruleset[6+r6][9+AO]=true;
+    OSVars.ruleset[6+r6][9+AO_bar]=true;
+    OSVars.ruleset[6+r6][4+AO]=true;
+    OSVars.ruleset[6+r6][4+AO_bar]=true;
+    OSVars.ruleset[7+r6][4+AO]=true;
+    OSVars.ruleset[7+r6][4+AO_bar]=true;
+    OSVars.ruleset[11+r6][DFAO_Turn-2]=true;
+    OSVars.ruleset[18+r6][51]=true;
+    OSVars.ruleset[18+r6][169]=true;
     
     
 
@@ -119,11 +117,11 @@
     OSVars.ruleset[2+r6][10+glider_turn_l]=true;
     OSVars.ruleset[3+r6][10+glider_turn_l]=true;
 
-    OSVars.ruleset[5+r6][3+sp3]=true;
-    OSVars.ruleset[4+r6][4+sp3]=true;
-    OSVars.ruleset[5+r6][4+sp3]=true;
-    OSVars.ruleset[5+r6][1+sp3]=true;
-    OSVars.ruleset[4+r6][6+sp3]=true;
+    OSVars.ruleset[5+r6][3+glider_l_sp]=true;
+    OSVars.ruleset[4+r6][4+glider_l_sp]=true;
+    OSVars.ruleset[5+r6][4+glider_l_sp]=true;
+    OSVars.ruleset[5+r6][1+glider_l_sp]=true;
+    OSVars.ruleset[4+r6][6+glider_l_sp]=true;
     
     
     OSVars.ruleset[12+r6][1+glider_r]=true;
@@ -136,9 +134,9 @@
     
     OSVars.ruleset[18+r6][16+glider_sp]=true;
     
-    OSVars.ruleset[18+r6][1+sp3]=true;
+    OSVars.ruleset[18+r6][1+glider_l_sp]=true;
 
-    OSVars.ruleset[18+r6][3+sp3]=true;
+    OSVars.ruleset[18+r6][3+glider_l_sp]=true;
     OSVars.ruleset[6+r6][7+glider_r]=true;
     OSVars.ruleset[6+r6][9+glider_r]=true;
     OSVars.ruleset[6+r6][11+glider_r]=true;
@@ -152,17 +150,17 @@
     OSVars.ruleset[18+r6][3+glider_sp_rsg]=true;
 
 
-    OSVars.ruleset[2+r6][260]=true;
-    OSVars.ruleset[2+r6][827]=true;
-    OSVars.ruleset[3+r6][260]=true;
-    OSVars.ruleset[3+r6][827]=true;
-    OSVars.ruleset[5+r6][75]=true;
-    OSVars.ruleset[5+r6][225]=true;
-    OSVars.ruleset[4+r6][76]=true;
-    OSVars.ruleset[4+r6][226]=true;
-    OSVars.ruleset[5+r6][76]=true;
-    OSVars.ruleset[5+r6][226]=true;
-    OSVars.ruleset[10+r6][386]=true;
+    OSVars.ruleset[2+r6][8+AO]=true;
+    OSVars.ruleset[2+r6][8+AO_bar]=true;
+    OSVars.ruleset[3+r6][8+AO]=true;
+    OSVars.ruleset[3+r6][8+AO_bar]=true;
+    OSVars.ruleset[5+r6][51]=true;
+    OSVars.ruleset[5+r6][169]=true;
+    OSVars.ruleset[4+r6][52]=true;
+    OSVars.ruleset[4+r6][170]=true;
+    OSVars.ruleset[5+r6][52]=true;
+    OSVars.ruleset[5+r6][170]=true;
+    OSVars.ruleset[10+r6][DFAO_Turn-1]=true;
 
 
     
@@ -175,8 +173,8 @@
 
     OSVars.ruleset[10+r6][5+r6_sp]=true;
 
-    OSVars.ruleset[12+r6][255]=true;
-    OSVars.ruleset[12+r6][822]=true;
+    OSVars.ruleset[12+r6][3+AO]=true;
+    OSVars.ruleset[12+r6][3+AO_bar]=true;
     OSVars.ruleset[12+r6][375]=true;
     OSVars.ruleset[12+r6][826]=true;
     
@@ -205,7 +203,7 @@
     OSVars.ruleset[6+r6][4+glider_turn_l]=true;
     OSVars.ruleset[7+r6][4+glider_turn_l]=true;
     OSVars.ruleset[12+r6][2+glider_turn_l]=true;
-    OSVars.ruleset[18+r6][3+sp3]=true;
+    OSVars.ruleset[18+r6][3+glider_l_sp]=true;
     OSVars.ruleset[18+r6][10+glider_r]=true;
     
 
@@ -335,7 +333,7 @@
 
     //ls size 6
     /////////////////////必要？
-    OSVars.ruleset[1+l6_sp][385]=true;
+    OSVars.ruleset[1+l6_sp][DFAO_Turn-2]=true;
 //////////////////////////////////////////
     OSVars.ruleset[1+ls1][5+l6_sp]=true;
     OSVars.ruleset[2+ls1][6+l6_sp]=true;
@@ -419,9 +417,9 @@
     OSVars.ruleset[7+glider_turn_l][2+glider_turn_l]=true;
     
     OSVars.ruleset[6+glider_turn_l][10+r6_2]=true;
-    OSVars.ruleset[8+glider_turn_l][5+sp3]=true;
-    OSVars.ruleset[9+glider_turn_l][4+sp3]=true;
-    OSVars.ruleset[3+glider_turn_l][4+sp3]=true;
+    OSVars.ruleset[8+glider_turn_l][5+glider_l_sp]=true;
+    OSVars.ruleset[9+glider_turn_l][4+glider_l_sp]=true;
+    OSVars.ruleset[3+glider_turn_l][4+glider_l_sp]=true;
     OSVars.ruleset[12+glider_turn_l][5+glider_turn_l]=true;
     //OSVars.ruleset[12+glider_turn_l][6+glider_turn_l]=true;
     OSVars.ruleset[11+glider_turn_l][6+glider_turn_l]=true;
@@ -454,16 +452,16 @@
     
     
     
-    //sp3 size 6
-    OSVars.ruleset[3+sp3][10+glider_r]=true;
-    OSVars.ruleset[3+sp3][6+glider_r]=true;
-    OSVars.ruleset[1+sp3][6+sp3]=true;
-    OSVars.ruleset[2+sp3][6+sp3]=true;
-    OSVars.ruleset[3+glider_r][4+sp3]=true;
-    OSVars.ruleset[7+glider_r][4+sp3]=true;
+    //glider_l_sp size 6
+    OSVars.ruleset[3+glider_l_sp][10+glider_r]=true;
+    OSVars.ruleset[3+glider_l_sp][6+glider_r]=true;
+    OSVars.ruleset[1+glider_l_sp][6+glider_l_sp]=true;
+    OSVars.ruleset[2+glider_l_sp][6+glider_l_sp]=true;
+    OSVars.ruleset[3+glider_r][4+glider_l_sp]=true;
+    OSVars.ruleset[7+glider_r][4+glider_l_sp]=true;
         
-    OSVars.ruleset[3+sp3][4+glider_sp]=true;
-    OSVars.ruleset[3+sp3][10+glider_turn_l]=true;
+    OSVars.ruleset[3+glider_l_sp][4+glider_sp]=true;
+    OSVars.ruleset[3+glider_l_sp][10+glider_turn_l]=true;
 
     
     
@@ -668,9 +666,9 @@
     OSVars.ruleset[6+sl4][22+rgs]=true;
     OSVars.ruleset[7+sl4][20+rgs]=true;
 
-    OSVars.ruleset[3+sl4][4+sp2]=true;
-    OSVars.ruleset[6+sl4][6+sp2]=true;
-    OSVars.ruleset[7+sl4][5+sp2]=true;
+    //OSVars.ruleset[3+sl4][4+sp2]=true;
+    //OSVars.ruleset[6+sl4][6+sp2]=true;
+    //OSVars.ruleset[7+sl4][5+sp2]=true;
 
 	OSVars.ruleset[1+sl4][12+glider_tau_r]=true;
 	OSVars.ruleset[2+sl4][7+glider_tau_r]=true;
@@ -751,22 +749,22 @@
 
     //sp2 size 6
     
-    OSVars.ruleset[1+sp2][1+glider_r_sp2]=true;
+    // OSVars.ruleset[1+sp2][1+glider_r_sp2]=true;
     
-    OSVars.ruleset[1+sp2][4+glider_sp]=true;
-    OSVars.ruleset[1+sp2][3+glider_r_sp2]=true;
-    OSVars.ruleset[1+sp2][6+glider_sp]=true;
+    // OSVars.ruleset[1+sp2][4+glider_sp]=true;
+    // OSVars.ruleset[1+sp2][3+glider_r_sp2]=true;
+    // OSVars.ruleset[1+sp2][6+glider_sp]=true;
     
-    OSVars.ruleset[3+sp2][10+sl4]=true;
+    // OSVars.ruleset[3+sp2][10+sl4]=true;
     
-    OSVars.ruleset[5+sp2][1+sp2]=true;
-    OSVars.ruleset[6+sp2][1+sp2]=true;
-    OSVars.ruleset[6+sp2][1+glider_r_sp2]=true;
+    // OSVars.ruleset[5+sp2][1+sp2]=true;
+    // OSVars.ruleset[6+sp2][1+sp2]=true;
+    // OSVars.ruleset[6+sp2][1+glider_r_sp2]=true;
     
-    OSVars.ruleset[6+sp2][4+glider_sp]=true;
-    OSVars.ruleset[6+sp2][3+glider_r_sp2]=true;
+    // OSVars.ruleset[6+sp2][4+glider_sp]=true;
+    // OSVars.ruleset[6+sp2][3+glider_r_sp2]=true;
 
-    OSVars.ruleset[6+sp2][6+glider_sp]=true;
+    // OSVars.ruleset[6+sp2][6+glider_sp]=true;
 
     
  
@@ -838,15 +836,15 @@
     OSVars.ruleset[1+r6_2][10+sl4]=true;
     OSVars.ruleset[6+r6_2][9+sl4]=true;
     OSVars.ruleset[7+r6_2][4+sl4]=true; 
-    OSVars.ruleset[18+r6_2][3+sp2]=true;
+    //OSVars.ruleset[18+r6_2][3+sp2]=true;
     
 
     //
     OSVars.ruleset[2+r6_2][8+sl4]=true;
     OSVars.ruleset[3+r6_2][8+sl4]=true;
-    OSVars.ruleset[5+r6_2][3+sp2]=true;
-    OSVars.ruleset[4+r6_2][4+sp2]=true;
-    OSVars.ruleset[5+r6_2][4+sp2]=true;
+   // OSVars.ruleset[5+r6_2][3+sp2]=true;
+   // OSVars.ruleset[4+r6_2][4+sp2]=true;
+   // OSVars.ruleset[5+r6_2][4+sp2]=true;
     OSVars.ruleset[12+r6_2][3+sl4]=true;
     OSVars.ruleset[12+r6_2][7+sl4]=true;
 
@@ -1169,19 +1167,7 @@
     
 
 
-	//三つ目のターン部分のみ
-	var space=807;
-	OSVars.ruleset[3+space][12+move]=true;
-	OSVars.ruleset[2+space][12+move]=true;
-	OSVars.ruleset[5+space][3+space]=true;
-	OSVars.ruleset[5+space][2+space]=true;
-	OSVars.ruleset[6+space][1+space]=true;
-	OSVars.ruleset[9+space][4+space]=true;
-	OSVars.ruleset[8+space][4+space]=true;
-	OSVars.ruleset[12+space][3+space]=true;
-	OSVars.ruleset[11+space][4+space]=true;
-	OSVars.ruleset[11+space][2+r6_sp]=true;
-	OSVars.ruleset[10+space][3+r6_sp]=true;
+	
 	
 	
 		
