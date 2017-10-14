@@ -73,73 +73,59 @@ console.log(seedx);
 
 
 for(var i=0;i<bitNum;i++){
-if(v3[i]==0||v3[i]==5){
+if(v3[i]==0||v3[i]==4){
 //0
-setSeed(22+seedx+i*18, 7+seedy , { beadType: 300, index : -3, bondNum : 0 } );
-setSeed(23+seedx+i*18, 7+seedy , { beadType: 299, index : -3, bondNum : 0 } );
-setSeed(24+seedx+i*18, 7+seedy , { beadType: 294, index : -3, bondNum : 0 } );
-setSeed(25+seedx+i*18, 7+seedy , { beadType: 293, index : -3, bondNum : 0 } );
-setSeed(26+seedx+i*18, 7+seedy , { beadType: 288, index : -3, bondNum : 0 } );
-setSeed(27+seedx+i*18, 7+seedy , { beadType: 287, index : -3, bondNum : 0 } );
-setSeed(28+seedx+i*18, 7+seedy , { beadType: 286, index : -3, bondNum : 1 } );
-setSeed(29+seedx+i*18, 7+seedy , { beadType: 285, index : -3, bondNum : 1 } );
-setSeed(30+seedx+i*18, 7+seedy , { beadType: 276, index : -3, bondNum : 1 } );
+setSeed(22+seedx+i*18, 7+seedy , { beadType: 214, index : -3, bondNum : 0 } );
+setSeed(23+seedx+i*18, 7+seedy , { beadType: 249, index : -3, bondNum : 0 } );
+setSeed(24+seedx+i*18, 7+seedy , { beadType: 244, index : -3, bondNum : 0 } );
+setSeed(25+seedx+i*18, 7+seedy , { beadType: 243, index : -3, bondNum : 0 } );
+setSeed(26+seedx+i*18, 7+seedy , { beadType: 238, index : -3, bondNum : 0 } );
+setSeed(27+seedx+i*18, 7+seedy , { beadType: 237, index : -3, bondNum : 0 } );
+setSeed(28+seedx+i*18, 7+seedy , { beadType: 236, index : -3, bondNum : 1 } );
+setSeed(29+seedx+i*18, 7+seedy , { beadType: 235, index : -3, bondNum : 1 } );
+setSeed(30+seedx+i*18, 7+seedy , { beadType: 226, index : -3, bondNum : 1 } );
 
 
-}else if(v3[i]==1||v3[i]==6){
-
-//f0
-setSeed(22+seedx+i*18, 7+seedy , { beadType: 302, index : -3, bondNum : 0 } );
-setSeed(23+seedx+i*18, 7+seedy , { beadType: 297, index : -3, bondNum : 0 } );
-setSeed(24+seedx+i*18, 7+seedy , { beadType: 296, index : -3, bondNum : 0 } );
-setSeed(25+seedx+i*18, 7+seedy , { beadType: 295, index : -3, bondNum : 0 } );
-setSeed(26+seedx+i*18, 7+seedy , { beadType: 288, index : -3, bondNum : 0 } );
-setSeed(27+seedx+i*18, 7+seedy , { beadType: 287, index : -3, bondNum : 0 } );
-setSeed(28+seedx+i*18, 7+seedy , { beadType: 286, index : -3, bondNum : 1 } );
-setSeed(29+seedx+i*18, 7+seedy , { beadType: 285, index : -3, bondNum : 1 } );
-setSeed(30+seedx+i*18, 7+seedy , { beadType: 276, index : -3, bondNum : 1 } );
-
-
-}else if(v3[i]==2){
+}else if(v3[i]==1){
 
 //Key0
-setSeed(22+seedx+i*18, 7+seedy , { beadType: 300, index : -3, bondNum : 0 } );
-setSeed(23+seedx+i*18, 7+seedy , { beadType: 299, index : -3, bondNum : 0 } );
-setSeed(24+seedx+i*18, 7+seedy , { beadType: 295, index : -3, bondNum : 0 } );
-setSeed(25+seedx+i*18, 7+seedy , { beadType: 294, index : -3, bondNum : 0 } );
-setSeed(26+seedx+i*18, 7+seedy , { beadType: 289, index : -3, bondNum : 0 } );
-setSeed(27+seedx+i*18, 7+seedy , { beadType: 284, index : -3, bondNum : 0 } );
-setSeed(28+seedx+i*18, 7+seedy , { beadType: 283, index : -3, bondNum : 1 } );
-setSeed(29+seedx+i*18, 7+seedy , { beadType: 282, index : -3, bondNum : 1 } );
-setSeed(30+seedx+i*18, 7+seedy , { beadType: 281, index : -3, bondNum : 1 } );
+setSeed(22+seedx+i*18, 7+seedy , { beadType: 214, index : -3, bondNum : 0 } );
+setSeed(23+seedx+i*18, 7+seedy , { beadType: 249, index : -3, bondNum : 0 } );
+setSeed(24+seedx+i*18, 7+seedy , { beadType: 244, index : -3, bondNum : 0 } );
+setSeed(25+seedx+i*18, 7+seedy , { beadType: 243, index : -3, bondNum : 0 } );
+setSeed(26+seedx+i*18, 7+seedy , { beadType: 238, index : -3, bondNum : 0 } );
+setSeed(27+seedx+i*18, 7+seedy , { beadType: 237, index : -3, bondNum : 0 } );
+setSeed(28+seedx+i*18, 7+seedy , { beadType: 236, index : -3, bondNum : 1 } );
+setSeed(29+seedx+i*18, 7+seedy , { beadType: 229, index : -3, bondNum : 1 } );
+setSeed(30+seedx+i*18, 7+seedy , { beadType: 228, index : -3, bondNum : 1 } );
 
 
-}else if(v3[i]==3||v3[i]==7){
+}else if(v3[i]==2||v3[i]==5){
 
 //1
-setSeed(22+seedx+i*18, 7+seedy , { beadType: 300, index : -3, bondNum : 0 } );
-setSeed(23+seedx+i*18, 7+seedy , { beadType: 299, index : -3, bondNum : 0 } );
-setSeed(24+seedx+i*18, 7+seedy , { beadType: 294, index : -3, bondNum : 0 } );
-setSeed(25+seedx+i*18, 7+seedy , { beadType: 293, index : -3, bondNum : 0 } );
-setSeed(26+seedx+i*18, 7+seedy , { beadType: 288, index : -3, bondNum : 0 } );
-setSeed(27+seedx+i*18, 7+seedy , { beadType: 287, index : -3, bondNum : 0 } );
-setSeed(28+seedx+i*18, 7+seedy , { beadType: 282, index : -3, bondNum : 1 } );
-setSeed(29+seedx+i*18, 7+seedy , { beadType: 281, index : -3, bondNum : 1 } );
-setSeed(30+seedx+i*18, 7+seedy , { beadType: 276, index : -3, bondNum : 1 } );
+setSeed(22+seedx+i*18, 7+seedy , { beadType: 214, index : -3, bondNum : 0 } );
+setSeed(23+seedx+i*18, 7+seedy , { beadType: 249, index : -3, bondNum : 0 } );
+setSeed(24+seedx+i*18, 7+seedy , { beadType: 244, index : -3, bondNum : 0 } );
+setSeed(25+seedx+i*18, 7+seedy , { beadType: 243, index : -3, bondNum : 0 } );
+setSeed(26+seedx+i*18, 7+seedy , { beadType: 238, index : -3, bondNum : 0 } );
+setSeed(27+seedx+i*18, 7+seedy , { beadType: 237, index : -3, bondNum : 0 } );
+setSeed(28+seedx+i*18, 7+seedy , { beadType: 232, index : -3, bondNum : 1 } );
+setSeed(29+seedx+i*18, 7+seedy , { beadType: 231, index : -3, bondNum : 1 } );
+setSeed(30+seedx+i*18, 7+seedy , { beadType: 226, index : -3, bondNum : 1 } );
 
 
-}else if(v3[i]==4){
+}else if(v3[i]==3){
 
 //k1
-setSeed(22+seedx+i*18, 7+seedy , { beadType: 300, index : -3, bondNum : 0 } );
-setSeed(23+seedx+i*18, 7+seedy , { beadType: 299, index : -3, bondNum : 1 } );
-setSeed(24+seedx+i*18, 7+seedy , { beadType: 298, index : -3, bondNum : 1 } );
-setSeed(25+seedx+i*18, 7+seedy , { beadType: 291, index : -3, bondNum : 0 } );
-setSeed(26+seedx+i*18, 7+seedy , { beadType: 290, index : -3, bondNum : 2 } );
-setSeed(27+seedx+i*18, 7+seedy , { beadType: 286, index : -3, bondNum : 2 } );
-setSeed(28+seedx+i*18, 7+seedy , { beadType: 285, index : -3, bondNum : 1 } );
-setSeed(29+seedx+i*18, 7+seedy , { beadType: 284, index : -3, bondNum : 1 } );
-setSeed(30+seedx+i*18, 7+seedy , { beadType: 283, index : -3, bondNum : 1 } );
+setSeed(22+seedx+i*18, 7+seedy , { beadType: 214, index : -3, bondNum : 0 } );
+setSeed(23+seedx+i*18, 7+seedy , { beadType: 249, index : -3, bondNum : 1 } );
+setSeed(24+seedx+i*18, 7+seedy , { beadType: 248, index : -3, bondNum : 1 } );
+setSeed(25+seedx+i*18, 7+seedy , { beadType: 241, index : -3, bondNum : 0 } );
+setSeed(26+seedx+i*18, 7+seedy , { beadType: 240, index : -3, bondNum : 2 } );
+setSeed(27+seedx+i*18, 7+seedy , { beadType: 236, index : -3, bondNum : 2 } );
+setSeed(28+seedx+i*18, 7+seedy , { beadType: 235, index : -3, bondNum : 1 } );
+setSeed(29+seedx+i*18, 7+seedy , { beadType: 234, index : -3, bondNum : 1 } );
+setSeed(30+seedx+i*18, 7+seedy , { beadType: 233, index : -3, bondNum : 1 } );
 
 
 }
@@ -147,23 +133,23 @@ setSeed(30+seedx+i*18, 7+seedy , { beadType: 283, index : -3, bondNum : 1 } );
 }
 
 if(carry==0){
-setSeed(22+seedx, 8+seedy , { beadType: 326, index : -3, bondNum : 0 } );
-setSeed(23+seedx, 9+seedy , { beadType: 325, index : -3, bondNum : 0 } );
-setSeed(23+seedx, 10+seedy , { beadType: 324, index : -3, bondNum : 0 } );
-setSeed(21+seedx, 8+seedy , { beadType: 323, index : -3, bondNum : 0 } );
-setSeed(22+seedx, 9+seedy , { beadType: 322, index : -3, bondNum : 0 } );
-setSeed(22+seedx, 10+seedy , { beadType: 321, index : -3, bondNum : 0 } );
+setSeed(22+seedx, 8+seedy , { beadType: 102, index : -3, bondNum : 0 } );
+setSeed(23+seedx, 9+seedy , { beadType: 101, index : -3, bondNum : 0 } );
+setSeed(23+seedx, 10+seedy , { beadType: 100, index : -3, bondNum : 0 } );
+setSeed(21+seedx, 8+seedy , { beadType: 99, index : -3, bondNum : 0 } );
+setSeed(22+seedx, 9+seedy , { beadType: 98, index : -3, bondNum : 0 } );
+setSeed(22+seedx, 10+seedy , { beadType: 97, index : -3, bondNum : 0 } );
 OSVars.w_path = [
     {x: 22+seedx+(bitNum-1)*18, y: 8+seedy}
 ];
 
 }else{
-setSeed(22+seedx, 8+seedy , { beadType: 324, index : -3, bondNum : 0 } );
-setSeed(23+seedx, 9+seedy , { beadType: 325, index : -3, bondNum : 0 } );
-setSeed(23+seedx, 10+seedy , { beadType: 326, index : -3, bondNum : 0 } );
-setSeed(21+seedx, 8+seedy , { beadType: 323, index : -3, bondNum : 0 } );
-setSeed(22+seedx, 9+seedy , { beadType: 322, index : -3, bondNum : 0 } );
-setSeed(22+seedx, 10+seedy , { beadType: 321, index : -3, bondNum : 0 } );
+setSeed(22+seedx, 8+seedy , { beadType: 100, index : -3, bondNum : 0 } );
+setSeed(23+seedx, 9+seedy , { beadType: 101, index : -3, bondNum : 0 } );
+setSeed(23+seedx, 10+seedy , { beadType: 102, index : -3, bondNum : 0 } );
+setSeed(21+seedx, 8+seedy , { beadType: 99, index : -3, bondNum : 0 } );
+setSeed(22+seedx, 9+seedy , { beadType: 98, index : -3, bondNum : 0 } );
+setSeed(22+seedx, 10+seedy , { beadType: 97, index : -3, bondNum : 0 } );
 OSVars.w_path = [
     {x: 23+seedx+(bitNum-1)*18, y: 10+seedy}
 ];

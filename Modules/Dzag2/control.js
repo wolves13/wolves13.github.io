@@ -149,13 +149,11 @@ var secondSettings = function () {
 
 var secondNextPushed = function () {
     var fm = document.forms;
-    var beadTypeNum = 3000;
-    var inputNumber;
     // word を OS-simulator へ反映する.
     var inputID=fm.inputNum;
-    for(i=0;i<8;i++){
+    for(var i=0;i<6;i++){
     if ( inputID[i].checked ){
-    	if(i<5){
+    	if(i<4){
     		carry=1;
     	}else{
     		carry=0;
@@ -198,20 +196,20 @@ var thirdSettings = function (  ) {
     var conformation_str = "Conformation :";
     
     
-   	if(v3[0]==0){
-   		if(carry==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-20.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   			console.log("here");
-   		}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-f0.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    if(v3[0]==0){
+   		secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag2-b0a.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		console.log("here");
+   		}else if(v3[0]==1){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag2-b0b.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==2){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag2-b1a.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==3){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag2-b1b.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==4){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag2-t0a.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==5){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag2-t1a.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    		}
-   	}else{
-   		if(carry==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-21.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   		}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-1.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   		}
-   	}
    	
     //secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";

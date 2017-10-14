@@ -8,38 +8,45 @@ Block = function (name, size, num) {
 
 
 
-var lss = new Block('lss', 36, 633);
-var lsg = new Block('lsg', 38, 669);
-var lgs = new Block('lgs', 37, 707);
-var rss = new Block('rss', 18, 744);
-var rsg = new Block('rsg', 23, 762);
-var rgs = new Block('rgs', 22, 785);
-
-var r6 = new Block('r6', 18, 387);
-var r6_2 = new Block('r6_2', 18, 405);
-var r6_sp = new Block('r6_sp', 6, 423); //750
-
-var l6 = new Block('l6', 18, 429);
-var l6_sp = new Block('l6_sp', 6, 447);
-
-var sl4 = new Block('sl4', 12, 453);
-var sl4_sp = new Block('sl4_sp', 6, 465);
-
-var glider_r = new Block('glider_r', 18, 471);
-var glider_l = new Block('glider_l', 12, 474);
-var glider_turn_r = new Block('glider_turn_r', 18, 489);
-var glider_turn_l = new Block('glider_turn_l', 12, 507);
-var glider_sp = new Block('glider_sp', 6, 200); //1200
-
-var sp3 = new Block('sp3', 6, 519);
-
-var glider_tau_r = new Block('glider_tau_r', 18, 525);
-var last_body = new Block('last_body', 36, 543);
-var move = new Block('move', 18, 579);
-var move_tau = new Block('move_tau', 18, 597);
-var move_last = new Block('move_last', 18, 615);
+var ls1 = new Block('ls1', 6, 509);
+var ls2 = new Block('ls2', 9, 515);
+var lsg_end = new Block('lsg_end',11,524);
+var lg = new Block('lg', 10, 535);
+var rss = new Block('rss', 18, 78);//
+var rsg = new Block('rsg', 17, 78);//
+var rgs = new Block('rgs', 22, 545);
 
 
+var r6 = new Block('r6', 18, 335);//origin_388
+var r6_2 = new Block('r6_2', 18, 54);//
+var r6_sp = new Block('r6_sp', 6, 353); //750
+var r6_sp_latter_half =new Block('r6_sp_latter_half',3,356);//
+
+var l6 = new Block('l6', 18, 359);
+var l6_sp = new Block('l6_sp', 6, 377);
+
+var sl4 = new Block('sl4', 12, 0);//
+var sl4_sp = new Block('sl4_sp', 6, 383);
+
+var glider_r = new Block('glider_r', 12, 276);//
+var glider_l = new Block('glider_l', 12, 276);//
+var glider_turn_r = new Block('glider_turn_r', 12, 264);//
+var glider_turn_l = new Block('glider_turn_l', 12, 389);
+var glider_sp = new Block('glider_sp', 6, 72); //
+var glider_sp_first_half = new Block('glider_sp_first_half', 3, 72); //
+var glider_sp_rsg = new Block('glider_sp_rsg',6,144);//
+
+var glider_l_sp = new Block('glider_l_sp', 6, 401);
+var glider_r_sp1 = new Block('glider_r_sp1', 3, 407);
+var glider_r_sp2 = new Block('glider_r_sp2', 3, 410);
+
+var glider_tau_r = new Block('glider_tau_r', 18, 413);
+var last_body = new Block('last_body', 36, 431);
+var move = new Block('move', 18, 467);
+var move_sp = new Block('move_sp', 6, 485);
+var move_last = new Block('move_last', 18, 491);
+
+//we use 567 beadtype now.
 //var word = [];
 
 make_r_glider = function (bit, imp_num) {
@@ -47,20 +54,28 @@ make_r_glider = function (bit, imp_num) {
 
 
     if (imp_num === 0) {
+        words.push(glider_r_sp1);
         words.push(glider_turn_r);
+        words.push(glider_r_sp2);
     }
     else {
+        words.push(glider_r_sp1);
         words.push(glider_r);
+        words.push(glider_r_sp2);
     }
     for (var i = 1; i < bit; i++) {
         words = words.concat([glider_sp, glider_sp, glider_sp, glider_sp, glider_sp, glider_sp]);
 
 
         if (i == imp_num) {
+            words.push(glider_r_sp1);
             words.push(glider_turn_r);
+            words.push(glider_r_sp2);
         }
         else {
+            words.push(glider_r_sp1);
             words.push(glider_r);
+            words.push(glider_r_sp2);
         }
     }
 
@@ -75,11 +90,11 @@ make_l_glider = function (bit, imp_num) {
 
     if (imp_num === 0) {
         words.push(glider_turn_l);
-        words.push(sp3);
+        words.push(glider_l_sp);
     }
     else {
         words.push(glider_l);
-        words.push(sp3);
+        words.push(glider_l_sp);
     }
     for (var i = 1; i < bit; i++) {
         words = words.concat([glider_sp, glider_sp, glider_sp, glider_sp, glider_sp, glider_sp]);
@@ -87,11 +102,11 @@ make_l_glider = function (bit, imp_num) {
 
         if (i == imp_num) {
             words.push(glider_turn_l);
-            words.push(sp3);
+            words.push(glider_l_sp);
         }
         else {
             words.push(glider_l);
-            words.push(sp3);
+            words.push(glider_l_sp);
         }
     }
 
@@ -110,6 +125,9 @@ make_block_list = function (bit) {
     r6_2_word = [r6_2];
     l6_word = [l6];
     sl4_word = [sl4, sl4_sp];
+    lsg = [l6_sp,l6_sp,ls1,ls2,lsg_end];
+    lss = [sl4_sp,sl4_sp,ls1,ls2,r6_sp_latter_half,r6_sp];
+    lgs = [glider_sp,glider_sp_first_half,lg,ls2,r6_sp_latter_half,r6_sp];
 
     for (var i = 1; i < bit; i++) {
         r6_word = r6_word.concat([r6_sp, r6_sp, r6_sp, r6_sp, r6_sp, r6_sp, r6]);
@@ -130,22 +148,25 @@ make_block_list = function (bit) {
         words = words.concat(r6_word);
         words.push(rss);
         words = words.concat(l6_word);
-        words.push(lsg);
+        words = words.concat(lsg);
         words = words.concat(make_r_glider(bit, i));
         words.push(rgs);
         words = words.concat(sl4_word);
-        words.push(lss);
+        words = words.concat(lss);
         words = words.concat(r6_2_word);
         words.push(rsg);
+        words.push(glider_sp_rsg);
         words = words.concat(make_l_glider(bit, bit - 1 - i));
-        words.push(lgs);
+        words = words.concat(lgs);
 
     }
 
     words = words.concat(r6_word);
     words.pop();
     words.push(last_body);
-    words.push(move_tau);
+    words.push(move_sp);
+    words.push(move_sp);
+    words.push(move_sp);
 
     for (var i = 0; i < (bit - 1) * 3 + 2; i++) {
         words.push(move);
@@ -162,6 +183,9 @@ make_block_list_last = function (bit) {
     r6_2_word = [r6_2];
     l6_word = [l6];
     sl4_word = [sl4, sl4_sp];
+    lsg = [l6_sp,l6_sp,ls1,ls2,lsg_end];
+    lss = [sl4_sp,sl4_sp,ls1,ls2,r6_sp_latter_half,r6_sp];
+    lgs = [glider_sp,glider_sp_first_half,lg,ls2,r6_sp_latter_half,r6_sp];
 
     for (var i = 1; i < bit; i++) {
         r6_word = r6_word.concat([r6_sp, r6_sp,r6_sp, r6_sp,r6_sp, r6_sp, r6]);
@@ -182,22 +206,25 @@ make_block_list_last = function (bit) {
         words = words.concat(r6_word);
         words.push(rss);
         words = words.concat(l6_word);
-        words.push(lsg);
+        words = words.concat(lsg);
         words = words.concat(make_r_glider(bit, i));
         words.push(rgs);
         words = words.concat(sl4_word);
-        words.push(lss);
+        words = words.concat(lss);
         words = words.concat(r6_2_word);
         words.push(rsg);
+        words.push(glider_sp_rsg);
         words = words.concat(make_l_glider(bit, bit - 1 - i));
-        words.push(lgs);
+        words = words.concat(lgs);
 
     }
 
     words = words.concat(r6_word);
     words.pop();
     words.push(last_body);
-    words.push(move_tau);
+    words.push(move_sp);
+    words.push(move_sp);
+    words.push(move_sp);
 
     for (var i = 0; i < (bit - 1) * 3 + 2; i++) {
         words.push(move);
@@ -233,7 +260,8 @@ connect_three_turn = function (bit) {
     words = make_block_list(bit);
     //words_last = make_block_list_last(bit);
     turn_words = words.concat(words);
-    turn_words = turn_words.concat(make_block_list_last(bit));
+    //turn_words = turn_words.concat(make_block_list_last(bit));
+	turn_words = turn_words.concat(words);
 
     return turn_words;
 };

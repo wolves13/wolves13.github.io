@@ -199,13 +199,13 @@ var thirdSettings = function (  ) {
     
     
    	if(v3[0]==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-f0.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag1-f0.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    	}else if(v3[0]==1){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-20.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag1-0.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    	}else if(v3[0]==2){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-1.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag1-1a.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    	}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzig1-21.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Dzag1-1b.png" width="250" height="150"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    	}
    	
     //secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
@@ -263,7 +263,7 @@ var thirdSettings = function (  ) {
  	ColorChange(13,18,'black');
  	ColorChange(81,86,'black');
  	ColorChange(143,148,'black');
- 	ColorChange(191,196,'black');
+ 	//ColorChange(191,196,'black');
     complement(OSVars.cons.beadTypeNum);
    	//////////////////////////////////////////////
    	
