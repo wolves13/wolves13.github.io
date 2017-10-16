@@ -153,13 +153,8 @@ var secondNextPushed = function () {
     var inputNumber;
     // word を OS-simulator へ反映する.
     var inputID=fm.inputNum;
-    for(i=0;i<10;i++){
+    for(i=0;i<12;i++){
     if ( inputID[i].checked ){
-    	if(i<2){
-    		carry=0;
-    	}else{
-    		carry=1;
-    	}
     var input1=parseInt(inputID[i].value);
     v3[0]=input1;
     break;
@@ -169,7 +164,7 @@ var secondNextPushed = function () {
    	var startP = fm.startTB;
    	carry=startP.value;
    	*/
-    Seedfunction(bitNum,v3,carry);
+    Seedfunction(bitNum,v3);
     return thirdSettings(  );
 };
 
@@ -188,33 +183,39 @@ var thirdSettings = function (  ) {
     
     var Input_str = "Input : [ "+v3[0]+" ]";;
 
-    var startpoint;
-    if(carry==0){
-    	startpoint='Top';
-    }else{
-    	startpoint='Bottom';
-    }
-    var Start_str = "Start at the "+startpoint;
+   
     var animationcheck = "Animation :" ;
     var conformation_str = "Conformation :";
     
     
-   	if(v3[0]==0){
-   		if(carry==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb0.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   			console.log("here");
-   		}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu0.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    if(v3[0]==0){
+   		secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="AO-0.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		console.log("here");
+   		}else if(v3[0]==1){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-E0b.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==2){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-E0a.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==3){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-G0.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==4){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-I0.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==5){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-K0.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==6){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="AO-1.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==7){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-E1b.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==8){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-E1a.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==9){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-G1.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==10){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-I1.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   		}else if(v3[0]==11){
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+conformation_str+'<br><br>'+'<IMG src="TA-K1.png" width="300" height="200"><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    		}
-   	}else{
-   		if(carry==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   		}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   		}
-   	}
    	
-    //secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+    //secondSettingDiv.innerHTML =Input_str + '<br><br>'+animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
     secondSettingDiv.style.backgroundColor = "white";
 	
     OSVars.cons.beadTypeNum = parseInt( beadTypeNum, 10 );

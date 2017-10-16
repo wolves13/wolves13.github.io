@@ -8,7 +8,7 @@
 UNIT_DIST_X = 25;
 UNIT_DIST_Y = 25;
 
-CIRCLE_RADIUS = 8;  // 6, 6.5, 7 are suitable...?
+CIRCLE_RADIUS = 9;  // 6, 6.5, 7 are suitable...?
 ANGLE_IN_OCS = Math.PI / 6;
 
 TEST = 0;
@@ -106,7 +106,7 @@ var drawBeadType = function(x, y, beadType, context, color){
     var text = beadType.toString();
     var centerP = getPointOnOCS(x, y);
 
-    context.font = '8px century';               // ここでbeadType のfontを決定してる.
+    context.font = '10px century';               // ここでbeadType のfontを決定してる.
     context.textBaseline = 'middle';    
     context.textAlign = 'center';
     context.fillStyle = color ? color : 'black';

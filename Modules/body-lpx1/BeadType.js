@@ -1,8 +1,5 @@
 ﻿
 
-
-
-//ビードタイプをここで設定
 function setBeadTypes(){
 	var presentnum=1;
 	function useBead(confnum,times){
@@ -23,9 +20,8 @@ function setBeadTypes(){
 	
 	/////////////////
 	var spaceNum=0;
-	var turnspace=[701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718];
 	while(spaceNum<18){
-		OSVars.word[presentnum]=1801+spaceNum;
+		OSVars.word[presentnum]=360+spaceNum;
 		presentnum++;
 		spaceNum++;
 	}

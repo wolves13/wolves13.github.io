@@ -18,13 +18,12 @@ function setBeadTypes(){
 	while(presentnum<OSVars.cons.len){
 	console.log(presentnum);
 	
-	var leng =1;//Dragon_length
-	var bitnum=bitNum;//bit
+	
 	
 	
 	var spaceNum=0;
 	while(spaceNum<12){
-		OSVars.word[presentnum]=1151+spaceNum;
+		OSVars.word[presentnum]=390+spaceNum;
 		presentnum++;
 		spaceNum++;
 	}
