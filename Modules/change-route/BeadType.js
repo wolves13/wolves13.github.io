@@ -23,9 +23,8 @@ function setBeadTypes(){
 	
 	/////////////////
 	var spaceNum=0;
-	var turnspace=[701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718];
 	while(spaceNum<36){
-		OSVars.word[presentnum]=1501+spaceNum;
+		OSVars.word[presentnum]=432+spaceNum;
 		presentnum++;
 		spaceNum++;
 	}
