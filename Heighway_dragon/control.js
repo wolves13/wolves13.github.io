@@ -229,9 +229,9 @@ var thirdSettings = function (  ) {
 	//////////////////////////////////////////////
    	//Completion
    	
- 	ColorChange(13,18,'black');
+ 	ColorChange(1,313,'blue');
  	//ColorChange(49,54,'black');
- 	ColorChange(113,118,'black');
+ 	ColorChange(312,567,'orange');
  	//ColorChange(140,146,'black');
     complement(OSVars.cons.beadTypeNum);
     var maxnum;
