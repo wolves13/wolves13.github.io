@@ -36,7 +36,7 @@
 
     ColorChange(r6+1,r6+18,'green');
     ColorChange(l6+1,l6+18,'green');
-    ColorChange(glider_tau_r+3+1,glider_tau_r+15,'green');
+    ColorChange(glider_tau_r+1,glider_tau_r+12,'green');
     ColorChange(glider_turn_l+1,glider_turn_l+12,'green');
     ColorChange(last_body+1,last_body+36,'blue');
     ColorChange(move+1,move+18,'blue');
