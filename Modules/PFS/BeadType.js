@@ -1,10 +1,20 @@
-﻿
-
+﻿function checktype(){
+    var maxnum=0;
+    var i=0;
+    var chek=[];
+    while(i<4000){
+    	if(OSVars.word.indexOf(i) >= 0){
+    		maxnum++;   
+	    }
+	i++;
+	}
+    return maxnum;
+}
 
 
 //ビードタイプをここで設定
 function setBeadTypes(){
-	var presentnum=1;
+	var presentnum=1; 
 	function useBead(confnum,times){
 		var setnum = Confirmations[confnum].Beads;
 		for(var i=0;i<times;i++){
@@ -16,16 +26,15 @@ function setBeadTypes(){
 	}
 
 	while(presentnum<OSVars.cons.len){
-	console.log(presentnum);
-	
-	var leng =1;//Dragon_length
-	var bitnum=bitNum;//bit
-	
-	
 
 	
-	//4con
-	useBead(31,1);
+	var leng =OSVars.dragon_height;//Dragon_length
+	var bitnum=bitNum;//bit
+	
+	//1st_counter
+	
+	
+	useBead(18,1);
 
 	direction++;
 	}	

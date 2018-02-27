@@ -153,7 +153,7 @@ var secondNextPushed = function () {
     var inputNumber;
     // word を OS-simulator へ反映する.
     var inputID=fm.inputNum;
-    for(i=0;i<10;i++){
+    for(i=0;i<2;i++){
     if ( inputID[i].checked ){
     var input1=parseInt(inputID[i].value);
     v3[0]=input1;
@@ -195,18 +195,9 @@ var thirdSettings = function (  ) {
     
     
    	if(v3[0]==0){
-   		if(carry==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb0.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   			console.log("here");
-   		}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu0.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   		}
-   	}else{
-   		if(carry==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   		}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
-   		}
+   		secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="change-A.png"  width="400" height="175" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   	}else if(v3[0]==1){
+   		secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="change-O.png"  width="400" height="175" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    	}
    	
     //secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';

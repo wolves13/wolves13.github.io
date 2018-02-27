@@ -23,11 +23,16 @@ function setBeadTypes(){
 	
 	
 	var spaceNum=0;
-	while(spaceNum<22){
-		OSVars.word[presentnum]=2601+spaceNum;
+	while(spaceNum<10){
+		OSVars.word[presentnum]=536+spaceNum;
 		presentnum++;
 		spaceNum++;
 	}
-	
+	spaceNum=0;
+	while(spaceNum<10){
+		OSVars.word[presentnum]=516+spaceNum;
+		presentnum++;
+		spaceNum++;
+	}
 	}	
 }
