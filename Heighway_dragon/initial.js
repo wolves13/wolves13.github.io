@@ -73,48 +73,72 @@ var v3 =[0,0,0,0,0,0,0];
 
 for(var i=0;i<bitNum;i++){
 if(bitNum==1||i>0){
-setSeed(14+seedx+i*18, 7+seedy, { beadType: 426, index : -3, bondNum : 0 } );
-setSeed(15+seedx+i*18, 7+seedy , { beadType: 427, index : -3, bondNum : 0 } );
-setSeed(16+seedx+i*18, 7+seedy , { beadType: 426, index : -3, bondNum : 0 } );
-setSeed(17+seedx+i*18, 7+seedy , { beadType: 427, index : -3, bondNum : 0 } );
-setSeed(18+seedx+i*18, 7+seedy , { beadType: 426, index : -3, bondNum : 0 } );
-setSeed(19+seedx+i*18, 7+seedy , { beadType: 427, index : -3, bondNum : 0 } );
-setSeed(20+seedx+i*18, 7+seedy , { beadType: 426, index : -3, bondNum : 0 } );
+setSeed(14+seedx+i*18, 7+seedy, { beadType: 356, index : -3, bondNum : 0 } );
+setSeed(15+seedx+i*18, 7+seedy , { beadType: 357, index : -3, bondNum : 0 } );
+setSeed(16+seedx+i*18, 7+seedy , { beadType: 356, index : -3, bondNum : 0 } );
+setSeed(17+seedx+i*18, 7+seedy , { beadType: 357, index : -3, bondNum : 0 } );
+setSeed(18+seedx+i*18, 7+seedy , { beadType: 356, index : -3, bondNum : 0 } );
+setSeed(19+seedx+i*18, 7+seedy , { beadType: 357, index : -3, bondNum : 0 } );
+setSeed(20+seedx+i*18, 7+seedy , { beadType: 356, index : -3, bondNum : 0 } );
 }
-setSeed(21+seedx+i*18, 7+seedy , { beadType: 427, index : -3, bondNum : 0 } );
-setSeed(22+seedx+i*18, 7+seedy , { beadType: 426, index : -3, bondNum : 0 } );
-setSeed(23+seedx+i*18, 7+seedy , { beadType: 427, index : -3, bondNum : 0 } );
-setSeed(24+seedx+i*18, 7+seedy , { beadType: 426, index : -3, bondNum : 0 } );
-setSeed(25+seedx+i*18, 7+seedy , { beadType: 427, index : -3, bondNum : 0 } );
-
+if(i==0){
+setSeed(21+seedx+i*18, 7+seedy , { beadType: 499, index : -3, bondNum : 0 } );
+setSeed(22+seedx+i*18, 7+seedy , { beadType: 500, index : -3, bondNum : 0 } );
+setSeed(23+seedx+i*18, 7+seedy , { beadType: 501, index : -3, bondNum : 0 } );
+setSeed(24+seedx+i*18, 7+seedy , { beadType: 506, index : -3, bondNum : 0 } );
+setSeed(25+seedx+i*18, 7+seedy , { beadType: 507, index : -3, bondNum : 0 } );
+}else{
+setSeed(21+seedx+i*18, 7+seedy , { beadType: 357, index : -3, bondNum : 0 } );
+setSeed(22+seedx+i*18, 7+seedy , { beadType: 356, index : -3, bondNum : 0 } );
+setSeed(23+seedx+i*18, 7+seedy , { beadType: 357, index : -3, bondNum : 0 } );
+setSeed(24+seedx+i*18, 7+seedy , { beadType: 356, index : -3, bondNum : 0 } );
+setSeed(25+seedx+i*18, 7+seedy , { beadType: 357, index : -3, bondNum : 0 } );
+}
 if(v3[i]==0){
 //0parts most upper
-setSeed(26+seedx+i*18, 7+seedy , { beadType: 390, index : -3, bondNum : 0 } );
-setSeed(27+seedx+i*18, 7+seedy , { beadType: 391, index : -3, bondNum : 0 } );
-setSeed(28+seedx+i*18, 7+seedy , { beadType: 396, index : -3, bondNum : 0 } );
-setSeed(29+seedx+i*18, 7+seedy , { beadType: 397, index : -3, bondNum : 0 } );
+setSeed(26+seedx+i*18, 7+seedy , { beadType: 338, index : -3, bondNum : 0 } );
+setSeed(27+seedx+i*18, 7+seedy , { beadType: 339, index : -3, bondNum : 0 } );
+setSeed(28+seedx+i*18, 7+seedy , { beadType: 344, index : -3, bondNum : 0 } );
+setSeed(29+seedx+i*18, 7+seedy , { beadType: 345, index : -3, bondNum : 0 } );
 
 
 }else if(v3[i]==1){
 
 //1parts most upper
-setSeed(26+seedx+i*18, 7+seedy , { beadType: 398, index : -3, bondNum : 0 } );
-setSeed(27+seedx+i*18, 7+seedy , { beadType: 399, index : -3, bondNum : 0 } );
-setSeed(28+seedx+i*18, 7+seedy , { beadType: 400, index : -3, bondNum : 0 } );
-setSeed(29+seedx+i*18, 7+seedy , { beadType: 401, index : -3, bondNum : 0 } );
+setSeed(26+seedx+i*18, 7+seedy , { beadType: 346, index : -3, bondNum : 0 } );
+setSeed(27+seedx+i*18, 7+seedy , { beadType: 347, index : -3, bondNum : 0 } );
+setSeed(28+seedx+i*18, 7+seedy , { beadType: 348, index : -3, bondNum : 0 } );
+setSeed(29+seedx+i*18, 7+seedy , { beadType: 349, index : -3, bondNum : 0 } );
 
 }
-setSeed(30+seedx+i*18, 7+seedy , { beadType: 402, index : -3, bondNum : 0 } );
-setSeed(31+seedx+i*18, 7+seedy , { beadType: 403, index : -3, bondNum : 0 } );
+
+setSeed(30+seedx+i*18, 7+seedy , { beadType: 350, index : -3, bondNum : 0 } );
+setSeed(31+seedx+i*18, 7+seedy , { beadType: 351, index : -3, bondNum : 0 } );
+
 }
+
+
+setSeed(32+seedx+(bitNum-1)*18, 7+seedy , { beadType: 356, index : -3, bondNum : 0 } );
+setSeed(33+seedx+(bitNum-1)*18, 7+seedy , { beadType: 357, index : -3, bondNum : 0 } );
+setSeed(34+seedx+(bitNum-1)*18, 7+seedy , { beadType: 316, index : -3, bondNum : 0 } );
+setSeed(35+seedx+(bitNum-1)*18, 7+seedy , { beadType: 317, index : -3, bondNum : 0 } );
+setSeed(36+seedx+(bitNum-1)*18, 8+seedy , { beadType: 318, index : -3, bondNum : 0 } );
+setSeed(37+seedx+(bitNum-1)*18, 9+seedy , { beadType: 319, index : -3, bondNum : 0 } );
+setSeed(38+seedx+(bitNum-1)*18, 10+seedy , { beadType: 320, index : -3, bondNum : 0 } );
+setSeed(35+seedx+(bitNum-1)*18, 8+seedy , { beadType: 323, index : -3, bondNum : 0 } );
+setSeed(36+seedx+(bitNum-1)*18, 9+seedy , { beadType: 322, index : -3, bondNum : 0 } );
+setSeed(37+seedx+(bitNum-1)*18, 10+seedy , { beadType: 321, index : -3, bondNum : 0 } );
+setSeed(34+seedx+(bitNum-1)*18, 8+seedy , { beadType: 324, index : -3, bondNum : 0 } );
+setSeed(35+seedx+(bitNum-1)*18, 9+seedy , { beadType: 325, index : -3, bondNum : 0 } );
+setSeed(33+seedx+(bitNum-1)*18, 8+seedy , { beadType: 327, index : -3, bondNum : 0 } );
+setSeed(34+seedx+(bitNum-1)*18, 9+seedy , { beadType: 326, index : -3, bondNum : 0 } );
 
 
 setSeed(32+seedx+(bitNum-1)*18, 9+seedy , { beadType: 29, index : -3, bondNum : 0 } );
-//setSeed(31+seedx+(bitNum-1)*18, 7+seedy , { beadType: 200, index : -3, bondNum : 0 } );
-setSeed(33+seedx+(bitNum-1)*18, 9+seedy , { beadType: 200, index : -3, bondNum : 0 } );
+setSeed(33+seedx+(bitNum-1)*18, 9+seedy , { beadType: 329, index : -3, bondNum : 0 } );
 setSeed(35+seedx+(bitNum-1)*18, 10+seedy , { beadType: 24, index : -3, bondNum : 0 } );
 setSeed(36+seedx+(bitNum-1)*18, 10+seedy , { beadType: 19, index : -3, bondNum : 0 } );
-setSeed(32+seedx+(bitNum-1)*18, 8+seedy , { beadType: 200, index : -3, bondNum : 0 } );
+setSeed(32+seedx+(bitNum-1)*18, 8+seedy , { beadType: 328, index : -3, bondNum : 0 } );
 
 //start point with carry
 var carry=false;
