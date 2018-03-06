@@ -124,12 +124,12 @@ setSeed(31+seedx+i*18, 7+seedy , { beadType: 25, index : -3, bondNum : 0 } );
 
 }
 
-setSeed(25+seedx+i*18, 8+seedy , { beadType: 73, index : -3, bondNum : 0 } );
-setSeed(26+seedx+i*18, 9+seedy , { beadType: 74, index : -3, bondNum : 0 } );
-setSeed(27+seedx+i*18, 10+seedy , { beadType: 75, index : -3, bondNum : 0 } );
-setSeed(26+seedx+i*18, 8+seedy , { beadType: 78, index : -3, bondNum : 0 } );
-setSeed(27+seedx+i*18, 9+seedy , { beadType: 77, index : -3, bondNum : 0 } );
-setSeed(28+seedx+i*18, 10+seedy , { beadType: 76, index : -3, bondNum : 0 } );
+setSeed(25+seedx+i*18, 8+seedy , { beadType: 49, index : -3, bondNum : 0 } );
+setSeed(26+seedx+i*18, 9+seedy , { beadType: 50, index : -3, bondNum : 0 } );
+setSeed(27+seedx+i*18, 10+seedy , { beadType: 51, index : -3, bondNum : 0 } );
+setSeed(26+seedx+i*18, 8+seedy , { beadType: 54, index : -3, bondNum : 0 } );
+setSeed(27+seedx+i*18, 9+seedy , { beadType: 53, index : -3, bondNum : 0 } );
+setSeed(28+seedx+i*18, 10+seedy , { beadType: 52, index : -3, bondNum : 0 } );
 
 //start point with carry
 OSVars.w_path = [
