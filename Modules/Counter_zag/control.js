@@ -200,16 +200,16 @@ var thirdSettings = function (  ) {
     
    	if(v3[0]==0){
    		if(carry==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb0.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Counter_zag0b.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    			console.log("here");
    		}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu0.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Counter_zag0a.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    		}
    	}else{
    		if(carry==0){
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigb1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Counter_zag1a.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    		}else{
-   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Co_zigu1.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
+   			secondSettingDiv.innerHTML =Input_str + '<br><br>'+Start_str+'<br><br>'+conformation_str+'<br><br>'+'<IMG src="Counter_zag1b.png" ><br><br>' +animationcheck + '<input type="checkbox" name="Animation" checked="checked"/>';
    		}
    	}
    	
